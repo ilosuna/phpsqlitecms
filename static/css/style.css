@@ -1,7 +1,7 @@
 body             { margin-bottom: 20px; }
 body.admin       {  padding-top: 50px; padding-bottom: 20px;margin-bottom: 20px; }
 
-#logo            { margin:30px 0 15px -20px; font-family:Patua One; font-size:48px; font-weight:bold; transform:rotate(-6deg); }
+#logo            { margin:30px 0 15px -20px; font-family:Patua One; font-size:48px; font-weight:bold; transform:rotate(-6deg); -moz-transform:rotate(-6deg); -webkit-transform:rotate(-6deg); }
 #logo a          { padding:5px; color:#333; text-decoration:none; border:5px solid #333; border-radius:10px; }
 #logo a:hover    { color:#3276b1; border:5px solid #3276b1; }
 

@@ -70,7 +70,7 @@ try
   if(isset($cache) && isset($_GET['clear_cache']) && isset($_SESSION[$settings['session_prefix'].'user_id']))
    {
     $cache->clear();
-    header('Location: index.php?msg=cache_cleared');
+    header('Location: '.BASE_URL);
     exit;
    }
 

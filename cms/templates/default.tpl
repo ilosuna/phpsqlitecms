@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="<?php echo $lang['charset']; ?>" />
-<title><?php echo $settings['website_title']; if($page_title): ?> - <?php echo $page_title; elseif($title): ?> - <?php echo $title; endif; ?></title>
+<title><?php if($page_title): ?><?php echo $page_title; ?><?php else: ?><?php echo $settings['website_title']; ?><?php if($title): ?> - <?php echo $title; ?><?php endif; ?><?php endif; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">

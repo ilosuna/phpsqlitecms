@@ -20,3 +20,10 @@
                 <li><a href="<?php echo BASE_URL; ?>cms/index.php?mode=users"><span class="glyphicon glyphicon-user"></span> <?php if($user_type==1) echo $lang['admin_menu_user_administr']; else echo $lang['admin_menu_edit_userdata']; ?></a></li>
 </ul>
 
+<?php if($settings['caching']): ?>
+<ul class="list-unstyled">
+<li><a href="index.php?clear_cache=true"><span class="glyphicon glyphicon-remove"></span> <?php echo $lang['admin_menu_clear_cache']; ?></a></li>
+</ul>
+<?php endif; ?>
+
+

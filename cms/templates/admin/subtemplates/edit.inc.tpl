@@ -52,13 +52,6 @@
 </div>
 </div>
 
-<div class="form-group">
-<label for="page_title" class="col-lg-1 control-label control-label-left"><?php echo $lang['edit_page_title_marking']; ?></label>
-<div class="col-lg-11">
-<input id="page_title" type="text" name="page_title" value="<?php if(isset($page_data['page_title'])) echo $page_data['page_title']; ?>" size="50" class="form-control" />
-</div>
-</div>
-
 <?php /*if(!$wysiwyg): ?>
 <div class="form-group">
 <label for="headline" class="col-lg-1 control-label control-label-left"><?php echo $lang['edit_headline_marking']; ?></label>
@@ -140,6 +133,13 @@
 
 
 <div class="tab-pane fade" id="properties">
+
+<div class="form-group">
+<label for="page_title" class="col-lg-2 control-label"><?php echo $lang['edit_page_title_marking']; ?></label>
+<div class="col-lg-10">
+<input id="page_title" type="text" name="page_title" value="<?php if(isset($page_data['page_title'])) echo $page_data['page_title']; ?>" size="50" class="form-control form-control-inline form-control-default" />
+</div>
+</div>
 
 <div class="form-group">
 <label for="type" class="col-lg-2 control-label"><?php echo $lang['edit_type_marking']; ?></label>

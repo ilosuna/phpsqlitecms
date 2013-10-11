@@ -177,7 +177,7 @@ try
      {
       if($cache->cacheId && $cache->doCaching)
        {
-        $cache_content = $cache->createCacheContent($template->fetch(BASE_PATH.'templates/'.$template_file), $content_type, CHARSET);
+        $cache_content = $cache->createCacheContent($template->fetch(BASE_PATH.'cms/templates/'.$template_file), $content_type, CHARSET);
         $cache->createChacheFile($cache_content);
        }
      }
