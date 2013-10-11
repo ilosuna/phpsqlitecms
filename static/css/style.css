@@ -1,0 +1,108 @@
+body             { margin-bottom: 20px; }
+body.admin       {  padding-top: 50px; padding-bottom: 20px;margin-bottom: 20px; }
+
+#logo            { margin:30px 0 15px -20px; font-family:Patua One; font-size:48px; font-weight:bold; transform:rotate(-6deg); }
+#logo a          { padding:5px; color:#333; text-decoration:none; border:5px solid #333; border-radius:10px; }
+#logo a:hover    { color:#3276b1; border:5px solid #3276b1; }
+
+.header .nav     { margin-top:70px; padding:0; }
+
+.col-lg-4 h2     { font-size:30px;  }
+     
+header           { padding:10px 0 10px 0; }
+header ul        { padding:20px 0 0 0; }
+
+.topsep          { margin:10px 0 15px 0; }
+
+.main-content p,
+.main-content ul,
+.sidebar p,
+.sidebar ul      { line-height:175%; }
+
+.caption         { margin:3px 0 3px 0; color:#808080; font-style:italic; }
+.thumbnail       { max-width:100% !important; height:auto; } 
+.thumbnail-left  { float:left; margin:0 15px 10px 0; }
+.thumbnail-right { float:right; margin:0 0 10px 15px; }
+.thumbnail img   { width:100%; }
+a.thumbnail:hover { opacity:0.9; } 
+
+.news-teaser     { margin-bottom:30px; }
+.news-teaser:first-child { padding-top:20px; }
+.news-teaser h2  { color:#016d2f; font-size:26px; margin:0; padding:0; }
+.news-teaser h2 a { color:#016d2f; }
+.news-teaser p   { margin:0; padding:0; }
+.news-teaser .time { color:#808080; font-size:13px; margin:0 0 7px 0; padding:0; }
+
+.caption + p     { margin-top:20px; }
+
+.topspace        { margin-top:10px; }
+.closure         { margin-top:50px; }
+
+.footer p        { margin:0; font-size:13px; }
+.footer          { color:#808080; text-align:center; }
+.footer a        { color:#808080; text-align:center; }
+.footer a:hover  { color:#2a6496; }
+
+.header .nav > li > a {  padding: 7px 15px; }
+
+.alert h3        { margin:0; }
+.alert-danger h3 { color:#b94a48; }
+
+#comments        { margin-top:50px; }
+#commentformwrapper { padding-top:20px; }
+h3#preview       { color:#ca9853; margin-bottom:10px;}
+h4.author        { font-size:14px; margin-bottom:5px; font-style:italic; }
+.comment         { position:relative; margin-bottom:25px; }
+.comment-admin   { position:absolute; top:0; right:0; }
+.comment-delete  { background:#f2dede; }
+.comment-preview { color:#333; }
+.comment-info    { font-size:13px; color:#808080; margin:0 0 -10px 0;}
+
+.gallery         { margin:20px 0 30px 0; padding:30px 30px 0 30px; border:1px solid #ddd; border-radius: 4px 4px 4px 4px;  background:#eee; }
+.gallery h3      { margin:-15px 0 20px 0; padding:0; font-size:14px; color:#808080; font-style:italic; text-align:center; }
+.thumbnail-wrapper { text-align:center; margin-bottom:30px; }
+.thumbnail-wrapper a { display:inline-block; margin:auto;  }
+
+#menu-toggle-handle    { display:block; margin:7px 0 1px 0; background:#428bca; padding:10px 15px; color:#fff; text-align:center; text-decoration:none; }
+#menu-toggle-handle .icon-bar { display: block; margin:auto; width:22px; height:2px;  background-color:#fff; border-radius:1px; }
+#menu-toggle-handle .icon-bar + .icon-bar { margin-top:4px; }
+
+.dropdown-menu .glyphicon { padding-right:5px; }  
+
+a.rss                         { padding-left:23px; background:url(../img/rss.png) no-repeat left; }
+a.pdf                         { padding-left:23px; background-image:url(../img/pdf.png); background-repeat:no-repeat; background-position: top left; }
+
+#mylightbox-background        { display:none; position:fixed; height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:2000; }
+#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:5px 5px 20px #000; }
+#mylightbox img               { max-width:100%; height:auto; }
+#mylightbox-header            { height:20px; font-size:13px; line-height:20px; padding:0 0 3px 0; }
+#mylightbox-title             { position:absolute; top:2px; left:10px; width:40%; margin:0; padding:0; font-weight:bold; }
+#mylightbox-nav               { position:absolute; top:2px; left:40%; width:20%; margin:0; padding:0; text-align:center; float:left; white-space:nowrap; }
+#mylightbox-controls          { position:absolute; top:4px; right:10px; width:14px; margin:0; padding:0; }
+#mylightbox #photo            { margin:0; padding:0; }
+#mylightbox-subtitle          { font-size:14px; line-height:150%; margin:0; padding:3px 0 0 0; font-style:italic; color:#808080; }
+#mylightbox-description       { font-size:14px; line-height:150%; margin:0; padding:3px 0 8px 0; }
+#mylightbox-throbber          { width:32px; height:32px; margin:0 auto 0 auto; padding:100px 0; background:url(../img/throbber.gif) no-repeat center; }
+#mylightbox-prev              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; }
+#mylightbox-prev:hover        { opacity:0.75; }
+#mylightbox-next              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; }
+#mylightbox-next:hover        { opacity:0.75; }
+#mylightbox-close             { width:14px; height:14px; display:inline-block; }
+#mylightbox-close:hover       { width:14px; height:14px; display:inline-block; }
+
+@media (min-width: 992px)
+ {
+  .sidebar { padding-left:30px; }
+  .header .nav { margin-top:37px; float:right; text-align:right; }
+  .sidebar { padding-left:50px; }
+ }
+
+@media screen and (max-width:768px)
+ {
+  #logo                  { margin:10px 0 20px 0; font-size:36px; text-align:center; transform:rotate(0); }
+  #nav { display:none; margin:0; padding:0; }
+  #nav ul { margin:0; padding:0; }
+  #nav .nav-pills > li { text-align:center; float:none; background:#eee; }
+  #nav .nav-pills > li > a { padding: 10px 15px; border-radius:0; }
+  #nav .nav-pills > li + li > a { margin-top: 2px; margin-left: 0; }
+ }

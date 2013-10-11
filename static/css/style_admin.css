@@ -1,0 +1,59 @@
+body {  padding-top:70px; padding-bottom:50px; }
+
+.login-form { max-width:350px; }
+
+.nav-tabs a  { outline:none; }
+.nav-tabs li.active a,
+.nav-tabs li.active a:active,
+.nav-tabs li.active a:focus,
+.nav-tabs li.active a:hover  { background:#fafafa; }
+.tab-content { padding:20px; margin-bottom:20px; border:1px solid #ddd; border-top:none; background:#fafafa; }
+
+.label-block { font-size:14px; line-height:20px; display:block; }
+
+.form-control-inline { display:inline; width:inherit; }
+.form-control-default { width:500px; max-width:100%; }
+.form-control-large { width:900px; max-width:100%; }
+.form-control-medium { width:200px; max-width:100%; }
+.form-control-small { width:100px; max-width:100%; }
+.form-control-description { font-size:small; color:grey; }
+
+.control-label-left { text-align:left !important; } 
+
+textarea.html { font-family:monospace; }
+
+.nowrap { white-space:nowrap; }
+
+.table th a { color:#000; text-decoration:none; white-space:nowrap; }
+.table th a .glyphicon { font-size:11px; padding-left:3px; }
+
+td.options { text-align:right; white-space:nowrap; }
+
+.strong, .btn-strong { font-weight:bold; }
+
+.dropdown-menu .glyphicon { padding-right:5px; } 
+
+.btn-top  { margin-top:20px; }
+
+.sortable-handle { cursor:move; }
+
+#mylightbox-background        { display:none; position:fixed; height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:2000; }
+#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:7px 7px 10px #333; }
+#mylightbox img               { max-width:100%; height:auto; }
+#mylightbox-header            { height:20px; font-size:13px; line-height:20px; padding:0 0 3px 0; }
+#mylightbox-title             { position:absolute; top:2px; left:10px; width:40%; margin:0; padding:0; font-weight:bold; }
+#mylightbox-nav               { position:absolute; top:2px; left:40%; width:20%; margin:0; padding:0; text-align:center; float:left; white-space:nowrap; }
+#mylightbox-controls          { position:absolute; top:4px; right:10px; width:14px; margin:0; padding:0; }
+#mylightbox #photo            { margin:0; padding:0; }
+#mylightbox-subtitle          { font-size:14px; line-height:150%; margin:0; padding:3px 0 0 0; font-style:italic; color:#808080; }
+#mylightbox-description       { font-size:14px; line-height:150%; margin:0; padding:3px 0 8px 0; }
+#mylightbox-throbber          { width:32px; height:32px; margin:0 auto 0 auto; padding:100px 0; background:url(../img/throbber.gif) no-repeat center; }
+#mylightbox-prev              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; background:url(../img/previous.png) no-repeat 0 0; }
+#mylightbox-prev:hover        { opacity:0.75; }
+#mylightbox-next              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; background:url(../img/next.png) no-repeat 0 0; }
+#mylightbox-next:hover        { opacity:0.75; }
+#mylightbox-prev span,
+#mylightbox-next span         { display:none; }
+#mylightbox-close             { width:14px; height:14px; display:inline-block; text-indent:-999em; background:url(../img/close_button.png) no-repeat 0 0; outline:none; }
+#mylightbox-close:hover       { width:14px; height:14px; display:inline-block; text-indent:-999em; background:url(../img/close_button.png) no-repeat 0 -14px; outline:none; }
+
