@@ -91,7 +91,7 @@
 <?php if($gcb_1 && isset($gcb[$gcb_1])): ?>
 <?php echo $gcb[$gcb_1]; ?>
 <?php else: ?>
-<p>&copy; phpSQLiteCMS 2013<br /><?php if($type!='news' && $type!='search' && $type!='notes') echo $lang['page_last_modified']; ?></p>
+<p>&copy; <a href="http://phpsqlitecms.net">phpSQLiteCMS</a> 2013<br /><?php if($type!='news' && $type!='search' && $type!='notes') echo $lang['page_last_modified']; ?></p>
 <?php endif; ?>
 </div>
 </footer>
