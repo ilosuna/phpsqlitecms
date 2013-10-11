@@ -1,7 +1,7 @@
-phpsqlitecms
+phpSQLiteCMS
 ============
 
-<a href="http://phpsqlitecms.net/">phpSQLiteCMS</a> is a simple and lightweight open source web content management system (CMS) based on <a href="http://php.net/">PHP</a> and <a href="http://www.sqlite.org/">SQLite</a>. As SQLite is file-based, it just runs "out of the box" without installation.
+**<a href="http://phpsqlitecms.net/">phpSQLiteCMS</a>** is a simple and lightweight open source web content management system (CMS) based on <a href="http://php.net/">PHP</a> and <a href="http://www.sqlite.org/">SQLite</a>. As SQLite is file-based, it just runs "out of the box" without installation.
 
 System requirements
 -------------------
