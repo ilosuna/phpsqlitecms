@@ -23,7 +23,7 @@ Installation
 phpSQLiteCMS example sites
 --------------------------
 
-* <a href="http://phpsqlitecms.net/">phpsqlitecms.net</a> - project website
+* <a href="http://phpsqlitecms.net/">phpSQLiteCMS</a> - project website
 * <a href="http://mylittleforum.net/">my little forum</a> - another project of the author of *phpSQLiteCMS*
 * <a href="http://procosara.org/">Pro Cosara</a> - an association dedicated to the conservation of Atlantic Forest in Paraguay
 * <a href="http://www.eschenhof-online.de/">Eschenhof</a> - biodynamic farm near Kassel, Germany / Biologisch-dynamische Landwirtschaft bei Kassel

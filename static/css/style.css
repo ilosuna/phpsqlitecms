@@ -99,7 +99,7 @@ a.pdf                         { padding-left:23px; background-image:url(../img/p
 
 @media screen and (max-width:768px)
  {
-  #logo                  { margin:10px 0 20px 0; font-size:36px; text-align:center; transform:rotate(0); }
+  #logo                  { margin:10px 0 20px 0; font-size:36px; text-align:center; transform:rotate(0); -moz-transform:rotate(0); -webkit-transform:rotate(0); }
   #nav { display:none; margin:0; padding:0; }
   #nav ul { margin:0; padding:0; }
   #nav .nav-pills > li { text-align:center; float:none; background:#eee; }

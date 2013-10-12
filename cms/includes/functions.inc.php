@@ -138,7 +138,7 @@ function get_language_name($string)
 function get_content($page)
  {
   #global $settings, $db_settings, $pdo;
-  $content_query = "SELECT id, page, author, type, type_addition, time, last_modified, display_time, page_title, title, keywords, description, category, page_info, language, breadcrumbs, headline, teaser_headline, teaser, teaser_formatting, content, content_formatting, sidebar_1, sidebar_1_formatting, sidebar_2, sidebar_2_formatting, sidebar_3, sidebar_3_formatting, sections, menu_1, menu_2, menu_3, gcb_1, gcb_2, gcb_3, include_news, template, content_type, charset, edit_permission, edit_permission_general, tv, status FROM ".Database::$db_settings['pages_table']." WHERE lower(page)=lower(:page) AND status!=0 LIMIT 1";
+  $content_query = "SELECT id, page, author, type, type_addition, time, last_modified, display_time, page_title, title, keywords, description, category, page_info, language, breadcrumbs, teaser_headline, teaser, content, sidebar_1, sidebar_2, sidebar_3, sections, menu_1, menu_2, menu_3, gcb_1, gcb_2, gcb_3, include_news, template, content_type, charset, edit_permission, edit_permission_general, tv, status FROM ".Database::$db_settings['pages_table']." WHERE lower(page)=lower(:page) AND status!=0 LIMIT 1";
   $dbr = Database::$content->prepare($content_query);
   $dbr->bindParam(':page', $page, PDO::PARAM_STR);
   $dbr->execute();
@@ -969,8 +969,8 @@ function raise_error($error,$error_message='')
   $lang = isset($localization) ? Localization::$lang['lang'] : 'en';
   $charset = isset($localization) ? Localization::$lang['charset'] : 'utf-8';
 
-  if(empty($lang['language'])) $lang['language'] ='en';
-  if(empty($lang['charset'])) $lang['charset'] ='utf-8';
+  #if(empty($lang['language'])) $lang['language'] ='en';
+  #if(empty($lang['charset'])) $lang['charset'] ='utf-8';
   if(empty($settings['website_title'])) $settings['website_title'] = 'phpSQLiteCMS';
 
   $title = 'Error';

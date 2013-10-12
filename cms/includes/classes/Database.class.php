@@ -58,7 +58,7 @@ class Database
         }
        break;
       case 'mysql':
-       self::$complete = new PDO('mysql:host='.self::$db_settings['host'].';dbname='.self::$db_settings['database'], self::$db_settings['user'], self::$db_settings['password']);
+       self::$complete = new PDO('mysql:host='.self::$db_settings['host'].';port='.self::$db_settings['port'].';dbname='.self::$db_settings['database'], self::$db_settings['user'], self::$db_settings['password']);
        self::$complete->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        self::$complete->query("set names utf8");
        self::$content =& self::$complete;

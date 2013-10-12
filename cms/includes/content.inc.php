@@ -64,26 +64,22 @@ $page = $data['page'];
 $content = $data['content'];
 if($settings['content_auto_link']==1) $content = make_link($content);
 #if($settings['content_smilies']==1) $content = smilies($content);
-if($data['content_formatting']==1) $content = auto_html($content);
 
 $content = parse_special_tags($content);
 
 $sidebar_1 = $data['sidebar_1'];
 if($settings['content_auto_link']==1) $sidebar_1 = make_link($sidebar_1);
 #if($settings['content_smilies']==1) $sidebar_1 = smilies($sidebar_1);
-if($data['sidebar_1_formatting']==1) $sidebar_1 = auto_html($sidebar_1);
 if($sidebar_1!='') $sidebar_1 = parse_special_tags($sidebar_1);
 
 $sidebar_2 = $data['sidebar_2'];
 if($settings['content_auto_link']==1) $sidebar_2 = make_link($sidebar_2);
 #if($settings['content_smilies']==1) $sidebar_2 = smilies($sidebar_2);
-if($data['sidebar_2_formatting']==1) $sidebar_2 = auto_html($sidebar_2);
 if($sidebar_2!='') $sidebar_2 = parse_special_tags($sidebar_2);
 
 $sidebar_3 = $data['sidebar_3'];
 if($settings['content_auto_link']==1) $sidebar_3 = make_link($sidebar_3);
 #if($settings['content_smilies']==1) $sidebar_3 = smilies($sidebar_3);
-if($data['sidebar_3_formatting']==1) $sidebar_3 = auto_html($sidebar_3);
 if($sidebar_3!='') $sidebar_3 = parse_special_tags($sidebar_3);
 
 $sections_array = explode(',',$data['sections']);
@@ -122,7 +118,7 @@ if($data['include_news'])
      }
     else
      {
-      $dbr = Database::$content->prepare("SELECT id, time, teaser_headline, headline, title, page_title, page, teaser, teaser_formatting, content, content_formatting, link_name AS linkname FROM ".Database::$db_settings['pages_table']." WHERE include_page=:page_id ORDER BY time DESC LIMIT ".$settings['include_news_items']);
+      $dbr = Database::$content->prepare("SELECT id, time, teaser_headline, headline, title, page_title, page, teaser, content, link_name AS linkname FROM ".Database::$db_settings['pages_table']." WHERE include_page=:page_id ORDER BY time DESC LIMIT ".$settings['include_news_items']);
      }
     $dbr->bindParam(':page_id', $data['include_news'], PDO::PARAM_INT);
     $dbr->execute();
@@ -213,7 +209,6 @@ else $template->assign('description', '');
 
 $template->assign('category', htmlspecialchars($data['category']));
 $template->assign('page_info', $data['page_info']);
-$template->assign('headline', $data['headline']);
 $template->assign('content', $content);
 $template->assign('sidebar_1', $sidebar_1);
 $template->assign('sidebar_2', $sidebar_2);

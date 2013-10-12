@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="<?php echo $lang['charset']; ?>" />
-<title><?php if($page_title): ?><?php echo $page_title; ?><?php else: ?><?php echo $settings['website_title']; ?><?php if($title): ?> - <?php echo $title; ?><?php endif; ?><?php endif; ?></title>
+<title><?php if($page_title): ?><?php echo $page_title; ?><?php else: ?><?php if($title): ?><?php echo $title; ?> - <?php endif; ?><?php echo $settings['website_title']; ?><?php endif; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -13,10 +13,6 @@
 <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/leaflet.css" />
 <?php endif; ?>
 <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
-<?php if(isset($tv['map'])): ?>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&amp;sensor=false"></script>
-<script src="<?php echo STATIC_URL; ?>js/leaflet.js"></script>
-<?php endif; ?>
 </head>
 
 <body<?php if($admin): ?> class="admin"<?php endif; ?>>
@@ -82,6 +78,10 @@
 <?php endif; ?>
 
 </div>
+
+<?php if($sidebar_3): ?>
+<?php echo $sidebar_3; ?>
+<?php endif; ?>
 
 <hr class="closure">
 
