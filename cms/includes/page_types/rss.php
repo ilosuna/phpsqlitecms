@@ -68,7 +68,7 @@ while($rss_data = $dbr->fetch())
   $i++;
  }
 
-$template->assign('wfw', $wfw);
+if(isset($wfw)) $template->assign('wfw', $wfw);
 if(isset($rss_items)) $template->assign('rss_items', $rss_items);
 
 $content_type = 'text/xml';
