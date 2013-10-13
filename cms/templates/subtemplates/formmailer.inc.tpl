@@ -34,7 +34,7 @@
 <textarea id="message" class="form-control" name="message" rows="12"><?php if(isset($message)) echo $message; ?></textarea>
 </div>
 
-<p><button class="btn btn-success btn-lg" type="submit"><span class="glyphicon glyphicon-envelope"></span> <?php echo $lang['formmailer_button_send']; ?></button></p>
+<p><button class="btn btn-primary btn-lg" type="submit"><span class="glyphicon glyphicon-envelope"></span> <?php echo $lang['formmailer_button_send']; ?></button></p>
 
 </div>
 </form>

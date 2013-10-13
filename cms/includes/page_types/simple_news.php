@@ -1,5 +1,5 @@
 <?php
-if($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && $_GET['get_2']=='delete' && isset($_GET['get_3']) && $_GET['get_3']=='confirmed')
+if($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && $_GET['get_2']=='delete' && isset($_REQUEST['confirmed']))
  {
   $delete_id = $_GET['get_1'];
  }
@@ -23,7 +23,7 @@ if($authorized_to_edit && isset($_POST['text']))
   $title = isset($_POST['title']) ? trim($_POST['title']) : '';
   $teaser = isset($_POST['teaser']) ? trim($_POST['teaser']) : '';
   $text = isset($_POST['text']) ? trim($_POST['text']) : '';
-  $text_formatting = isset($_POST['text_formatting']) && $_POST['text_formatting']==1 ? 1 : 0;
+  #$text_formatting = isset($_POST['text_formatting']) && $_POST['text_formatting']==1 ? 1 : 0;
   $linkname = isset($_POST['linkname']) ? trim($_POST['linkname']) : '';
   $time = isset($_POST['time']) && trim($_POST['time'])!='' ? trim($_POST['time']) : date("Y-m-d H:i:s");
 
@@ -44,13 +44,13 @@ if($authorized_to_edit && isset($_POST['text']))
    {
     if(isset($_POST['id']))
      {
-      $dbr = Database::$content->prepare("UPDATE ".Database::$db_settings['news_table']." SET time=:time, title=:title, teaser=:teaser, text=:text, text_formatting=:text_formatting, linkname=:linkname WHERE id=:id");
+      $dbr = Database::$content->prepare("UPDATE ".Database::$db_settings['news_table']." SET time=:time, title=:title, teaser=:teaser, text=:text, linkname=:linkname WHERE id=:id");
       $dbr->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
       $dbr->bindParam(':time', $time, PDO::PARAM_INT);
       $dbr->bindParam(':title', $title, PDO::PARAM_STR);
       $dbr->bindParam(':teaser', $teaser, PDO::PARAM_STR);
       $dbr->bindParam(':text', $text, PDO::PARAM_STR);
-      $dbr->bindParam(':text_formatting', $text_formatting, PDO::PARAM_INT);
+      #$dbr->bindParam(':text_formatting', $text_formatting, PDO::PARAM_INT);
       $dbr->bindParam(':linkname', $linkname, PDO::PARAM_STR);
       $dbr->execute();
       $id = $_POST['id'];
@@ -63,7 +63,7 @@ if($authorized_to_edit && isset($_POST['text']))
       $dbr->bindParam(':title', $title, PDO::PARAM_STR);
       $dbr->bindParam(':teaser', $teaser, PDO::PARAM_STR);
       $dbr->bindParam(':text', $text, PDO::PARAM_STR);
-      $dbr->bindParam(':text_formatting', $text_formatting, PDO::PARAM_INT);
+      #$dbr->bindParam(':text_formatting', $text_formatting, PDO::PARAM_INT);
       $dbr->bindParam(':linkname', $linkname, PDO::PARAM_STR);
       $dbr->execute();
       #$id = $dbr->lastInsertId(); 
@@ -104,7 +104,7 @@ if($authorized_to_edit && isset($_POST['text']))
     $edit_news['title'] = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
     $edit_news['teaser'] = isset($_POST['teaser']) ? htmlspecialchars($_POST['teaser']) : '';
     $edit_news['text'] = isset($_POST['text']) ? htmlspecialchars($_POST['text']) : '';
-    $edit_news['text_formatting'] = isset($_POST['text_formatting']) && $_POST['text_formatting']==1 ? 1 : 0;
+    #$edit_news['text_formatting'] = isset($_POST['text_formatting']) && $_POST['text_formatting']==1 ? 1 : 0;
     $edit_news['link'] = isset($_POST['link']) ? htmlspecialchars($_POST['link']) : '';
     $edit_news['linkname'] = isset($_POST['linkname']) ? htmlspecialchars($_POST['linkname']) : '';
     $edit_news['time'] = isset($_POST['time']) ? htmlspecialchars($_POST['time']) : date("Y-m-d H:i:s");
@@ -119,8 +119,8 @@ if($authorized_to_edit && isset($_POST['text']))
 
 if($authorized_to_edit && isset($_GET['get_1']) && $_GET['get_1']=='add_item')
  {
-  $edit_news['text_formatting'] = $settings['default_formatting'];
-  $edit_news['text_formatting'] = 1;
+  #$edit_news['text_formatting'] = $settings['default_formatting'];
+  #$edit_news['text_formatting'] = 1;
   $edit_news['linkname'] = Localization::$lang['simple_news_default_linkname'];
   $edit_news['time'] = date("Y-m-d H:i:s", time());   
   if($settings['wysiwyg_editor'] && isset($_SESSION[$settings['session_prefix'].'wysiwyg']) && $_SESSION[$settings['session_prefix'].'wysiwyg']==1) $template->assign('wysiwyg', true);
@@ -139,7 +139,7 @@ if($authorized_to_edit && isset($_GET['get_1']) && $_GET['get_1']=='add_item')
  }
 elseif($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && $_GET['get_2']=='edit')
  {
-  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, text_formatting, linkname FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
+  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, linkname FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
   $dbr->bindParam(':id', $_GET['get_1'], PDO::PARAM_STR);
   $dbr->execute();
   $edit_news_item_data = $dbr->fetch();
@@ -149,7 +149,7 @@ elseif($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && 
     $edit_news['title'] = htmlspecialchars($edit_news_item_data['title']);
     $edit_news['teaser'] = htmlspecialchars($edit_news_item_data['teaser']);
     $edit_news['text'] = htmlspecialchars($edit_news_item_data['text']);
-    $edit_news['text_formatting'] = $edit_news_item_data['text_formatting'];
+    #$edit_news['text_formatting'] = $edit_news_item_data['text_formatting'];
     $edit_news['linkname'] = htmlspecialchars($edit_news_item_data['linkname']);
     $edit_news['time'] = date("Y-m-d H:i:s", $edit_news_item_data['time']);   
     $template->assign('edit_news', $edit_news);
@@ -177,7 +177,7 @@ elseif($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && 
  }
 elseif($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && $_GET['get_2']=='delete')
  {
-  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, text_formatting, linkname FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
+  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, linkname FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
   $dbr->bindParam(':id', $_GET['get_1'], PDO::PARAM_STR);
   $dbr->execute();
   $delete_news_item_data = $dbr->fetch();
@@ -199,7 +199,7 @@ elseif($authorized_to_edit && isset($_GET['get_1']) && isset($_GET['get_2']) && 
 elseif(isset($_GET['get_1']) && $_GET['get_1']=='rss')
  {
   $rss = true;
-  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, text_formatting, linkname FROM ".Database::$db_settings['news_table']." WHERE page_id=:page_id AND time<=:now ORDER BY time DESC LIMIT ".$settings['rss_maximum_items']);
+  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, linkname FROM ".Database::$db_settings['news_table']." WHERE page_id=:page_id AND time<=:now ORDER BY time DESC LIMIT ".$settings['rss_maximum_items']);
   $dbr->bindParam(':page_id', $data['id'], PDO::PARAM_STR);
   $dbr->bindValue(':now', time(), PDO::PARAM_STR);
   $dbr->execute();
@@ -213,8 +213,8 @@ elseif(isset($_GET['get_1']) && $_GET['get_1']=='rss')
      }
     else
      {
-      if($rss_data['text_formatting']==1) $rss_items[$i]['content'] = auto_html($rss_data['text']);
-      else $rss_items[$i]['content'] = $rss_data['text'];
+      #if($rss_data['text_formatting']==1) $rss_items[$i]['content'] = auto_html($rss_data['text']);
+      $rss_items[$i]['content'] = $rss_data['text'];
      }
     $rss_items[$i]['linkname'] = htmlspecialchars($rss_data['linkname']);
     $rss_items[$i]['link'] = BASE_URL.PAGE.','.$rss_data['id'];
@@ -228,7 +228,7 @@ elseif(isset($_GET['get_1']) && $_GET['get_1']=='rss')
  }
 elseif(isset($_GET['get_1']) && intval($_GET['get_1'])>0) // item opened
  {
-  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, text_formatting FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
+  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text FROM ".Database::$db_settings['news_table']." WHERE id=:id LIMIT 1");
   $dbr->bindParam(':id', $_GET['get_1'], PDO::PARAM_STR);
   $dbr->execute();
   $note_data = $dbr->fetch();
@@ -237,8 +237,8 @@ elseif(isset($_GET['get_1']) && intval($_GET['get_1'])>0) // item opened
     $news_item['id'] = $note_data['id'];
     $news_item['title'] = htmlspecialchars($note_data['title']);
     $news_item['teaser'] = htmlspecialchars($note_data['teaser']);
-    if($note_data['text_formatting']==1) $news_item['text'] = auto_html($note_data['text']);
-    else $news_item['text'] = $note_data['text'];
+    #if($note_data['text_formatting']==1) $news_item['text'] = auto_html($note_data['text']);
+    $news_item['text'] = $note_data['text'];
     $news_item['time'] = date("Y-m-d H:i:s", $note_data['time']);
     $template->assign('display_time', true);
     $localization->replacePlaceholder('time', $note_data['time'], 'page_time', Localization::FORMAT_TIME);
@@ -280,7 +280,7 @@ else // overview
   if($current_page<1) $current_page = 1;
   if($current_page>$total_pages) $current_page = $total_pages;
 
-  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, text_formatting, linkname FROM ".Database::$db_settings['news_table']." WHERE page_id=:page_id ORDER BY time DESC LIMIT ".(($current_page-1)*$settings['simple_news_per_page']).", ".$settings['simple_news_per_page']); // AND time<=:now
+  $dbr = Database::$content->prepare("SELECT id, time, title, teaser, text, linkname FROM ".Database::$db_settings['news_table']." WHERE page_id=:page_id ORDER BY time DESC LIMIT ".(($current_page-1)*$settings['simple_news_per_page']).", ".$settings['simple_news_per_page']); // AND time<=:now
   $dbr->bindParam(':page_id', $data['id'], PDO::PARAM_STR);
   //$dbr->bindValue(':now', time(), PDO::PARAM_STR);
   $dbr->execute();
@@ -291,8 +291,8 @@ else // overview
     $news[$i]['time'] = $news_data['time'];
     $news[$i]['title'] = $news_data['title'];
     $news[$i]['teaser'] = $news_data['teaser'];
-    if($news_data['text_formatting']==1) $news[$i]['text'] = auto_html($news_data['text']);
-    else $news[$i]['text'] = $news_data['text'];
+    #if($news_data['text_formatting']==1) $news[$i]['text'] = auto_html($news_data['text']);
+    $news[$i]['text'] = $news_data['text'];
     $news[$i]['linkname'] = $news_data['linkname'];
     $localization->bindReplacePlaceholder($news_data['id'], 'time', $news_data['time'], 'simple_news_time', Localization::FORMAT_TIME);
     $i++;
