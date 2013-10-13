@@ -91,7 +91,7 @@
 <?php if($gcb_1 && isset($gcb[$gcb_1])): ?>
 <?php echo $gcb[$gcb_1]; ?>
 <?php else: ?>
-<p>&copy; <a href="http://phpsqlitecms.net">phpSQLiteCMS</a> 2013<br /><?php if($type!='news' && $type!='search' && $type!='notes') echo $lang['page_last_modified']; ?></p>
+<p>&copy; 2013 <?php echo $settings['author']; ?><?php if($type!='news' && $type!='search' && $type!='notes'): ?><br /><?php echo $lang['page_last_modified']; ?><?php endif; ?><br />Powered by <a href="http://phpsqlitecms.net">phpSQLiteCMS</a></p>
 <?php endif; ?>
 </div>
 </footer>

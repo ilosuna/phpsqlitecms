@@ -26,16 +26,9 @@
 </div>
 
 <div class="form-group">
-<label for="website_footnote_1" class="col-md-2 control-label"><?php echo $lang['settings_website_footnote_1']; ?></label>
+<label for="author" class="col-md-2 control-label"><?php echo $lang['settings_author']; ?></label>
 <div class="col-md-6">
-<input type="text" class="form-control" id="website_footnote_1" name="website_footnote_1" value="<?php echo htmlspecialchars($settings['website_footnote_1']); ?>" size="35">
-</div>
-</div>
-
-<div class="form-group">
-<label for="website_footnote_2" class="col-md-2 control-label"><?php echo $lang['settings_website_footnote_2']; ?></label>
-<div class="col-md-6">
-<input type="text" class="form-control" id="website_footnote_2" name="website_footnote_2" value="<?php echo htmlspecialchars($settings['website_footnote_2']); ?>" size="35">
+<input type="text" class="form-control" id="author" name="author" value="<?php echo htmlspecialchars($settings['author']); ?>" size="35">
 </div>
 </div>
 
