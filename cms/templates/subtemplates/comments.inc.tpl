@@ -1,5 +1,5 @@
 <div id="comments" class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title"><?php echo $lang['comment_headline']; ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php echo $lang['comment_headline']; ?> (<?php echo $total_comments; ?>)</h3></div>
 
 <div class="panel-body">
 <?php if(isset($edit_data)): ?>

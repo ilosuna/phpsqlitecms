@@ -52,12 +52,6 @@ $page_types['notes'] = array(
 'requires_parameter' => true
 );
 
-$page_types['newsletter'] = array(
-'page_type' => 'newsletter.php',
-'page_type_label' => 'page_type_newsletter',
-'requires_parameter' => false
-);
-
 $page_types['search'] = array(
 'page_type' => 'search.php',
 'page_type_label' => 'page_type_search',

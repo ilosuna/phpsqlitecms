@@ -149,6 +149,7 @@ if(empty($template_done))
   $pingbacks = $comment->get_pingbacks();
 
   $template->assign('comments', $comments);
+  $template->assign('total_comments', $comment->total_comments);
   $template->assign('pingbacks', $pingbacks);
   $template->assign('pagination', pagination($comment->total_pages,$comment->current_page));
   $template->assign('current_page', $comment->current_page);

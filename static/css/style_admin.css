@@ -23,6 +23,7 @@ body {  padding-top:70px; padding-bottom:50px; }
 textarea.html { font-family:monospace; }
 
 .nowrap { white-space:nowrap; }
+.nomargin { margin:0; }
 
 .table th a { color:#000; text-decoration:none; white-space:nowrap; }
 .table th a .glyphicon { font-size:11px; padding-left:3px; }

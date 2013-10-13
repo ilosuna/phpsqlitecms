@@ -89,7 +89,7 @@ $lang['no_notes'] =                      'No notes availble';
 $lang['formmailer_label_email'] =        'E-mail:';
 $lang['formmailer_label_subject'] =      'Subject:';
 $lang['formmailer_label_message'] =      'Message:';
-$lang['formmailer_button_send'] =        'OK - Send';
+$lang['formmailer_button_send'] =        'Send message';
 $lang['formmail_error_email_invalid'] =  'E-mail address invalid or empty';
 $lang['formmail_error_no_message'] =     'No message entered';
 $lang['formmail_error_text_too_long'] =  'The message is too long';
@@ -131,37 +131,6 @@ $lang['error_news_no_text'] =            'No text entered';
 $lang['error_news_time_invalid'] =       'invalid date/time format';
 $lang['delete_news_title'] =             'Delete entry';
 $lang['delete_news_confirm_submit'] =    'OK - Delete';
-
-// Newsletter:
-$lang['newsletter_subscr_email'] =       'E-mail address:';
-$lang['newsletter_subscribe'] =          'subscribe';
-$lang['newsletter_unsubscribe'] =        'unsubscribe';
-$lang['newsletter_email'] =              'E-mail';
-$lang['newsletter_subscribe_time'] =     'Subscribed';
-$lang['newsletter_subscribe_time_format'] = '[time|%d.%m.%Y, %H:%M]';
-$lang['newsletter_error_invalid_email'] = 'E-mail address invalid';
-$lang['newsletter_error_email_exists'] = 'This e-mail address already exists';
-$lang['newsletter_error_email_not_exist'] = 'The e-mail address doesn\'t exist';
-$lang['newsletter_error_mail'] =         'Error while sending e-mail - please try again later';
-$lang['newsletter_conf_ok'] =            'Thank you! Your e-mail address has been confirmed.';
-$lang['newsletter_delete_ok'] =          'You have successfully unsubscribed from the newsletter!';
-$lang['newsletter_conf_failed'] =        '<b>Error:</b> Invalid confirmation link (e.g. time period expired)!';
-$lang['newsletter_conf_mail_sent'] =     'An e-mail with a confirmation link has been sent to the specified e-mail address. Please confirm this link within one hour!';
-$lang['newsletter_email_delete'] =       'delete';
-$lang['newsletter_no_emails'] =          'No e-mail addresses available.';
-$lang['newsletter_add_email'] =          'Add e-mail address:';
-$lang['newsletter_email_list'] =         'E-mail list';
-$lang['newsletter_edit_emails'] =        'Edit e-mail addresses';
-$lang['newsletter_email_count'] =        '[number] e-mail addresses';
-$lang['newsletter_subscribe_subj'] =     'Subscribe to newsletter';
-$lang['newsletter_subscribe_text'] =     "Your e-mail address has been added to our mailing list. Please click the link below to confirm your request. If this e-mail has been sent in error (either by you or someone else) please ignore this e-mail.\n\nLink to confirm the subscription:\n[link]";
-$lang['newsletter_unsubscribe_subj'] =   'Unsubscribe to newsletter';
-$lang['newsletter_unsubscribe_text'] =   "Please click the following link to unsubscribe to the newsletter:\n[link]";
-$lang['newsletter_checkall'] =           'check all';
-$lang['newsletter_uncheckall'] =         'uncheck all';
-$lang['newsletter_delete_checked'] =     'Delete checked';
-$lang['newsletter_delete_confirm'] =     'Delete e-mail(s)?';
-$lang['newsletter_delete_confirm_submit'] = 'OK - Delete';
 
 // Search:
 $lang['search_submit'] =                 'Search';

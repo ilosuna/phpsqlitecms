@@ -43,6 +43,6 @@
            <li><a href="<?php echo BASE_URL; ?>cms/index.php?mode=logout"><span class="glyphicon glyphicon-off"></span> <?php echo $lang['admin_menu_logout']; ?></a></li>
           </ul>
           <?php endif; ?> 
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>

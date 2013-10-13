@@ -28,8 +28,7 @@ a.thumbnail:hover { opacity:0.9; }
 
 .news-teaser     { margin-bottom:30px; }
 .news-teaser:first-child { padding-top:20px; }
-.news-teaser h2  { color:#016d2f; font-size:26px; margin:0; padding:0; }
-.news-teaser h2 a { color:#016d2f; }
+.news-teaser h2  { font-size:26px; margin:0; padding:0; }
 .news-teaser p   { margin:0; padding:0; }
 .news-teaser .time { color:#808080; font-size:13px; margin:0 0 7px 0; padding:0; }
 

@@ -59,17 +59,20 @@
     <td><?php if(isset($comment['email_hp'])): ?><a href="<?php echo $comment['email_hp']; ?>"><?php echo $comment['name']; ?></a><?php else: ?><?php echo $comment['name']; ?><?php endif; ?></td>
     <td><?php if($comment['comment']=='' && $type==0): ?><em><?php echo $lang['pingback']; ?></em><?php else: echo $comment['comment']; endif; ?></td>
     <td><?php echo $comment['ip']; ?></td>
-    <td class="nowrap"><a class="btn btn-primary btn-xs" href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;edit=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>" title="<?php echo $lang['edit']; ?>"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a class="btn btn-danger btn-xs" href="index.php?mode=comments&type=<?php echo $type; ?>&amp;delete=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>" title="<?php echo $lang['delete']; ?>" data-delete-confirm="<?php echo rawurlencode($lang['delete_this_comment_confirm']); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+    <td class="options"><a class="btn btn-primary btn-xs" href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;edit=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>" title="<?php echo $lang['edit']; ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-danger btn-xs" href="index.php?mode=comments&type=<?php echo $type; ?>&amp;delete=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>" title="<?php echo $lang['delete']; ?>" data-delete-confirm="<?php echo rawurlencode($lang['delete_this_comment_confirm']); ?>"><span class="glyphicon glyphicon-remove"></span></a>
     <?php if($settings['akismet_key']!='' && $settings['akismet_entry_check']==1): ?>
-    <td class="<?php if($i%2==0): ?>a<?php else: ?>b<?php endif; ?>"><a href="index.php?mode=comments&type=<?php echo $type; ?>&amp;report_spam=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>"><img src="<?php echo BASE_URL; ?>templates/admin/images/exclamation.png" alt="<?php echo $lang['report_as_spam']; ?>" title="<?php echo $lang['report_as_spam']; ?>" width="16" height="16" /></a></td>
-    <?php endif ?>
+    <a class="btn btn-danger btn-xs" href="index.php?mode=comments&type=<?php echo $type; ?>&amp;report_spam=<?php echo $comment['id']; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $page; ?>" title="<?php echo $lang['report_as_spam']; ?>"><span class="glyphicon glyphicon-warning-sign"></span></a>
+    <?php endif ?></td>
    </tr>
    <?php $i++; endforeach; ?>
    </tbody>
   </table>
   </div>
   
+  <div class="row">
+  <div class="col-md-8">
+
   <button type="button" class="btn btn-default" data-toggle-checkboxes="commentcheckbox"><?php echo $lang['toggle_selection']; ?></button>
   <input class="btn btn-danger" type="submit" name="delete_checked" value="<?php echo $lang['comments_del_checked']; ?>" />
   <?php if($comment_id==0): ?>
@@ -86,20 +89,26 @@
   <?php endif; ?>
   <input type="hidden" name="type" value="<?php echo $type; ?>" />
   <input type="hidden" name="page" value="<?php echo $page; ?>" />
-
+  </div>
+  
+  <div class="col-md-4">
+  <?php if($pagination): ?> 
+  <ul class="pagination pull-right nomargin"> 
+  <?php if($pagination['previous']): ?><li><a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $pagination['previous']; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a></li><?php endif; ?>
+  <?php foreach($pagination['items'] as $item): ?>
+  <?php if(empty($item)): ?><li><span>&hellip;</span></li><?php elseif($item==$pagination['current']): ?><li class="active"><span><?php echo $item; ?></span></li><?php else: ?><li><a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $item; ?>"><?php echo $item; ?></a></li><?php endif; ?>
+  <?php endforeach; ?>
+  <?php if($pagination['next']): ?><li><a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $pagination['next']; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a></li><?php endif; ?>
+  </ul>
+  <?php endif; ?>  
+  </div>
+  
+  </div>
 
  </div>
 </form>
 
- <div id="pagination">
-  <?php if($pagination): ?>
-  <?php if($pagination['previous']): ?> <a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $pagination['previous']; ?>">&laquo;</a> <?php endif; ?>
-  <?php foreach($pagination['items'] as $item): ?>
-  <?php if(empty($item)): ?> ..<?php elseif($item==$pagination['current']): ?> <span class="current"><?php echo $item; ?></span><?php else: ?> <a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $item; ?>"><?php echo $item; ?></a><?php endif; ?>
-  <?php endforeach; ?>
-  <?php if($pagination['next']): ?> <a href="index.php?mode=comments&amp;type=<?php echo $type; ?>&amp;comment_id=<?php echo $comment_id; ?>&amp;page=<?php echo $pagination['next']; ?>">&raquo;</a><?php endif; ?>
-  <?php endif; ?>
- </div>
+
 
 <?php else: ?>
 <div class="alert alert-warning">
