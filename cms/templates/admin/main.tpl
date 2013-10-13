@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang['lang']; ?>" dir="<?php echo $lang['dir']; ?>">
 <head>
 <meta charset="<?php echo $lang['charset']; ?>" />
 <title><?php echo $settings['website_title']; ?> - <?php echo $lang['administration']; if(isset($subtitle)) echo ' - ' . $subtitle; ?></title>

@@ -12,7 +12,6 @@ $lang['admin_menu_admin'] =              'Administración';
 $lang['admin_menu_page_overview'] =      'Relación de páginas';
 $lang['admin_menu_new_page'] =           'Crear una nueva página';
 $lang['admin_menu_logout'] =             'Cerrar sesión';
-$lang['admin_menu_act_page_actions'] =   'Esta página:';
 $lang['admin_menu_edit_page'] =          'Editar';
 $lang['admin_menu_delete_page'] =        'Borrar';
 $lang['cancel'] =                        'Cancelar';

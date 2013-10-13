@@ -3,8 +3,6 @@
 $lang['lang'] =                          'es';
 $lang['charset'] =                       'utf-8';
 $lang['locale'] =                        array('es_ES.utf8','es','esp');
-#$lang['time_format'] =                  '%d/%m/%y, %H:%M';
-#$lang['time_format_full'] =             '%d/%m/%y, %H:%M';
 $lang['dir'] =                           'ltr';
 
 // General:
@@ -131,37 +129,6 @@ $lang['error_news_no_text'] =            'No se ha introducido el texto';
 $lang['error_news_time_invalid'] =       'la fecha y/o la hora no tienen el formato correcto';
 $lang['delete_news_title'] =             'Borrar entrada';
 $lang['delete_news_confirm_submit'] =    'OK - Borrar';
-
-// Newsletter:
-$lang['newsletter_subscr_email'] =       'Dirección de correo electrónico:';
-$lang['newsletter_subscribe'] =          'suscribir';
-$lang['newsletter_unsubscribe'] =        'cancelar suscripción';
-$lang['newsletter_email'] =              'Dirección de correo electrónico';
-$lang['newsletter_subscribe_time'] =     'Suscrito';
-$lang['newsletter_subscribe_time_format'] = '[time|%d/%m/%y, %H:%M]';
-$lang['newsletter_error_invalid_email'] = 'Dirección de correo electrónico incorrecta';
-$lang['newsletter_error_email_exists'] = 'Ya existe esta dirección de correo electrónico';
-$lang['newsletter_error_email_not_exist'] = 'Dirección de correo electrónico inexistente';
-$lang['newsletter_error_mail'] =         'Se ha producido un error al enviar el mensaje de correo electrónico  - por favor, inténtelo de nuevo más tarde';
-$lang['newsletter_conf_ok'] =            '¡Gracias! Se ha confirmado su dirección de correo electrónico.';
-$lang['newsletter_delete_ok'] =          '¡Se ha cancelado su suscripción al boletín de noticias!';
-$lang['newsletter_conf_failed'] =        '<b>Error:</b> ¡Enlace de confirmación incorrecto (es posible que haya caducado)!';
-$lang['newsletter_conf_mail_sent'] =     '¡Se le ha enviado un mensaje de correo electrónico con un enlace de confirmación. Por favor ¡realice la confirmación en menos de una hora!';
-$lang['newsletter_email_delete'] =       'borrar';
-$lang['newsletter_no_emails'] =          'No hay direcciones de correo electrónico.';
-$lang['newsletter_add_email'] =          'Añadir direcciones de correo electrónico:';
-$lang['newsletter_email_list'] =         'Lista de direcciones de correo electrónico';
-$lang['newsletter_edit_emails'] =        'Editar las direcciones de correo electrónico';
-$lang['newsletter_email_count'] =        '[number] direcciones de correo electrónico';
-$lang['newsletter_subscribe_subj'] =     'Suscribirse al boletín de noticias';
-$lang['newsletter_subscribe_text'] =     "Se ha añadido su dirección de correo electrónico a nuestra lista de correo. Por favor, pique en el enlace inferior para confirmar su solicitud. Si se le ha enviado este mensaje por error haga el favor de ignorarlo.\n\nEnlace para confirmar la suscripción:\n[link]";
-$lang['newsletter_unsubscribe_subj'] =   'Darse de baja del boletín de noticias';
-$lang['newsletter_unsubscribe_text'] =   "Por favor, pique sobre el siguiente enlace para cancelar su suscripción al boletín de noticias:\n[link]";
-$lang['newsletter_checkall'] =           'marcar todo';
-$lang['newsletter_uncheckall'] =         'desmarcar todo';
-$lang['newsletter_delete_checked'] =     'Borrar los marcados';
-$lang['newsletter_delete_confirm'] =     '¿Borrar mensajes?';
-$lang['newsletter_delete_confirm_submit'] = 'OK - Borrar';
 
 // Search:
 $lang['search_submit'] =                 'Buscar';

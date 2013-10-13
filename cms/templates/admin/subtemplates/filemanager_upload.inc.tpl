@@ -10,7 +10,7 @@
  <div>
   <input type="hidden" name="mode" value="filemanager" />
   <input type="hidden" name="upload_file_submit" value="true"> 
-   <fieldset style="width:400px; border:1px solid #c0c0c0;"><!--<legend style="font-size:11px;"><?php echo $lang['file_legend']; ?>--></legend>
+   <fieldset style="width:400px; border:1px solid #c0c0c0;"><legend style="font-size:11px;"><?php echo $lang['file_legend']; ?></legend>
     <p style="margin-top:20px;"><?php echo $lang['upload_file_label']; ?><br />
      <input type="file" name="file" size="25" /></p>
      <p><?php echo $lang['upload_directory_label']; ?><br />

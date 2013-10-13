@@ -3,8 +3,6 @@
 $lang['lang'] =                          'en';
 $lang['charset'] =                       'utf-8';
 $lang['locale'] =                        array('en_US.utf8','en','eng');
-#$lang['time_format'] =                  '%Y-%m-%d, %H:%M';
-#$lang['time_format_full'] =             '%A, %B %d, %Y, %H:%M';
 $lang['dir'] =                           'ltr';
 
 // General:

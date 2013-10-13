@@ -12,14 +12,11 @@ $lang['admin_menu_admin'] =              'Administration';
 $lang['admin_menu_page_overview'] =      'Page overview';
 $lang['admin_menu_new_page'] =           'Create new page';
 $lang['admin_menu_logout'] =             'Log out';
-$lang['admin_menu_act_page_actions'] =   'This page:';
 $lang['admin_menu_edit_page'] =          'Edit';
 $lang['admin_menu_delete_page'] =        'Delete';
 $lang['cancel'] =                        'Cancel';
 $lang['admin_menu_delete_page_conf'] =   'Delete this page?';
-
 $lang['administration'] =                'Administration';
-
 $lang['submit_button_ok'] =              '&nbsp;OK&nbsp;';
 $lang['submit_button_delete'] =          'Delete!';
 $lang['edit'] =                          'edit';
@@ -115,7 +112,6 @@ $lang['page_type_news'] =                'News page';
 $lang['page_type_simple_news'] =         'Simple news page';
 $lang['page_type_gallery'] =             'Photo gallery:';
 $lang['page_type_formmailer'] =          'Formmailer:';
-$lang['page_type_guestbook'] =           'Guestbook';
 $lang['page_type_redirect'] =            'Redirect:';
 $lang['page_type_language_redirect'] =   'Language redirect:';
 $lang['page_type_notes'] =               'Notes page:';
@@ -276,7 +272,7 @@ $lang['comments_comment'] =              'Comment';
 $lang['comments_ip'] =                   'IP';
 $lang['comments_name'] =                 'Name';
 $lang['comments_time'] =                 'Date';
-$lang['toggle_selection'] =              'toggle selection';
+$lang['toggle_selection'] =              'Auswahl umkehren';
 $lang['comments_del_checked'] =          'delete checked comments';
 $lang['comments_delete_all'] =           'delete all comments';
 $lang['delete_this_comment_confirm'] =   'Delete this comment?';
@@ -473,10 +469,6 @@ $lang['upload_image'] =                  'Upload image';
 $lang['upload_image_marking'] =          'Choose image:';
 $lang['available_images'] =              'Available images';
 $lang['no_images'] =                     'No images available';
-#$lang['view_image_button'] =             'show';
-#$lang['delete_image_button'] =           'delete';
-
-# insert_thumbnail
 $lang['insert_thumbnail'] =              'Insert thumbnail';
 $lang['thumbnail_select_gallery'] =      'Select gallery:';
 $lang['insert_image_label'] =           'Insert image';
