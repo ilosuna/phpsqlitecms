@@ -35,6 +35,7 @@ a.thumbnail:hover { opacity:0.9; }
 .news-teaser p   { margin:0; padding:0; }
 .news-teaser .time { color:#808080; font-size:13px; margin:0 0 7px 0; padding:0; }
 
+.simple-news h2 { margin:10px 0; }
 .simple-news-delete { background:#f2dede; }
 
 .caption + p     { margin-top:20px; }
