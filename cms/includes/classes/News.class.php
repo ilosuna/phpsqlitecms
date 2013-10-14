@@ -62,12 +62,12 @@ class News
     
     if($this->category)
      {
-      $dbr = Database::$content->prepare("SELECT id, page, title, page_title, category, type, time, teaser_headline, teaser, teaser_formatting, teaser_img, link_name, headline, content, content_formatting FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND category=:category AND status!=0 ORDER BY time DESC LIMIT ".(($this->current_page-1)*$this->news_per_page).", ".$this->news_per_page);
+      $dbr = Database::$content->prepare("SELECT id, page, title, page_title, category, type, time, teaser_headline, teaser, teaser_img, link_name, headline, content FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND category=:category AND status!=0 ORDER BY time DESC LIMIT ".(($this->current_page-1)*$this->news_per_page).", ".$this->news_per_page);
       $dbr->bindParam(':category', $this->category, PDO::PARAM_STR);
      }
     else
      {
-      $dbr = Database::$content->prepare("SELECT id, page, title, page_title, category, type, time, teaser_headline, teaser, teaser_formatting, teaser_img, link_name, headline, content, content_formatting FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND status!=0 ORDER BY time DESC LIMIT ".(($this->current_page-1)*$this->news_per_page).", ".$this->news_per_page);
+      $dbr = Database::$content->prepare("SELECT id, page, title, page_title, category, type, time, teaser_headline, teaser, teaser_img, link_name, headline, content FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND status!=0 ORDER BY time DESC LIMIT ".(($this->current_page-1)*$this->news_per_page).", ".$this->news_per_page);
      } 
     $dbr->bindParam(':include_page', $this->id, PDO::PARAM_INT);
     $dbr->bindParam(':time', $this->current_time, PDO::PARAM_INT);
@@ -125,26 +125,19 @@ class News
        }
       if($news_data['teaser']!='')
        {
-        if($news_data['teaser_formatting']==1)
-         {
-          $news[$i]['teaser'] = auto_html($news_data['teaser']);
-         }
-        else
-         {
-          $news[$i]['teaser'] = $news_data['teaser'];
-         }
+        $news[$i]['teaser'] = $news_data['teaser'];
         $news[$i]['more'] = true;
        }
       else
        {
-        if($news_data['content_formatting']==1)
-         {
-          $news[$i]['teaser'] = auto_html($news_data['content']);
-         }
-        else
-         {
+        #if($news_data['content_formatting']==1)
+        # {
+        #  $news[$i]['teaser'] = auto_html($news_data['content']);
+        # }
+        #else
+        # {
           $news[$i]['teaser'] = $news_data['content'];
-         }
+        # }
         $news[$i]['teaser'] = parse_special_tags($news[$i]['teaser'], $news_data['page']);
         $news[$i]['more'] = false;
        }
@@ -178,7 +171,7 @@ class News
   
   public function get_feed($rss_maximum_items=20, $fullfeed=false)
    {
-    $dbr = Database::$content->prepare("SELECT id, page, type, category, title, teaser, teaser_formatting, teaser_img, headline, content, content_formatting, time, last_modified FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND status!=0 ORDER BY time DESC LIMIT ".$rss_maximum_items);
+    $dbr = Database::$content->prepare("SELECT id, page, type, category, title, teaser, teaser_img, headline, content, time, last_modified FROM ".Database::$db_settings['pages_table']." WHERE include_page=:include_page AND time<=:time AND status!=0 ORDER BY time DESC LIMIT ".$rss_maximum_items);
     $dbr->bindParam(':include_page', $this->id, PDO::PARAM_INT);
     $dbr->bindParam(':time', $this->current_time, PDO::PARAM_INT);
     $dbr->execute();
@@ -195,26 +188,26 @@ class News
   
       if($fullfeed || $rss_data['teaser']=='')
        {
-        if($rss_data['content_formatting']==1)
-         {
-          $rss_items[$i]['content'] = auto_html($rss_data['content']);
-         }
-        else
-         {
+        #if($rss_data['content_formatting']==1)
+        # {
+        #  $rss_items[$i]['content'] = auto_html($rss_data['content']);
+        # }
+        #else
+        # {
           $rss_items[$i]['content'] = $rss_data['content'];
-         }
+        # }
         $rss_items[$i]['content'] = parse_special_tags($rss_items[$i]['content'], $parent_page=$rss_data['page'], $rss=true);
        }
       else
        {
-        if($rss_data['teaser_formatting']==1)
-         {
+        #if($rss_data['teaser_formatting']==1)
+        # {
           $rss_items[$i]['content'] = auto_html($rss_data['teaser']);
-         }
-        else
-         {
+        # }
+        #else
+        # {
           $rss_items[$i]['content'] = $rss_data['teaser'];
-         }
+        # }
        }
 
       if(!$fullfeed && $rss_data['teaser_img']) 

@@ -1,7 +1,7 @@
 <?php if($news): ?>
 <?php foreach($news as $item): ?>
 
-<div class="news-teaser">
+<div class="news">
 
 <p class="time"><?php echo $lang['news_time'][$item['id']]; ?></p>
 
@@ -15,9 +15,12 @@
 
 
 
-<?php if(isset($item['teaser'])) echo $item['teaser']; ?> 
-<p class="news-link"><a href="<?php echo BASE_URL.$item['page']; ?>"><?php echo $item['link_name']; ?></a>
-<?php if(isset($item['comments'])): ?><a href="<?php echo BASE_URL.$item['page']; ?>#comments" class="comments">(<?php echo $lang['number_of_comments'][$item['id']]; ?>)</a><?php endif; ?></p>
+<?php if(isset($item['teaser'])): ?>
+<p><?php echo $item['teaser']; ?></p>
+<?php endif; ?>
+
+<p><a class="btn btn-primary" href="<?php echo BASE_URL.$item['page']; ?>"><?php echo $item['link_name']; ?></a>
+<?php if(isset($item['comments'])): ?><a class="btn btn-default" href="<?php echo BASE_URL.$item['page']; ?>#comments" class="comments"><?php echo $lang['number_of_comments'][$item['id']]; ?></a><?php endif; ?></p>
 
 </div>
 </div>

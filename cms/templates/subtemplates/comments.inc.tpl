@@ -1,5 +1,14 @@
 <div id="comments" class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title"><?php echo $lang['comment_headline']; ?> (<?php echo $total_comments; ?>)</h3></div>
+<div class="panel-heading">
+<?php if($admin): ?>
+<?php if(empty($comments_closed)): ?>
+<a class="btn btn-danger btn-xs pull-right" href="<?php echo BASE_URL . PAGE; ?>,openclose" ><span class="glyphicon glyphicon-lock"></span> <?php echo $lang['comments_close']; ?></a>
+<?php else: ?>
+<a class="btn btn-success btn-xs pull-right" href="<?php echo BASE_URL . PAGE; ?>,openclose"><span class="glyphicon glyphicon-lock"></span> <?php echo $lang['comments_open']; ?></a>
+<?php endif; ?>
+<?php endif; ?>
+<h3 class="panel-title"><?php echo $lang['comment_headline']; ?> <span class="badge"><?php echo $total_comments; ?></span></h3>
+</div>
 
 <div class="panel-body">
 <?php if(isset($edit_data)): ?>
@@ -8,12 +17,12 @@
 <input type="hidden" name="current_page" value="<?php echo $edit_data['current_page']; ?>" />
 <input type="hidden" name="id" value="<?php echo $edit_data['id']; ?>" />
 <p><label for="comment_text"><strong><?php echo $lang['comment_edit_text']; ?></strong></label><br />
-<textarea id="comment_text" name="comment_text" cols="63" rows="10"><?php echo $edit_data['comment']; ?></textarea></p>
+<textarea id="comment_text" class="form-control" name="comment_text" cols="63" rows="10"><?php echo $edit_data['comment']; ?></textarea></p>
 <p class="userdata"><label for="name"><?php echo $lang['comment_input_name']; ?></label><br />
-<input type="text" id="name" name="name" value="<?php echo $edit_data['name']; ?>" size="30" /></p>
+<input type="text" id="name" class="form-control" name="name" value="<?php echo $edit_data['name']; ?>" size="30" /></p>
 <p class="userdata"><label for="email_hp"><?php echo $lang['comment_input_email_hp']; ?></label><br />
-<input type="text" id="email_hp" name="email_hp" value="<?php echo $edit_data['email_hp']; ?>" size="30" /></p>
-<p><input name="edit_save" type="submit" value="<?php echo $lang['comment_input_submit']; ?>" /></p>
+<input type="text" id="email_hp" class="form-control" name="email_hp" value="<?php echo $edit_data['email_hp']; ?>" size="30" /></p>
+<p><input class="btn btn-primary" name="edit_save" type="submit" value="<?php echo $lang['comment_input_submit']; ?>" /></p>
 </div>
 </form>
 
@@ -73,7 +82,7 @@
 <?php endif; ?>
 
 <?php if(empty($preview) && empty($errors)): ?>
-<p><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#commentformwrapper"><span class="glyphicon glyphicon-plus"></span> <?php echo $lang['comments_add_comment']; ?></button></p>
+<p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#commentformwrapper"><span class="glyphicon glyphicon-plus"></span> <?php echo $lang['comments_add_comment']; ?></button></p>
 <?php endif; ?>
 
 <div id="commentformwrapper" class="collapse<?php if(isset($preview) || $errors): ?> in<?php endif; ?>">
@@ -129,11 +138,8 @@
 <?php endif; ?>
 
 <?php if(isset($comments_closed)): ?>
-<p id="closed"><em><?php echo $lang['comments_closed']; ?></em><?php if($admin): ?> &nbsp;<a href="<?php echo BASE_URL . PAGE; ?>,openclose" class="opencomments"><?php echo $lang['comments_open']; ?></a><?php endif; ?></p>
+<p><em><span class="glyphicon glyphicon-lock"></span> <?php echo $lang['comments_closed']; ?></em></p>
 <?php endif; ?>
 
-<?php if($admin && empty($comments_closed)): ?>
-<p id="close"><a href="<?php echo BASE_URL . PAGE; ?>,openclose" class="closecomments"><?php echo $lang['comments_close']; ?></a></p>
-<?php endif; ?>
 </div>
 </div>
