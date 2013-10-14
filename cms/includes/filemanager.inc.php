@@ -87,7 +87,6 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
      // create thumbnail:
      if(isset($_POST['create_thumbnail']) && $upload->isImage)
       {
-       
        if($thumbnail_resize_xy=='x')
         {
          $thumbnail_x = $thumbnail_resize;

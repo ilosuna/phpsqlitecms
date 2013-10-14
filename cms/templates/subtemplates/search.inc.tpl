@@ -1,9 +1,15 @@
 <form action="<?php echo BASE_URL.PAGE; ?>" method="post">
-<p><input type="text" name="q" value="<?php if(isset($q)) echo $q; ?>" size="30" maxlength="200" /> <input type="submit" name="" value="<?php echo $lang['search_submit']; ?>" /></p>
+
+<div class="input-group">
+<input class="form-control" type="text" name="q">
+<span class="input-group-btn">
+<button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+</span>
+</div>
 </form>
 
 <?php if(isset($results)): ?>
-<p><strong><?php echo $lang['search_number_of_results']; ?></strong>
+<p style="margin-top:20px;"><strong><?php echo $lang['search_number_of_results']; ?></strong>
 
 <ul id="search">
 <?php foreach($results as $result): ?>
