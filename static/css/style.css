@@ -18,9 +18,12 @@ header ul        { padding:20px 0 0 0; }
 .topsep          { margin:10px 0 15px 0; }
 
 .main-content p,
-.main-content ul,
+.main-content ul { line-height:175%; }
+.sidebar         { margin-top:30px; }
 .sidebar p,
 .sidebar ul      { line-height:175%; }
+.teaser p        { margin-top:0; }
+.teaser .thumbnail { margin-bottom:5px; }
 
 .caption         { margin:3px 0 3px 0; color:#808080; font-style:italic; }
 .thumbnail       { max-width:100% !important; height:auto; } 
@@ -46,7 +49,7 @@ a.thumbnail:hover { opacity:0.9; }
 
 .overview h2 a   { color:#333; text-decoration:none; }
 
-.news            { margin-bottom:30px; }
+.news            { margin:30px 0 30px 0; }
 .news:first-child { margin-top:20px; }
 .news h2         { margin:0; padding:0; }
 .news h2 a       { color:#333; text-decoration:none; }
@@ -100,9 +103,8 @@ a.pdf                         { padding-left:23px; background-image:url(../img/p
 
 @media (min-width: 992px)
  {
-  .sidebar { padding-left:30px; }
   .header .nav { margin-top:37px; float:right; text-align:right; }
-  .sidebar { padding-left:50px; }
+  .sidebar { margin-top:0; }
  }
 
 @media screen and (max-width:768px)

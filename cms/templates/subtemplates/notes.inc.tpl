@@ -4,8 +4,8 @@
 <div class="news">
 <p class="time"><?php echo $lang['note_time'][$note['id']]; ?></p>
 <h2><?php if($note['link']): ?><a href="<?php echo $note['link']; ?>"><?php echo $note['title']; ?></a><?php else: ?><?php echo $note['title']; ?><?php endif; ?></h2>
-<?php if($note['text']) echo $note['text']; ?>
-<?php if($note['link']): ?><p class="link"><a href="<?php echo $note['link']; ?>"><?php echo $note['linkname']; ?></a></p><?php endif; ?>
+<?php if($note['text']): ?><p><?php echo $note['text']; ?></p><?php endif; ?>
+<?php if($note['linkname']): ?><p class="link"><a class="btn btn-primary" href="<?php echo $note['link']; ?>"><?php echo $note['linkname']; ?></a></p><?php endif; ?>
 </div>
 <?php endforeach; ?>
 

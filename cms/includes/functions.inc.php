@@ -5,6 +5,7 @@ function __autoload($class_name)
   require_once(BASE_PATH.'cms/includes/classes/'.$class_name.'.class.php');
  }
 
+/*
 if(get_magic_quotes_gpc())
  {
   function stripslashes_deep($value)
@@ -17,6 +18,7 @@ if(get_magic_quotes_gpc())
   $_COOKIE = array_map('stripslashes_deep', $_COOKIE);
   $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
  }
+*/
 
 function showme($what)
  {
@@ -998,20 +1000,20 @@ function raise_error($error,$error_message='')
      else $message = 'The server is currently unable to handle the request.';
      break;
    }
-  ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $lang; ?>">
+  ?><!DOCTYPE html>
+  <html>
   <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $website_title.' - '.$title; ?></title>
   <meta http-equiv="content-type" content="text/html; charset=<?php echo $charset; ?>" />
   <style type="text/css">
-  <!--
-  body              { color:#000; background:#fff; margin:0; padding:0; font-family: verdana, arial, sans-serif; font-size:100.1%; }
-  h1                { font-size:1.25em; }
-  p,ul              { font-size:0.82em; line-height:1.45em; }
-  #top              { margin:0; padding:0 20px 0 20px; height:4em; color:#000000; background:#d2ddea; border-bottom: 1px solid #bacbdf; line-height:4em;}
-  #top h1           { font-size:1.7em; margin:0; padding:0; color:#000080; }
-  #content          { padding:20px; }
-  -->
+  body              { color:#000; background:#fff; margin:0; padding:0; font-family:sans-serif; }
+  h1                { font-size:28px; }  
+  p,ul              { font-size:13px; line-height:150%; }
+  #top              { margin:0; padding:0 30px; color:#000; background:#f8f8f8; border-bottom: 1px solid #e7e7e7; line-height:50px; }
+  #top h1           { font-size:20px; margin:0; padding:0; color:#777e7d; font-weight:normal; }
+  #content          { padding:20px 30px; }
   </style>
   </head>
   <body>

@@ -72,7 +72,7 @@ try
 
   // load replacement functions for the multibyte string functions
   // if they are not available:
-  if(!defined('MB_CASE_LOWER')) require('./cms/includes/functions.mb_replacements.inc.php');
+  #if(!defined('MB_CASE_LOWER')) require('./cms/includes/functions.mb_replacements.inc.php');
 
   require('./cms/includes/classes/Database.class.php');
   $database = new Database();
@@ -151,16 +151,16 @@ try
      }
    }
 
-  if(isset($_GET['get_1']) && $_GET['get_1']==IMAGE_IDENTIFIER && isset($_GET['get_2']))
-   {
-    // photo:
-    include(BASE_PATH.'cms/includes/photo.inc.php');
-   }
-  else
-   {
+  #if(isset($_GET['get_1']) && $_GET['get_1']==IMAGE_IDENTIFIER && isset($_GET['get_2']))
+  # {
+  #  // photo:
+  #  include(BASE_PATH.'cms/includes/photo.inc.php');
+  # }
+  #else
+  # {
     // regular content:
     include(BASE_PATH.'cms/includes/content.inc.php');
-   }
+  # }
 
   if(isset($_SESSION[$settings['session_prefix'].'user_id'])) $localization->add_language_file(BASE_PATH.'cms/lang/'.$settings['admin_language'].'.admin.lang.php');
   
