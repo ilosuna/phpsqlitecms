@@ -454,7 +454,7 @@ function create_image($string)
     if(isset($img_class)) $image['class'] = htmlspecialchars($img_class);
     $template->assign('image', $image);
    }
-  $image_code = $template->fetch(BASE_PATH.'templates/subtemplates/image.inc.tpl');
+  $image_code = $template->fetch(BASE_PATH.'cms/templates/subtemplates/image.inc.tpl');
   return $image_code;
  }
 
@@ -521,7 +521,7 @@ function create_thumbnail_rss($string)
     #else $thumbnail = '<a href="'.$page.',photo,'.$id.'"><img src="images/'.$data['photo_thumbnail'].'" title="'.htmlspecialchars(strip_tags(stripslashes($data['title']))).'" alt="'.htmlspecialchars(strip_tags(stripslashes($data['title']))).'" width="'.$width.'" height="'.$height.'" /></a>';
     $template->assign('thumbnail', $thumbnail);
    }
-  $thumbnail = $template->fetch(BASE_PATH.'templates/subtemplates/thumbnail_rss.inc.tpl');
+  $thumbnail = $template->fetch(BASE_PATH.'cms/templates/subtemplates/thumbnail_rss.inc.tpl');
   return $thumbnail;
  }
 

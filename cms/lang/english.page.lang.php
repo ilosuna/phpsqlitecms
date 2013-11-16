@@ -142,5 +142,5 @@ $lang['search_no_results'] =             'No pages found';
 // Akismet:
 $lang['akismet_error_api_key'] =         'Invalid akismet api key';
 $lang['akismet_error_connection'] =      'Server connection error - please try again later';
-$lang['akismet_spam_suspicion'] =        'Spam suspicion!'
+$lang['akismet_spam_suspicion'] =        'Spam suspicion!';
 ?>

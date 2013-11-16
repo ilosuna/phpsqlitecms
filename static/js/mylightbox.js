@@ -3,21 +3,20 @@
 /********************************************************/
 myLightboxSettings = new Object();
 myLightboxSettings['vertical_align'] =      30; // 'center' or number of pixels from top
-myLightboxSettings['next_link'] =           '<span class="glyphicon glyphicon-arrow-right text-success"></span>';
+myLightboxSettings['next_link'] =           '[&raquo;]';
 myLightboxSettings['next_link_title'] =     'next';
-myLightboxSettings['previous_link']       = '<span class="glyphicon glyphicon-arrow-left text-success"></span>';
+myLightboxSettings['previous_link']       = '[&laquo;]';
 myLightboxSettings['previous_link_title'] = 'previous';
-myLightboxSettings['close_link'] =          '<span class="glyphicon glyphicon-remove text-danger"></span>';
+myLightboxSettings['close_link'] =          '[x]';
 myLightboxSettings['close_link_title'] =    'close';
 myLightboxSettings['html_box'] = '<div id="mylightbox">\
 <div id="mylightbox-header">\
 <div id="mylightbox-title"></div>\
-<div id="mylightbox-nav"></div>\
 <div id="mylightbox-controls"><a href="#" id="mylightbox-close" title="'+myLightboxSettings['close_link_title']+'" onclick="return false"><span>'+myLightboxSettings['close_link']+'</span></a></div>\
 </div>\
 <div id="mylightbox-photo"></div>\
-<p id="mylightbox-subtitle"></p>\
 <p id="mylightbox-description"></p>\
+<p id="mylightbox-author"></p>\
 </div>';
 myLightboxSettings['html_background'] = '<div id="mylightbox-background"></div>';
 
@@ -122,8 +121,8 @@ function doit(e,t)
   var myLightboxLinks = new Array();
   var srcs = new Array();
   var titles = new Array();
-  var subtitles = new Array();
   var descriptions = new Array();
+  var authors = new Array();
 
   //$(".mylightbox").each(function(i) // get all links with class="mylightbox"
   $("a[data-lightbox]").each(function(i) // get all links with rel="mylightbox"
@@ -132,15 +131,15 @@ function doit(e,t)
     myLightboxLinks.push($(this));
     srcs.push($(this).attr('href'));
     titles.push($(this).find('img').attr('title'));
-    subtitles.push($(this).find('img').attr('data-subtitle'));
     descriptions.push($(this).find('img').attr('data-description'));
+    authors.push($(this).find('img').attr('data-author'));
    });
   
   var numberOfImages = myLightboxLinks.length;
   var src = srcs[mylightboxCurrent];
   var title = titles[mylightboxCurrent];
-  var subtitle = subtitles[mylightboxCurrent];
   var description = descriptions[mylightboxCurrent];
+  var author = authors[mylightboxCurrent];
 
   // determine previous and next image:
   if(numberOfImages>1)
@@ -167,19 +166,8 @@ function doit(e,t)
 
   if(typeof(myLightboxCurrentWidth)!='undefined') $("#mylightbox").css({"width":myLightboxCurrentWidth+'px'});
   
-  // previous and next buttons:
-  if(typeof(prev)!='undefined' && typeof(next)!='undefined')
-   {
-    $("#mylightbox #mylightbox-nav").html('<a id="mylightbox-prev" href="'+$(prev).attr('href')+'" title="'+myLightboxSettings['previous_link_title']+'"><span>'+myLightboxSettings['previous_link']+'</span></a> &nbsp; <a id="mylightbox-next" href="'+$(next).attr('href')+'" title="'+myLightboxSettings['next_link_title']+'">'+myLightboxSettings['next_link']+'</a>');
-   }
-  else
-   {
-    $("#mylightbox #mylightbox-nav").html('&nbsp;');
-   }
-    
   $("#mylightbox #mylightbox-title").html('');
   $("#mylightbox-photo").html('<div id="mylightbox-throbber"></div>');
-  $("#mylightbox-subtitle").html('');
   $("#mylightbox-description").html('');
   
   if(typeof(myLightboxCurrentWidth)=='undefined') centerPopup($("#mylightbox").outerWidth(), $("#mylightbox").outerHeight());
@@ -189,7 +177,7 @@ function doit(e,t)
    {
     $("#mylightbox #mylightbox-title").html(title);
     $("#mylightbox-photo").hide();
-    if(typeof(next)!='undefined')
+    /*if(typeof(next)!='undefined')
      {
       $("#mylightbox-photo").html('<a id="mylightbox-next-img" href="'+$(next).attr('href')+'"><img src="'+src+'" /></a>');
       $("#mylightbox-next-img").click(function(e){ doit(e,next); });
@@ -198,9 +186,32 @@ function doit(e,t)
      {
       $("#mylightbox-photo").html('<img src="'+src+'" />');      
      }
+    */
+    $("#mylightbox-photo").html('<img src="'+src+'">');
+     
+  // previous and next buttons:
+  if(typeof(prev)!='undefined' && typeof(next)!='undefined')
+   {
+    $("#mylightbox-photo").append('<a id="mylightbox-prev" href="'+$(prev).attr('href')+'" title="'+myLightboxSettings['previous_link_title']+'"><span>'+myLightboxSettings['previous_link']+'</span></a>');
+    $("#mylightbox-photo").append('<a id="mylightbox-next" href="'+$(next).attr('href')+'" title="'+myLightboxSettings['next_link_title']+'"><span>'+myLightboxSettings['next_link']+'</span></a>');
+    $("#mylightbox-prev").click(function(e) { doit(e,prev); });       
+    $("#mylightbox-next").click(function(e) { doit(e,next); });  
     
-    $("#mylightbox-subtitle").html(subtitle);
+    if(typeof Hammer == 'function')
+     {
+      var hammertime = $("#mylightbox-photo").hammer();
+      hammertime.on("swipeleft", function(e) { doit(e,next); });  
+      hammertime.on("swiperight", function(e) { doit(e,prev); });
+     }
+   }
+  else
+   {
+    //$("#mylightbox-prev").remove();
+    //$("#mylightbox-next").remove(); 
+   }
+    
     $("#mylightbox-description").html(description);
+    $("#mylightbox-author").html(author);
     $("#mylightbox-photo").fadeIn("fast");
 
     myLightboxCurrentWidth = objImagePreloader.width;
@@ -210,15 +221,7 @@ function doit(e,t)
    };
   
   objImagePreloader.src = src;
-  
-  $("#mylightbox-next").click(function(e){ 
-   doit(e,next);
-  });   
-  
-  $("#mylightbox-prev").click(function(e){ 
-   doit(e,prev);
-  });     
-
+   
  }
 
 $(function()

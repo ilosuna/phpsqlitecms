@@ -83,24 +83,6 @@ h4.author        { font-size:14px; margin-bottom:5px; font-style:italic; }
 a.rss                         { padding-left:23px; background:url(../img/rss.png) no-repeat left; }
 a.pdf                         { padding-left:23px; background-image:url(../img/pdf.png); background-repeat:no-repeat; background-position: top left; }
 
-#mylightbox-background        { display:none; position:fixed; height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:2000; }
-#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:5px 5px 20px #000; }
-#mylightbox img               { max-width:100%; height:auto; }
-#mylightbox-header            { height:20px; font-size:13px; line-height:20px; padding:0 0 3px 0; }
-#mylightbox-title             { position:absolute; top:2px; left:10px; width:40%; margin:0; padding:0; font-weight:bold; }
-#mylightbox-nav               { position:absolute; top:2px; left:40%; width:20%; margin:0; padding:0; text-align:center; float:left; white-space:nowrap; }
-#mylightbox-controls          { position:absolute; top:4px; right:10px; width:14px; margin:0; padding:0; }
-#mylightbox #photo            { margin:0; padding:0; }
-#mylightbox-subtitle          { font-size:14px; line-height:150%; margin:0; padding:3px 0 0 0; font-style:italic; color:#808080; }
-#mylightbox-description       { font-size:14px; line-height:150%; margin:0; padding:3px 0 8px 0; }
-#mylightbox-throbber          { width:32px; height:32px; margin:0 auto 0 auto; padding:100px 0; background:url(../img/throbber.gif) no-repeat center; }
-#mylightbox-prev              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; }
-#mylightbox-prev:hover        { opacity:0.75; }
-#mylightbox-next              { vertical-align:text-top; display:inline-block; width:16px; height:16px; margin:0; padding:0; }
-#mylightbox-next:hover        { opacity:0.75; }
-#mylightbox-close             { width:14px; height:14px; display:inline-block; }
-#mylightbox-close:hover       { width:14px; height:14px; display:inline-block; }
-
 @media (min-width: 992px)
  {
   .header .nav { margin-top:37px; float:right; text-align:right; }
@@ -116,3 +98,22 @@ a.pdf                         { padding-left:23px; background-image:url(../img/p
   #nav .nav-pills > li > a { padding: 10px 15px; border-radius:0; }
   #nav .nav-pills > li + li > a { margin-top: 2px; margin-left: 0; }
  }
+ 
+#mylightbox-background        { display:none; position:fixed; height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:2000; }
+#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:5px 5px 20px #000; }
+#mylightbox img               { max-width:100%; height:auto; }
+#mylightbox-header            { height:25px; font-size:13px; line-height:20px; padding:0 0 10px 0; }
+#mylightbox-title             { position:absolute; top:3px; left:10px; width:90%; margin:0; padding:0; font-weight:bold; }
+#mylightbox-controls          { position:absolute; top:5px; right:10px; width:14px; margin:0; padding:0; }
+#mylightbox #photo            { margin:0; padding:0; }
+#mylightbox-subtitle          { font-size:14px; line-height:150%; margin:0; padding:3px 0 0 0; font-style:italic; color:#808080; }
+#mylightbox-description       { font-size:14px; line-height:150%; margin:0; padding:5px 0 8px 0; }
+#mylightbox-author            { color:#808080; font-size:13px; margin:-8px 0 0 0; padding:0 0 8px 0; }
+#mylightbox-throbber          { width:32px; height:32px; margin:0 auto 0 auto; padding:100px 0; background:url(../img/throbber.gif) no-repeat center; }
+#mylightbox-photo             { position:relative; }
+#mylightbox-prev              { width:25%; position:absolute; top:0; left:0; bottom:0; background:url(../img/prev.png) no-repeat -1000px 0; z-index:10000; text-indent:-999em; outline:none; }
+#mylightbox-prev:hover        { background:url(../img/prev.png) no-repeat 10% center, linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.2)); }
+#mylightbox-next              { width:25%; position:absolute; top:0; right:0; bottom:0; background:url(../img/next.png) no-repeat 1000px 0; z-index:10000; text-indent:-999em; outline:none; }
+#mylightbox-next:hover        { background:url(../img/next.png) no-repeat 90% center, linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.2));  }
+#mylightbox-close             { width:16px; height:16px; display:inline-block; text-indent:-999em; background:url(../img/close_button.png) no-repeat 0 0; outline:none; opacity:0.7; }
+#mylightbox-close:hover       { opacity:1; } 

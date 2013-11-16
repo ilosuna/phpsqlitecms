@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="<?php echo $lang['dir']; ?>">
+<html lang="<?php echo $lang['lang']; ?>" dir="<?php echo $lang['dir']; ?>">
 <head>
 <meta charset="<?php echo $lang['charset']; ?>" />
 <title><?php if($page_title): ?><?php echo $page_title; ?><?php else: ?><?php if($title): ?><?php echo $title; ?> - <?php endif; ?><?php echo $settings['website_title']; ?><?php endif; ?></title>
@@ -69,7 +69,6 @@
 
 <?php if($sidebar_2): ?>
 <div class="col-md-3 sidebar">
-<hr class="visible-xs">
 <?php echo $sidebar_2; ?>
 </div>
 <?php endif; ?>
