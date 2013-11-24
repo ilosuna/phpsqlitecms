@@ -603,6 +603,13 @@ function make_link($string)
   return $string;
  }
 
+function create_link_callback($string)
+ {
+  if(isset($string[2])) $link = '<a href="'.$string[1].'">'.$string[2].'</a>';
+  else $link = '<a href="'.$string[1].'">'.$string[1].'</a>';
+  return $link;
+ }
+
 function parse_special_tags($string, $parent_page=false, $rss=false)
  {
   global $settings;
@@ -619,21 +626,9 @@ function parse_special_tags($string, $parent_page=false, $rss=false)
     $string = preg_replace_callback("#\[thumbnail:(.+?)\]#is", "create_thumbnail", $string);
     $string = preg_replace_callback("#\[gallery:(.+?)\]#is", "create_gallery", $string);
    }
-  $string = preg_replace('/\[\[([^|\]]+?)(?:\|([^\]]+))?\]\]/e', "'<a href=\"\$1\">'.(('\$2')?'\$2':'\$1').'</a>'", $string); 
+  $string = preg_replace_callback('/\[\[([^|\]]+?)(?:\|([^\]]+))?\]\]/', "create_link_callback", $string); 
   return $string;
  }
-
-/*
-function make_link($string)
- {
-  $string = ' ' . $string;
-  $string = preg_replace("#(^|[\n ])([\w]+?://.*?[^ \"\n\r\t<]*)#is", "\\1<a href=\"\\2\">\\2</a>", $string);
-  $string = preg_replace("#(^|[\n ])((www|ftp)\.[\w\-]+\.[\w\-.\~]+(?:/[^ \"\t\n\r<]*)?)#is", "\\1<a href=\"http://\\2\">\\2</a>", $string);
-  $string = preg_replace("#(^|[\n ])([a-z0-9&\-_.]+?)@([\w\-]+\.([\w\-\.]+\.)*[\w]+)#i", "\\1<a href=\"mailto:\\2@\\3\">\\2@\\3</a>", $string);
-  $string = substr($string, 1);
-  return $string;
- }
-*/
 
 function smilies($string)
  {
