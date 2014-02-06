@@ -172,8 +172,8 @@ $lang['edit_permission'] =               'Autorisierte Redakteure:';
 $lang['edit_permission_general'] =       'alle Redakteure dürfen diese Seite bearbeiten';
 $lang['invalid_edit_auth_list'] =        'Bitte prüfen Sie die bearbeitete Autorisierungsliste - diese sollte um die nicht existierenden Benutzer bereinigt werden';
 $lang['status'] =                        'Status:';
-$lang['status_puplished_searchable'] =   'Veröffentlicht und durchsuchbar';
-$lang['status_puplished'] =              'Veröffentlicht';
+$lang['status_published_searchable'] =   'Veröffentlicht und durchsuchbar';
+$lang['status_published'] =              'Veröffentlicht';
 $lang['status_draft'] =                  'Entwurf';
 $lang['optional'] =                      '(optional)';
 

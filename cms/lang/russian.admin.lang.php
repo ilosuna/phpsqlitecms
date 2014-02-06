@@ -176,8 +176,8 @@ $lang['edit_permission'] =               'Авторизованные реда�
 $lang['edit_permission_general'] =       'all editors are authorized to edit this page';
 $lang['invalid_edit_auth_list'] =        'please check the edit authorization list - it had to be cleared due to inexistent users';
 $lang['status'] =                        'Статус:';
-$lang['status_puplished_searchable'] =   'Опубликовано и добавлено в поиске';
-$lang['status_puplished'] =              'Опубликовано';
+$lang['status_published_searchable'] =   'Опубликовано и добавлено в поиске';
+$lang['status_published'] =              'Опубликовано';
 $lang['status_draft'] =                  'Черновик';
 $lang['optional'] =                      '(не обязательно)';
 

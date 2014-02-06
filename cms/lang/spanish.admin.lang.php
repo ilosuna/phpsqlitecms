@@ -175,8 +175,8 @@ $lang['edit_permission'] =               'Editores autorizados:';
 $lang['edit_permission_general'] =       'todos los editores tienen autorización para editar esta página';
 $lang['invalid_edit_auth_list'] =        'Por favor, compruebe la lista de editores autorizados - debe ser purgada debido a usuarios inexistentes';
 $lang['status'] =                        'Estado:';
-$lang['status_puplished_searchable'] =   'publicada y buscable';
-$lang['status_puplished'] =              'publicada';
+$lang['status_published_searchable'] =   'publicada y buscable';
+$lang['status_published'] =              'publicada';
 $lang['status_draft'] =                  'borrador';
 $lang['optional'] =                      '(opcional)';
 

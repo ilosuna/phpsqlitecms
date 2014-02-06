@@ -329,8 +329,8 @@
 <strong class="col-lg-2 control-label"><?php echo $lang['status']; ?></strong>
 <div class="col-lg-10">
 <div class="radio">
-<label for="status_2"><input id="status_2" type="radio" name="status" value="2"<?php if(isset($page_data['status']) && $page_data['status']==2): ?> checked="checked"<?php endif; ?> /><?php echo $lang['status_puplished_searchable']; ?></label><br />
-<label for="status_1"><input id="status_1" type="radio" name="status" value="1"<?php if(isset($page_data['status']) && $page_data['status']==1): ?> checked="checked"<?php endif; ?> /> <?php echo $lang['status_puplished']; ?></label><br />
+<label for="status_2"><input id="status_2" type="radio" name="status" value="2"<?php if(isset($page_data['status']) && $page_data['status']==2): ?> checked="checked"<?php endif; ?> /><?php echo $lang['status_published_searchable']; ?></label><br />
+<label for="status_1"><input id="status_1" type="radio" name="status" value="1"<?php if(isset($page_data['status']) && $page_data['status']==1): ?> checked="checked"<?php endif; ?> /> <?php echo $lang['status_published']; ?></label><br />
 <label for="status_0"><input id="status_0" type="radio" name="status" value="0"<?php if(isset($page_data['status']) && $page_data['status']==0): ?> checked="checked"<?php endif; ?> /> <?php echo $lang['status_draft']; ?></label>
 </div>
 </div>
