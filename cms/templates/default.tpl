@@ -56,7 +56,7 @@
     
 <div class="body-content">
 
-<div class="row<?php if(isset($tv['nocolumns'])): ?> main-content<?php endif; ?>">
+<div class="row<?php if(isset($tv['nocolumns'])): ?> col-md-12 main-content<?php endif; ?>">
 
 <?php if(empty($tv['nocolumns'])): ?>
 <div class="col-md-9 main-content">
