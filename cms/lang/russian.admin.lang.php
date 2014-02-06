@@ -483,4 +483,4 @@ $lang['insert_image_alt'] =              'ALT текст:';
 $lang['insert_image_width_height'] =     'Ширина/Высота:';
 $lang['delete_error'] =                  'Ошибка удаления';
 $lang['upload_error'] =                  'Ошибка загрузки - проверьте права на запись для папки img!';
-
+?>
