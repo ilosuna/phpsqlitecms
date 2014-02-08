@@ -5,7 +5,7 @@
 <title><?php echo $settings['website_title']; ?> - <?php echo $lang['administration']; if(isset($subtitle)) echo ' - ' . $subtitle; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php echo STATIC_URL; ?>css/style_admin.css" rel="stylesheet">
 
 <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
@@ -45,7 +45,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="<?php echo STATIC_URL; ?>js/admin_backend.js"></script>
 <?php if($mode=='galleries'): ?>
 <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>   

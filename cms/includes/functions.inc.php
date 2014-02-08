@@ -5,7 +5,6 @@ function __autoload($class_name)
   require_once(BASE_PATH.'cms/includes/classes/'.$class_name.'.class.php');
  }
 
-/*
 if(get_magic_quotes_gpc())
  {
   function stripslashes_deep($value)
@@ -18,7 +17,6 @@ if(get_magic_quotes_gpc())
   $_COOKIE = array_map('stripslashes_deep', $_COOKIE);
   $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
  }
-*/
 
 function showme($what)
  {

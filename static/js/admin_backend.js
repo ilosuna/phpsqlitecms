@@ -16,9 +16,6 @@ obj.scrollTop = scrollTop;
 
 $(function() {
 
-
-
-
 $("a[data-delete-confirm]").click(function(e) { e.preventDefault();
                                             message = $(this).data('delete-confirm') ? decodeURIComponent($(this).data('delete-confirm')) : 'Delete?';
                                             $(this).parents("tr").addClass('danger');
@@ -31,7 +28,6 @@ $("a[data-delete-confirm]").click(function(e) { e.preventDefault();
 $("*[data-toggle-checkboxes]").click(function(e) { e.preventDefault();
                                             
                                             var checkboxClass = $(this).data('toggle-checkboxes');
-                                            //alert(checkboxClass);
                                             $('.'+checkboxClass).trigger('click'); });
 
 
@@ -50,6 +46,9 @@ $("*[data-sortable]").sortable({ start : function(e, ui) { ui.item.addClass("war
 
 
 
-$('.modal-invoker').click(function(e) { insertTarget = $(this).data('input'); });
+$('.modal').on('show.bs.modal', function (e) {  
+  $insertField = $(e.relatedTarget).data('insert');
+});
+
 
 });

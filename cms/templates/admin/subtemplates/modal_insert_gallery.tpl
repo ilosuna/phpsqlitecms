@@ -1,5 +1,3 @@
-<div class="modal-dialog">
-<div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 <h4 class="modal-title"><?php echo $lang['insert_gallery_label']; ?></h4>
@@ -21,13 +19,15 @@
 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $lang['cancel']; ?></button>
 <button id="insert-gallery" type="button" class="btn btn-primary"><?php echo $lang['insert_gallery_label']; ?></button>
 </div>
-</div>
-</div>
 <script>
 $(function() {
-$("#insert-gallery").click(function(e) { if(gallery = $("#galleryselect option:selected").val())
+$("#galleryselect option").dblclick( function(e) { 
+                                                 $("#insert-gallery").click (); 
+                                               });
+$("#insert-gallery").click(function(e) { 
+                                         if(gallery = $("#galleryselect option:selected").val())
                                           {
-                                           $("#"+insertTarget).insertAtCaret("[gallery:"+gallery+"]");
+                                           $($insertField).insertAtCaret("[gallery:"+gallery+"]");
                                           }
                                          $('#modal_gallery').modal('hide'); });
 });

@@ -81,9 +81,9 @@
 
 <div class="form-group">
 <div class="col-lg-12">
-<a class="btn btn-default btn-xs modal-invoker" href="index.php?mode=modal&amp;action=insert_image" data-toggle="modal" data-target="#modal_image" data-input="content" title="<?php echo $lang['insert_image_label']; ?>"><span class="glyphicon glyphicon-picture"></a>
-<a class="btn btn-default btn-xs modal-invoker" href="index.php?mode=modal&amp;action=insert_thumbnail" data-toggle="modal" data-target="#modal_thumbnail" data-input="content" title="<?php echo $lang['insert_thumbnail_label']; ?>"><span class="glyphicon glyphicon-hand-left"></a>
-<a class="btn btn-default btn-xs modal-invoker" href="index.php?mode=modal&amp;action=insert_gallery" data-toggle="modal" data-target="#modal_gallery" data-input="content" title="<?php echo $lang['insert_gallery_label']; ?>"><span class="glyphicon glyphicon-th"></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_image" data-toggle="modal" data-target="#modal_image" data-insert="#content" title="<?php echo $lang['insert_image_label']; ?>"><span class="glyphicon glyphicon-picture"></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_thumbnail" data-toggle="modal" data-target="#modal_thumbnail" data-insert="#content" title="<?php echo $lang['insert_thumbnail_label']; ?>"><span class="glyphicon glyphicon-hand-left"></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_gallery" data-toggle="modal" data-target="#modal_gallery" data-insert="#content" title="<?php echo $lang['insert_gallery_label']; ?>"><span class="glyphicon glyphicon-th"></a>
 </div>
 </div>
 
@@ -407,7 +407,7 @@
 <div class="input-group">
 <input type="text" id="teaser_img" name="teaser_img" value="<?php if(isset($page_data['teaser_img'])) echo $page_data['teaser_img']; ?>" size="35" class="form-control">
 <span class="input-group-btn">
-<a class="btn btn-default modal-invoker" href="index.php?mode=modal&amp;action=insert_raw_image" type="button" title="<?php echo $lang['select_image']; ?>" data-toggle="modal" data-target="#modal_raw_image" data-input="teaser_img"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-default modal-invoker" href="index.php?mode=modal&amp;action=insert_raw_image" type="button" title="<?php echo $lang['select_image']; ?>" data-toggle="modal" data-target="#modal_raw_image" data-insert="#teaser_img"><span class="glyphicon glyphicon-search"></span></a>
 </span>
 </div>
 
@@ -449,8 +449,27 @@
 </form>
 
 <?php endif; ?>
-
-<div class="modal fade" id="modal_image" tabindex="-1"></div>
-<div class="modal fade" id="modal_thumbnail" tabindex="-1"></div>
-<div class="modal fade" id="modal_gallery" tabindex="-1"></div>
-<div class="modal fade" id="modal_raw_image" tabindex="-1"></div>
+<div class="modal fade" id="modal_image" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+</div>
+</div>
+</div>
+<div class="modal fade" id="modal_thumbnail" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+</div>
+</div>
+</div>
+<div class="modal fade" id="modal_gallery" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+</div>
+</div>
+</div>
+<div class="modal fade" id="modal_raw_image" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+</div>
+</div>
+</div>

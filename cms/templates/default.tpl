@@ -7,7 +7,7 @@
 <meta name="description" content="<?php if($description) echo $description; else echo $settings['default_description']; ?>" />
 <meta name="keywords" content="<?php if($keywords) echo $keywords; else echo $settings['default_keywords']; ?>" />
 <meta name="generator" content="phpSQLiteCMS <?php echo $settings['version']; ?>" />
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 <link href="<?php echo STATIC_URL; ?>css/style.css" rel="stylesheet">
 <?php if(isset($tv['map'])): ?>
@@ -46,7 +46,7 @@
 <?php foreach($breadcrumbs as $breadcrumb): ?>
 <li><a href="<?php echo BASE_URL.$breadcrumb['page']; ?>"><?php echo $breadcrumb['title']; ?></a></li>
 <?php endforeach; ?>
-<li><?php if($title) echo $title; ?></li>
+<li class="active"><?php echo $title; ?></li>
 </ul>
 <?php endif; ?>
 
@@ -99,7 +99,7 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="<?php echo STATIC_URL; ?>js/main.js"></script>
 <?php if($admin): ?>
 <script src="<?php echo STATIC_URL; ?>js/admin_frontend.js"></script>
@@ -107,8 +107,5 @@
 <?php if(isset($contains_thumbnails)): ?>
 <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
 <?php endif; ?>    
-<?php if(isset($tv['map'])): ?>
-<script src="<?php echo STATIC_URL; ?>js/san_rafael_map.js"></script>
-<?php endif; ?>
 </body>
 </html>

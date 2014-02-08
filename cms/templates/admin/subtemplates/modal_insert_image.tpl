@@ -1,5 +1,3 @@
-<div class="modal-dialog">
-<div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 <h4 class="modal-title"><?php echo $lang['insert_image']; ?></h4>
@@ -31,16 +29,19 @@
 <button id="insert-image" type="button" class="btn btn-primary"><?php echo $lang['insert_image_button']; ?></button>
 <?php endif; ?>
 </div>
-</div>
-</div>
 <script>
 $(function() {
-$("#insert-image").click(function(e) { if(gallery = $("#imageselect option:selected").val())
+$("#imageselect option").dblclick( function(e) { 
+                                                 $("#insert-image").click (); 
+                                               });
+$("#insert-image").click(function(e) {
+                                       if(gallery = $("#imageselect option:selected").val())
                                         {
                                          if(image_class = $("#image_class").val()) imageCode = "[image:"+gallery+"|"+image_class+"]";
                                          else imageCode = "[image:"+gallery+"]";
-                                         $("#"+insertTarget).insertAtCaret(imageCode);
+                                         $($insertField).insertAtCaret(imageCode);
                                         }
-                                       $('#modal_image').modal('hide'); });
+                                       $('#modal_image').modal('hide');
+                                     });
 });
 </script>

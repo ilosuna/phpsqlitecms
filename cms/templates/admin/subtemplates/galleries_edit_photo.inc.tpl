@@ -30,7 +30,7 @@
 <div class="input-group">
 <input id="photo_thumbnail" class="form-control form-control" type="text" name="photo_thumbnail" value="<?php if(isset($photo_data['photo_thumbnail'])) echo $photo_data['photo_thumbnail']; ?>">
 <span class="input-group-btn">
-<a class="btn btn-default modal-invoker" href="index.php?mode=modal&action=insert_raw_image" data-toggle="modal" data-target="#modal_raw_image" data-input="photo_thumbnail" data-keyboard="true" title="<?php echo $lang['select_image']; ?>"><span class="glyphicon glyphicon-search"></a>
+<a class="btn btn-default" href="index.php?mode=modal&action=insert_raw_image" data-toggle="modal" data-target="#modal_raw_image" data-insert="#photo_thumbnail" data-keyboard="true" title="<?php echo $lang['select_image']; ?>"><span class="glyphicon glyphicon-search"></a>
 </span>
 </div>
 
@@ -43,7 +43,7 @@
 <div class="input-group">
 <input id="photo_normal" class="form-control" type="text" name="photo_normal" value="<?php if(isset($photo_data['photo_normal'])) echo $photo_data['photo_normal']; ?>">
 <span class="input-group-btn">
-<a class="btn btn-default modal-invoker" href="index.php?mode=modal&action=insert_raw_image" data-toggle="modal" data-target="#modal_raw_image" data-input="photo_normal" data-keyboard="true" title="<?php echo $lang['select_image']; ?>"><span class="glyphicon glyphicon-search"></a>
+<a class="btn btn-default modal-invoker" href="index.php?mode=modal&action=insert_raw_image" data-toggle="modal" data-target="#modal_raw_image" data-insert="#photo_normal" data-keyboard="true" title="<?php echo $lang['select_image']; ?>"><span class="glyphicon glyphicon-search"></a>
 </span>
 </div>
 </div>
@@ -89,5 +89,9 @@
 
 <?php endif; ?>
 
-<div class="modal fade" id="modal_raw_image" tabindex="-1"></div>
-
+<div class="modal fade" id="modal_raw_image" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+</div>
+</div>
+</div>

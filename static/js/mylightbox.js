@@ -15,6 +15,7 @@ myLightboxSettings['html_box'] = '<div id="mylightbox">\
 <div id="mylightbox-controls"><a href="#" id="mylightbox-close" title="'+myLightboxSettings['close_link_title']+'" onclick="return false"><span>'+myLightboxSettings['close_link']+'</span></a></div>\
 </div>\
 <div id="mylightbox-photo"></div>\
+<p id="mylightbox-subtitle"></p>\
 <p id="mylightbox-description"></p>\
 <p id="mylightbox-author"></p>\
 </div>';
@@ -121,6 +122,7 @@ function doit(e,t)
   var myLightboxLinks = new Array();
   var srcs = new Array();
   var titles = new Array();
+  var subtitles = new Array();
   var descriptions = new Array();
   var authors = new Array();
 
@@ -131,6 +133,7 @@ function doit(e,t)
     myLightboxLinks.push($(this));
     srcs.push($(this).attr('href'));
     titles.push($(this).find('img').attr('title'));
+    subtitles.push($(this).find('img').attr('data-subtitle'));
     descriptions.push($(this).find('img').attr('data-description'));
     authors.push($(this).find('img').attr('data-author'));
    });
@@ -138,6 +141,7 @@ function doit(e,t)
   var numberOfImages = myLightboxLinks.length;
   var src = srcs[mylightboxCurrent];
   var title = titles[mylightboxCurrent];
+  var subtitle = subtitles[mylightboxCurrent];
   var description = descriptions[mylightboxCurrent];
   var author = authors[mylightboxCurrent];
 
@@ -210,8 +214,28 @@ function doit(e,t)
     //$("#mylightbox-next").remove(); 
    }
     
+    if(subtitle)
+     {
+      $("#mylightbox-subtitle").html(subtitle);
+      $("#mylightbox-subtitle").show();
+     }
+    else
+     {
+      $("#mylightbox-subtitle").hide();
+     }
+
     $("#mylightbox-description").html(description);
-    $("#mylightbox-author").html(author);
+
+    if(author)
+     {
+      $("#mylightbox-author").html(author);
+      $("#mylightbox-author").show();
+     }
+    else
+     {
+      $("#mylightbox-author").hide();
+     }      
+
     $("#mylightbox-photo").fadeIn("fast");
 
     myLightboxCurrentWidth = objImagePreloader.width;

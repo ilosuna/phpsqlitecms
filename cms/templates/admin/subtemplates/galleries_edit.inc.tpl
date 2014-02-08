@@ -27,7 +27,7 @@
  <tbody data-sortable="<?php echo BASE_URL; ?>cms/?mode=galleries&amp;reorder_photos=true">
   <?php $i=0; foreach($items as $item): ?>
   <tr id="item_<?php echo $item['id']; ?>">
-   <td><a class="thumbnail" href="<?php echo BASE_URL.MEDIA_DIR.$item['photo_normal']; ?>" data-lightbox><img id="photo<?php echo $item['id']; ?>" src="<?php echo BASE_URL.MEDIA_DIR.$item['photo_thumbnail']; ?>" alt="<?php echo $item['title']; ?>" /></a></td>
+   <td><a class="thumbnail" href="<?php echo BASE_URL.MEDIA_DIR.$item['photo_normal']; ?>" data-lightbox><img id="photo<?php echo $item['id']; ?>" src="<?php echo BASE_URL.MEDIA_DIR.$item['photo_thumbnail']; ?>" title="<?php echo htmlspecialchars($item['title']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>" data-subtitle="<?php echo htmlspecialchars($item['subtitle']); ?>" data-description="<?php echo htmlspecialchars($item['description']); ?>" /></a></td>
    <td><?php echo $item['title']; ?></td>
    <td><?php echo $item['subtitle']; ?></td>
    <td><?php echo $item['description']; ?></td>
