@@ -172,8 +172,8 @@ $lang['edit_permission'] =               'Authorized editors:';
 $lang['edit_permission_general'] =       'all editors are authorized to edit this page';
 $lang['invalid_edit_auth_list'] =        'please check the edit authorization list - it had to be cleared due to inexistent users';
 $lang['status'] =                        'Status:';
-$lang['status_puplished_searchable'] =   'puplished and searchable';
-$lang['status_puplished'] =              'puplished';
+$lang['status_published_searchable'] =   'published and searchable';
+$lang['status_published'] =              'published';
 $lang['status_draft'] =                  'draft';
 $lang['optional'] =                      '(optional)';
 
