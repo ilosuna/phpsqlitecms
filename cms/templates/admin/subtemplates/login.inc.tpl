@@ -18,7 +18,7 @@
 <input id="pw" type="password" name="userpw" class="form-control" />
 </div>
 
-<input type="submit" class="btn btn-large btn-primary" value="<?php echo $lang['login_submit']; ?>" />
+<input type="submit" class="btn btn-lg btn-primary" value="<?php echo $lang['login_submit']; ?>" />
 
 </fieldset>
 </form>

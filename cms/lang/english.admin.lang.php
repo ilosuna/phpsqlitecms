@@ -50,7 +50,7 @@ $lang['login'] =                         'Log in';
 $lang['login_failed'] =                  'User unknown or password wrong';
 $lang['login_username'] =                'Name:';
 $lang['login_password'] =                'Password:';
-$lang['login_submit'] =                  'log in';
+$lang['login_submit'] =                  'Log in';
 
 # content
 $lang['edit_wysiwyg_mode'] =             'WYSIWYG mode';
