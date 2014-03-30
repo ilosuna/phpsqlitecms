@@ -55,8 +55,7 @@ function get_base_url($cut=false)
    {
     $protocol = 'http://';
    }
-  $base_url = $protocol . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
-  if(substr($base_url, -1) != '/') $base_url = $base_url.'/';
+  $base_url = $protocol . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\') . '/';
   if($cut)
    {
     $pos = strrpos($base_url, $cut);
@@ -75,7 +74,7 @@ function get_base_path($cut=false)
    {
     return $settings['base_path'];
    }
-  $base_path = dirname($_SERVER['SCRIPT_FILENAME']) . '/';
+  $base_path = dirname($_SERVER['SCRIPT_FILENAME']) . DIRECTORY_SEPARATOR;
   if($cut)
    {
     $pos = strrpos($base_path, $cut);

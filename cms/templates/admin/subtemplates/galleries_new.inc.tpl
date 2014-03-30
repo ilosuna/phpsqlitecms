@@ -5,14 +5,7 @@
 
 <h1><?php echo $lang['new_gallery']; ?></h1>
 
-<?php if(isset($errors)): ?>
-<p class="caution"><?php echo $lang['error_headline']; ?></p>
-<ul>
- <?php foreach($errors as $error): ?>
- <li><?php if(isset($lang[$error])) echo $lang[$error]; else echo $error; ?></li>
- <?php endforeach; ?>
-</ul>
-<?php endif; ?>
+<?php include('errors.inc.tpl'); ?>
 
 <form action="index.php" method="post">
  <div>

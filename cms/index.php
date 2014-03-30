@@ -47,9 +47,6 @@ try
    }
 
   define('VALID_URL_CHARACTERS', '/^[a-zA-Z0-9._\-\/]+$/');
-  #define('VALID_URL_CHARACTERS', '/.*/');
-  #define('VALID_URL_CHARACTERS', '/^[\p{Cyrillic}a-zA-Z0-9._\-\/]+$/u');
-
   define('ADMIN_DIR', 'cms/');
   define('MEDIA_DIR', 'static/media/');
   define('CACHE_DIR', 'cms/cache/');

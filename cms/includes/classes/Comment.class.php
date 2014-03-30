@@ -321,7 +321,7 @@ class Comment
          {
           $this->errors[] = 'error_not_accepted_words';
           #$this->assign_lang_placeholder('not_accepted_words', $not_accepted_words_listing, 'error_not_accepted_words');
-          $this->_localization->replacePlaceholder('not_accepted_words', $not_accepted_wordss_listing, 'error_not_accepted_words');
+          $this->_localization->replacePlaceholder('not_accepted_words', $not_accepted_words_listing, 'error_not_accepted_words');
          }
        }
       if(empty($data['name']))
@@ -340,9 +340,9 @@ class Comment
        {
         $this->errors[] = 'comment_error_email_hp_too_long';
        }
-      if(!empty($data['email_hp']) && strpos($data['email_hp'], '.')===false)
+      if(!empty($data['email_hp']))
        {
-        $this->errors[] = 'comment_error_email_hp_invalid';
+        if(strpos($data['email_hp'], ' ')!==false || strpos($data['email_hp'], '.')===false) $this->errors[] = 'comment_error_email_hp_invalid';
        }
       if(mb_strlen($data['comment_text']) > $this->comment_maxlength)
        {
@@ -367,7 +367,7 @@ class Comment
          {
           $this->errors[] = 'comment_error_too_long_word';
           #$this->assign_lang_placeholder('word', $too_long_words_listing, 'comment_error_too_long_word');
-          $this->_localization->replacePlaceholder('word', $too_long_word_listing, 'comment_error_too_long_word');
+          $this->_localization->replacePlaceholder('word', $too_long_words_listing, 'comment_error_too_long_word');
          }
         else
          {

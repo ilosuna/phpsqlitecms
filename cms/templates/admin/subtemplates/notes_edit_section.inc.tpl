@@ -36,6 +36,6 @@
 
 <?php else: ?>
 
-<p><em><?php echo $lang['no_notes']; ?></em></p>
+<div class="alert alert-warning"><?php echo $lang['no_notes']; ?></div>
 
 <?php endif; ?>

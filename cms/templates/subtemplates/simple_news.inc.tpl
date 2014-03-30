@@ -1,12 +1,15 @@
 <?php if(isset($edit_news)): ?>
 
 <?php if(isset($errors)): ?>
-<h2 class="caution"><?php echo $lang['error_headline']; ?></h2>
+<div class="alert alert-danger">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h3><span class="glyphicon glyphicon-warning-sign"></span> <strong><?php echo $lang['error_headline']; ?></strong></h3>
 <ul class="errors">
- <?php foreach($errors as $error): ?>
- <li><?php if(isset($lang[$error])) echo $lang[$error]; else echo $error; ?></li>
- <?php endforeach; ?>
+<?php foreach($errors as $error): ?>
+<li><?php if(isset($lang[$error])) echo $lang[$error]; else echo $error; ?></li>
+<?php endforeach; ?>
 </ul>
+</div>
 <?php endif; ?>
 
 <form class="form-horizontal" action="<?php echo BASE_URL . PAGE; ?>" method="post">

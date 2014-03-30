@@ -246,6 +246,7 @@ $lang['notes_text_hl'] =                 'Текст';
 $lang['notes_link_hl'] =                 'Ссылка';
 $lang['notes_overview'] =                'Обзор заметок';
 $lang['delete_note_section'] =           'Удалить раздел заметок';
+$lang['delete_this_note_section'] =      'Do you really want to delete this note section?';
 $lang['delete_note_section_confirm'] =   'Действительно удалить раздел заметок "[note_section]"?';
 $lang['delete_note_section_submit'] =    'OK - Удалить';
 $lang['error_note_sect_name_invalid'] =  'Недопустимое имя раздела (например, содержит пробелы или спецсимволы)';

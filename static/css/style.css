@@ -44,8 +44,7 @@ a.thumbnail:hover { opacity:0.9; }
 
 .header .nav > li > a {  padding: 7px 15px; }
 
-.alert h3        { margin:0; }
-.alert-danger h3 { color:#b94a48; }
+.alert h3   { margin:0 0 10px 0; }
 
 .overview h2 a   { color:#333; text-decoration:none; }
 
@@ -100,7 +99,7 @@ a.pdf                         { padding-left:23px; background-image:url(../img/p
  }
  
 #mylightbox-background        { display:none; position:fixed; height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:2000; }
-#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:5px 5px 20px #000; }
+#mylightbox                   { width:400px; display:none; position:absolute; background:#fff; z-index:2000; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; border-radius:5px; max-width:90%; height:auto; box-shadow:0 0 20px #000; }
 #mylightbox img               { max-width:100%; height:auto; }
 #mylightbox-header            { height:25px; font-size:13px; line-height:20px; padding:0 0 10px 0; }
 #mylightbox-title             { position:absolute; top:3px; left:10px; width:90%; margin:0; padding:0; font-weight:bold; }

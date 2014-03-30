@@ -1,7 +1,7 @@
 <?php
 if(!defined('IN_INDEX')) exit;
 
-if (isset($_SESSION[$settings['session_prefix'].'user_id']))
+if(isset($_SESSION[$settings['session_prefix'].'user_id']))
  {
   $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'main';
 

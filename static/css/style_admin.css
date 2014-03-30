@@ -2,6 +2,8 @@ body {  padding-top:70px; padding-bottom:50px; }
 
 .login-form { max-width:350px; }
 
+.alert h3   { margin:0 0 10px 0; }
+
 .nav-tabs a  { outline:none; }
 .nav-tabs li.active a,
 .nav-tabs li.active a:active,

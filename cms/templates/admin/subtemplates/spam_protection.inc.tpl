@@ -22,13 +22,13 @@
 
 <div class="form-group">
 <label for="banned_ips"><?php echo $lang['banned_ips']; ?></label>
-<span class="help-block"><?php echo $lang['not_accepted_words_desc']; ?></span>
+<span class="help-block"><?php echo $lang['banned_ips_desc']; ?></span>
 <textarea id="banned_ips" class="form-control" name="banned_ips" rows="7"><?php if(isset($banned_ips)) echo stripslashes($banned_ips);  ?></textarea>
 </div>
 
 <div class="form-group">
 <label for="banned_user_agents"><?php echo $lang['banned_user_agents']; ?></label>
-<span class="help-block"><?php echo $lang['not_accepted_words_desc']; ?></span>
+<span class="help-block"><?php echo $lang['banned_user_agents_desc']; ?></span>
 <textarea id="banned_user_agents" class="form-control" name="banned_user_agents" rows="7"><?php if(isset($banned_user_agents)) echo stripslashes($banned_user_agents);  ?></textarea>
 </div>
 

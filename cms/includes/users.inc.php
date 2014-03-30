@@ -116,21 +116,15 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
       $new_pw = $_POST['new_pw'];
       $new_pw_r = $_POST['new_pw_r'];
       $type = intval($_POST['type']);
-
-      if(empty($_POST['id']) || trim($_POST['name'])=='')
-       {
-        $errors[] = 'error_form_uncomplete';
-       }
+      if(empty($_POST['id']) || trim($_POST['name'])=='') $errors[] = 'error_form_uncomplete';
       if(empty($errors))
        {
-        $dbr = Database::$userdata->prepare("SELECT COUNT(*) FROM ".Database::$db_settings['userdata_table']." WHERE lower(name)=:name AND id!=:id LIMIT 1");
+        $dbr = Database::$userdata->prepare("SELECT COUNT(*) FROM ".Database::$db_settings['userdata_table']." WHERE LOWER(name)=LOWER(:name) AND id!=:id LIMIT 1");
         $dbr->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
-        $dbr->bindValue(':name', mb_strtolower(trim($_POST['name']), CHARSET), PDO::PARAM_INT);
+        $dbr->bindParam(':name', $name, PDO::PARAM_STR);
         $dbr->execute();
-        if($dbr->fetchColumn()!=0)
-         {
-          $errors[] = 'error_username_alr_exists';
-         }
+        list($name_count) = $dbr->fetch();
+        if($name_count) $errors[] = 'error_username_alr_exists';
        }
       if(empty($errors))
        {

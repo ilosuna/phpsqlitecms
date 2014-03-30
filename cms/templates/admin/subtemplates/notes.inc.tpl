@@ -22,7 +22,7 @@
  <tr>
   <td><?php echo $note_section; ?></td>
   <td class="nobreak options"><a class="btn btn-primary btn-xs" href="index.php?mode=notes&amp;edit=<?php echo $note_section; ?>" title="<?php echo $lang['edit']; ?>"><span class="glyphicon glyphicon-pencil"></span></a>
-  <a class="btn btn-danger btn-xs" href="index.php?mode=notes&amp;delete=<?php echo $note_section; ?>" title="<?php echo $lang['delete']; ?>" data-delete-confirm="<?php echo rawurlencode($lang['delete_note_section_confirm']); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+  <a class="btn btn-danger btn-xs" href="index.php?mode=notes&amp;delete=<?php echo $note_section; ?>" title="<?php echo $lang['delete']; ?>" data-delete-confirm="<?php echo rawurlencode($lang['delete_this_note_section']); ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
  </tr>
  <?php $i++; endforeach; ?>
  <tbody>
