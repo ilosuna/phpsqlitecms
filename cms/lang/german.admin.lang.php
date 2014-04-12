@@ -53,8 +53,9 @@ $lang['login_password'] =                'Passwort:';
 $lang['login_submit'] =                  'Login';
 
 # content
-$lang['enable_wysiwyg_editor'] =         'WYSIWYG-Editor';
-$lang['disable_wysiwyg_editor'] =        'Quelltext';
+$lang['wysiwyg_label'] =                 'WYSIWYG';
+$lang['enable_wysiwyg_editor'] =         'WYSIWYG-Editor aktivieren';
+$lang['disable_wysiwyg_editor'] =        'WYSIWYG-Editor deaktivieren';
 $lang['change_edit_mode_notice'] =       'Achtung! Aktuelle Änderungen werden beim Umschalten nicht übernommen!';
 $lang['values_comma_separated'] =        'mehrere Werte durch Komma getrennt';
 $lang['page_overview'] =                 'Seitenübersicht';
@@ -430,8 +431,6 @@ $lang['settings_index_page'] =           'Hauptseite';
 $lang['settings_error_page'] =           'Fehlerseite';
 $lang['default_page_language'] =         'Standard-Sprache für Seiten';
 $lang['admin_language'] =                'Administrations-Sprache';
-$lang['wysiwyg_editor'] =                'WYSIWYG-Editor';
-$lang['wysiwyg_editor_enabled'] =        'WYSIWYG-Editor aktiviert';
 $lang['settings_caching'] =              'Caching';
 $lang['settings_caching_enabled'] =      'Caching aktiviert';
 $lang['settings_name'] =                 'Name';

@@ -46,7 +46,7 @@
 <script src="<?php echo JQUERY; ?>"></script>
 <script src="<?php echo JQUERY_UI; ?>"></script>
 <script src="<?php echo BOOTSTRAP; ?>"></script>
-<?php if($settings['wysiwyg_editor'] && !empty($wysiwyg)): ?>
+<?php if(isset($wysiwyg)): ?>
 <script src="<?php echo WYSIWYG_EDITOR; ?>"></script>
 <script src="<?php echo WYSIWYG_EDITOR_INIT; ?>"></script>
 <?php endif; ?>

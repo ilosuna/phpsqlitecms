@@ -53,8 +53,9 @@ $lang['login_password'] =                'Password:';
 $lang['login_submit'] =                  'Log in';
 
 # content
-$lang['enable_wysiwyg_editor'] =         'WYSIWYG editor';
-$lang['disable_wysiwyg_editor'] =        'Source code';
+$lang['wysiwyg_label'] =                 'WYSIWYG';
+$lang['enable_wysiwyg_editor'] =         'Enable WYSIWYG editor';
+$lang['disable_wysiwyg_editor'] =        'Disable WYSIWYG editor';
 $lang['change_edit_mode_notice'] =       'Caution! Current changes will not be saved when switching edit mode!';
 $lang['values_comma_separated'] =        'several values separated by comma';
 $lang['page_overview'] =                 'Page overview';
@@ -430,8 +431,6 @@ $lang['settings_index_page'] =           'Main page';
 $lang['settings_error_page'] =           'Error page';
 $lang['default_page_language'] =         'Default page language';
 $lang['admin_language'] =                'Administration language';
-$lang['wysiwyg_editor'] =                'WYSIWYG editor';
-$lang['wysiwyg_editor_enabled'] =        'WYSIWYG editor enabled';
 $lang['settings_caching'] =              'Caching';
 $lang['settings_caching_enabled'] =      'caching enabled';
 $lang['settings_name'] =                 'Name';

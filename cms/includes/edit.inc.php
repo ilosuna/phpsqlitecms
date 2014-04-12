@@ -5,23 +5,9 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
  {
   $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'main';
 
-  if($settings['wysiwyg_editor'] && isset($_SESSION[$settings['session_prefix'].'wysiwyg']) && $_SESSION[$settings['session_prefix'].'wysiwyg']==1)
-   {
-    $wysiwyg_opt = true;
-    $wysiwyg = true;
-   }
-  elseif(!empty($settings['wysiwyg_editor']))
-   {
-    $wysiwyg_opt = true;
-    $wysiwyg = false;
-   }
-  else
-   {
-    $wysiwyg_opt = false;
-    $wysiwyg = false;
-   }
+  if(isset($_SESSION[$settings['session_prefix'].'wysiwyg']) && $_SESSION[$settings['session_prefix'].'wysiwyg']==1) $wysiwyg = true;
 
-  if($wysiwyg_opt && isset($_REQUEST['enable_wysiwyg']))
+  if(isset($_REQUEST['enable_wysiwyg']))
    {
     $wysiwyg = true;
     $dbr = Database::$userdata->prepare("UPDATE ".Database::$db_settings['userdata_table']." SET wysiwyg=1 WHERE id=:id");
@@ -29,19 +15,16 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
     $dbr->execute();
     $_SESSION[$settings['session_prefix'].'wysiwyg'] = 1;
    }
-  if($wysiwyg_opt && isset($_REQUEST['disable_wysiwyg']))
+  if(isset($_REQUEST['disable_wysiwyg']))
    {
-    $wysiwyg = false;
+    unset($wysiwyg);
     $dbr = Database::$userdata->prepare("UPDATE ".Database::$db_settings['userdata_table']." SET wysiwyg=0 WHERE id=:id");
     $dbr->bindParam(':id', $_SESSION[$settings['session_prefix'].'user_id'], PDO::PARAM_INT);
     $dbr->execute();
     $_SESSION[$settings['session_prefix'].'wysiwyg'] = 0;
    }
-
-  $template->assign('wysiwyg_opt',$wysiwyg_opt);
-  $template->assign('wysiwyg',$wysiwyg);
-
-  #if($wysiwyg) include('./modules/fckeditor/fckeditor.php');
+   
+  if(isset($wysiwyg)) $template->assign('wysiwyg', true);
 
   include(BASE_PATH.'cms/config/page_types.conf.php');
   $template->assign('page_types',$page_types);

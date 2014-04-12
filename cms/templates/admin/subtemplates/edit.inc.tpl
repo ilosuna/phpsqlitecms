@@ -52,32 +52,21 @@
 </div>
 </div>
 
-<?php /*if(!$wysiwyg): ?>
-<div class="form-group">
-<label for="headline" class="col-lg-1 control-label control-label-left"><?php echo $lang['edit_headline_marking']; ?></label>
-<div class="col-lg-11">
-<input id="headline" type="text" name="headline" value="<?php if(isset($page_data['headline'])) echo $page_data['headline']; ?>" size="50" class="form-control" />
-</div>
-</div>
-<?php endif;*/ ?>
-
 <div class="form-group">
 <div class="col-lg-12">
 <label for="content"><?php echo $lang['edit_content_marking']; ?></label>
 
-<?php if($wysiwyg_opt): ?>
-<?php if($wysiwyg): ?>
-<a id="wysiwyg-toggle" class="btn btn-default btn-xs pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;disable_wysiwyg=true" title="<?php echo $lang['disable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a>
+<?php if(isset($wysiwyg)): ?>
+<a id="wysiwyg-toggle" class="btn btn-default btn-xs active pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;disable_wysiwyg=true" title="<?php echo $lang['disable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><?php echo $lang['wysiwyg_label']; ?></a>
 <?php else: ?>
-<a id="wysiwyg-toggle" class="btn btn-info btn-xs pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;enable_wysiwyg=true" title="<?php echo $lang['enable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a>
-<?php endif; ?>
+<a id="wysiwyg-toggle" class="btn btn-default btn-xs pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;enable_wysiwyg=true" title="<?php echo $lang['enable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><?php echo $lang['wysiwyg_label']; ?></a>
 <?php endif; ?>
 
 <textarea id="content" name="content" cols="100" rows="28" class="form-control html"><?php if(isset($page_data['content'])) echo $page_data['content']; ?></textarea>
 </div>
 </div>
 
-<?php if(!$wysiwyg): ?>
+<?php if(empty($wysiwyg)): ?>
 <div class="form-group">
 <div class="col-lg-12">
 <a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_image" data-toggle="modal" data-target="#modal_image" data-insert="#content" title="<?php echo $lang['insert_image_label']; ?>"><span class="glyphicon glyphicon-picture"></span></a>
@@ -109,11 +98,6 @@
 <textarea id="sidebar_2" name="sidebar_2" cols="70" rows="13" class="form-control html"><?php if(isset($page_data['sidebar_1'])) echo $page_data['sidebar_2']; ?></textarea>
 </div>
 </div>
-<!--<div class="checkbox">
-<label for="sidebar_2_formatting">
-<input id="sidebar_2_formatting" type="checkbox" name="sidebar_2_formatting" value="1"<?php if(isset($page_data['sidebar_2_formatting']) && $page_data['sidebar_2_formatting']==1): ?> checked="checked"'<?php endif; ?> /> <?php echo $lang['edit_formatting']; ?>
-</label>
-</div>-->
 
 <div class="form-group">
 <div class="col-lg-12">
@@ -121,15 +105,8 @@
 <textarea id="sidebar_3" name="sidebar_3" cols="70" rows="13" class="form-control html"><?php if(isset($page_data['sidebar_1'])) echo $page_data['sidebar_3']; ?></textarea>
 </div>
 </div>
-<!--<div class="checkbox">
-<label for="sidebar_3_formatting">
-<input id="sidebar_3_formatting" type="checkbox" name="sidebar_3_formatting" value="1"<?php if(isset($page_data['sidebar_3_formatting']) && $page_data['sidebar_3_formatting']==1): ?> checked="checked"'<?php endif; ?> /> <?php echo $lang['edit_formatting']; ?>
-</label>
-</div>-->
 
 </div>
-
-
 
 <div class="tab-pane fade" id="properties">
 
@@ -383,13 +360,6 @@
 <label for="teaser" class="col-lg-2 control-label"><?php echo $lang['edit_teaser_marking']; ?></label>
 <div class="col-lg-9">
 <textarea id="teaser" name="teaser" cols="75" rows="13" class="form-control"><?php if(isset($page_data['teaser'])) echo $page_data['teaser']; ?></textarea>
-<?php /*
-<div class="checkbox">
-<label for="teaser_formatting">
-<input id="teaser_formatting" type="checkbox" name="teaser_formatting" value="1"<?php if(isset($page_data['teaser_formatting']) && $page_data['teaser_formatting']==1): ?> checked<?php endif; ?>> <?php echo $lang['edit_formatting']; ?>
-</label>
-</div>
-*/ ?>
 </div>
 </div>
 
@@ -428,7 +398,6 @@
 </div>     
 
 </div>
-     
 
 <div class="row">
 <div class="col-md-10">

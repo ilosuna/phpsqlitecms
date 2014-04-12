@@ -57,8 +57,9 @@ $lang['login_password'] =                'Пароль:';
 $lang['login_submit'] =                  'Войти';
 
 # content
-$lang['enable_wysiwyg_editor'] =         'WYSIWYG';
-$lang['disable_wysiwyg_editor'] =        'Text';
+$lang['wysiwyg_label'] =                 'WYSIWYG';
+$lang['enable_wysiwyg_editor'] =         'Включить визуальный редактор';
+$lang['disable_wysiwyg_editor'] =        'Отключить визуальный редактор';
 $lang['change_edit_mode_notice'] =       'Внимание! При смене режима все несохранённые изменения будут потеряны!';
 $lang['values_comma_separated'] =        'Перечислите значения через запятую';
 $lang['page_overview'] =                 'Страницы';
@@ -434,8 +435,6 @@ $lang['settings_index_page'] =           'Главная страница';
 $lang['settings_error_page'] =           'Страница ошибок';
 $lang['default_page_language'] =         'Язык по умолчанию';
 $lang['admin_language'] =                'Язык Админ-центра';
-$lang['wysiwyg_editor'] =                'Визуальный редактор';
-$lang['wysiwyg_editor_enabled'] =        'Визуальный редактор разрешён';
 $lang['settings_caching'] =              'Кэширование';
 $lang['settings_caching_enabled'] =      'Кэширование разрешено';
 $lang['settings_name'] =                 'Имя';

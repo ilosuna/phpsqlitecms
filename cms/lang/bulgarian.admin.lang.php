@@ -58,6 +58,7 @@ $lang['login_password'] =                'Парола:';
 $lang['login_submit'] =                  'Вход';
 
 # content
+$lang['wysiwyg_label'] =                 'WYSIWYG';
 $lang['enable_wysiwyg_editor'] =         'WYSIWYG режим';
 $lang['disable_wysiwyg_editor'] =        'Text режим';
 $lang['change_edit_mode_notice'] =       'Внимание! Настоящите промени няма да бъдат съхранени при смяна на режима на редактиране!';
@@ -435,8 +436,6 @@ $lang['settings_index_page'] =           'Начална страница';
 $lang['settings_error_page'] =           'Error страница';
 $lang['default_page_language'] =         'Език по подразбиране на страниците';
 $lang['admin_language'] =                'Език на административната част';
-$lang['wysiwyg_editor'] =                'WYSIWYG редактор';
-$lang['wysiwyg_editor_enabled'] =        'WYSIWYG редакторът е разрешен';
 $lang['settings_caching'] =              'Кеширане';
 $lang['settings_caching_enabled'] =      'кеширането е разрешено';
 $lang['settings_name'] =                 'Име';

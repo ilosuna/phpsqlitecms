@@ -3,9 +3,9 @@
  * phpSQLiteCMS - a simple and lightweight PHP web content management system
  * based on PHP and SQLite
  *
- * @author Mark Hoschek <alex at phpsqlitecms dot net>
- * @copyright Mark Hoschek 2013
- * @version 3
+ * @author Mark Hoschek < mail at mark-hoschek dot de >
+ * @copyright Mark Hoschek 2014
+ * @version 3.x
  * @link http://phpsqlitecms.net/
  * @package phpSQLiteCMS
  *

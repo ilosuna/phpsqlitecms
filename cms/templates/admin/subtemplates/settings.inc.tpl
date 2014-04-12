@@ -84,11 +84,6 @@
 
 <div class="form-group">
 <div class="col-md-offset-2 col-md-6">
-<div class="checkbox">
-<label for="wysiwyg_editor">
-<input id="wysiwyg_editor" type="checkbox" name="wysiwyg_editor" value="1"<?php if($settings['wysiwyg_editor']): ?> checked<?php endif; ?>> <?php echo $lang['wysiwyg_editor_enabled']; ?>
-</label>
-</div>
 
 <div class="checkbox">
 <label for="caching">
@@ -109,7 +104,7 @@
 
 <div class="form-group">
 <div class="col-md-offset-2 col-md-6">
-<button type="submit" class="btn btn-primary btn-strong" /><?php echo $lang['submit_button_ok']; ?></button>
+<button type="submit" class="btn btn-primary btn-strong"><?php echo $lang['submit_button_ok']; ?></button>
 <a class="btn btn-default" href="index.php?mode=settings&amp;action=advanced_settings"><?php echo $lang['advanced_settings']; ?></a>
 </div>
 </div>
