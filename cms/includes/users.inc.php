@@ -33,8 +33,9 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
     if(empty($errors))
      {
       $pw_hash = generate_pw_hash($_POST['pw']);
-      $dbr = Database::$userdata->prepare("INSERT INTO ".Database::$db_settings['userdata_table']." (name,type,pw,last_login) VALUES (:name,0,:pw,0)");
+      $dbr = Database::$userdata->prepare("INSERT INTO ".Database::$db_settings['userdata_table']." (name, type, wysiwyg, pw, last_login) VALUES (:name, 0, :wysiwyg, :pw, 0)");
       $dbr->bindValue(':name', trim($_POST['name']), PDO::PARAM_STR);
+      $dbr->bindParam(':wysiwyg', $settings['wysiwyg_editor'], PDO::PARAM_INT);
       $dbr->bindParam(':pw', $pw_hash, PDO::PARAM_STR);
       $dbr->execute();
       header('Location: '.BASE_URL.ADMIN_DIR.'index.php?mode=users');

@@ -11,6 +11,8 @@ body {  padding-top:70px; padding-bottom:50px; }
 .nav-tabs li.active a:hover  { background:#fafafa; }
 .tab-content { padding:20px; margin-bottom:20px; border:1px solid #ddd; border-top:none; background:#fafafa; }
 
+#wysiwyg-toggle {  }
+
 .label-block { font-size:14px; line-height:20px; display:block; }
 
 .form-control-inline { display:inline; width:inherit; }

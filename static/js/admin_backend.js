@@ -16,6 +16,11 @@ obj.scrollTop = scrollTop;
 
 $(function() {
 
+$("a[data-confirm-link]").click(function(e) { e.preventDefault();
+                                            message = $(this).data('confirm-link') ? decodeURIComponent($(this).data('confirm-link')) : 'Are you sure?';
+                                            var confirmed = confirm(decodeURIComponent(message));
+                                            if(confirmed) window.location.href = $(this).attr("href"); });
+
 $("a[data-delete-confirm]").click(function(e) { e.preventDefault();
                                             message = $(this).data('delete-confirm') ? decodeURIComponent($(this).data('delete-confirm')) : 'Delete?';
                                             $(this).parents("tr").addClass('danger');

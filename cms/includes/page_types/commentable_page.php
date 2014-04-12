@@ -100,7 +100,9 @@ elseif(isset($_POST['save']))
       $cache->clear(PAGE);
       $cache->clearRelated(PAGE);
      }
-    header('Location: '.BASE_URL.PAGE.'#comments');
+    if(!$settings['comment_order'] && $comment->total_pages>1) $comment_page_addition = ','.$comment->total_pages;
+    else $comment_page_addition = '';
+    header('Location: '.BASE_URL.PAGE.$comment_page_addition.'#comments');
     exit;
    }
  }

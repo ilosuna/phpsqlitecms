@@ -57,8 +57,8 @@ $lang['login_password'] =                'Пароль:';
 $lang['login_submit'] =                  'Войти';
 
 # content
-$lang['edit_wysiwyg_mode'] =             'WYSIWYG';
-$lang['edit_non_wysiwyg_mode'] =         'Text';
+$lang['enable_wysiwyg_editor'] =         'WYSIWYG';
+$lang['disable_wysiwyg_editor'] =        'Text';
 $lang['change_edit_mode_notice'] =       'Внимание! При смене режима все несохранённые изменения будут потеряны!';
 $lang['values_comma_separated'] =        'Перечислите значения через запятую';
 $lang['page_overview'] =                 'Страницы';

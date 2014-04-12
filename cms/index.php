@@ -46,17 +46,13 @@ try
     if(is_access_denied()) raise_error('403');
    }
 
-  define('VALID_URL_CHARACTERS', '/^[a-zA-Z0-9._\-\/]+$/');
   define('ADMIN_DIR', 'cms/');
-  define('MEDIA_DIR', 'static/media/');
   define('CACHE_DIR', 'cms/cache/');
-  define('IMAGE_IDENTIFIER', 'photo');
-  define('BASE_URL',get_base_url(ADMIN_DIR));
+  define('BASE_URL',get_base_url('cms/'));
   define('STATIC_URL', BASE_URL.'static/');
-  define('BASE_PATH',get_base_path(ADMIN_DIR));
-
-  define('WYSIWYG_EDITOR', 'cms/modules/tiny_mce/tiny_mce.js');
-  define('WYSIWYG_EDITOR_INIT', 'js/wysiwyg_init.js');
+  define('BASE_PATH',get_base_path('cms/'));
+  
+  require(BASE_PATH.'cms/config/definitions.conf.php');
 
   if($settings['caching'])
    {

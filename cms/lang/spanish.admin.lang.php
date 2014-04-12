@@ -55,8 +55,8 @@ $lang['login_password'] =                'Contraseña:';
 $lang['login_submit'] =                  'iniciar sesión';
 
 # content
-$lang['edit_wysiwyg_mode'] =             'Modo WYSIWYG';
-$lang['edit_non_wysiwyg_mode'] =         'Modo texto';
+$lang['enable_wysiwyg_editor'] =         'Modo WYSIWYG';
+$lang['disable_wysiwyg_editor'] =        'Modo texto';
 $lang['change_edit_mode_notice'] =       '¡Atención! ¡Los cambios actuales no se grabarán al cambiar el modo de edición!';
 $lang['values_comma_separated'] =        'varios valores separados por comas';
 $lang['page_overview'] =                 'Relación de páginas';

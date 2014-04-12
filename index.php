@@ -91,15 +91,9 @@ try
   define('BASE_URL', get_base_url());
   define('STATIC_URL', BASE_URL.'static/');
   define('BASE_PATH', get_base_path());
-  define('MEDIA_DIR', 'static/media/');
-  define('SMILIES_DIR', 'static/media/smilies/');
-  define('IMAGE_IDENTIFIER', 'photo');
-  define('CATEGORY_IDENTIFIER', 'category:');
-  define('AMPERSAND_REPLACEMENT', ':AMP:');
-
-  define('WYSIWYG_EDITOR', 'cms/modules/tiny_mce/tiny_mce.js');
-  define('WYSIWYG_EDITOR_INIT', 'js/wysiwyg_init_frontend.js');
-
+  
+  require(BASE_PATH.'cms/config/definitions.conf.php');
+  
   if($settings['content_functions']==1) require(BASE_PATH.'cms/includes/functions.content.inc.php');
 
   require('./cms/includes/classes/Template.class.php');

@@ -96,10 +96,10 @@ if(isset($_SESSION[$settings['session_prefix'].'user_type']) && $_SESSION[$setti
      $template->assign('subtemplate', 'settings.inc.tpl');
 
      // WYSIWYG editor available?
-     if(file_exists(BASE_PATH.WYSIWYG_EDITOR))
-      {
-       $template->assign('wysiwyg_editor_available', true);
-      }
+     #if(file_exists(BASE_PATH.WYSIWYG_EDITOR))
+     # {
+     #  $template->assign('wysiwyg_editor_available', true);
+     # }
 
     break;
     case 'advanced_settings';

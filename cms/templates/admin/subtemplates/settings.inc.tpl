@@ -85,11 +85,9 @@
 <div class="form-group">
 <div class="col-md-offset-2 col-md-6">
 <div class="checkbox">
-<?php if(isset($wysiwyg_editor_available)): ?>
 <label for="wysiwyg_editor">
 <input id="wysiwyg_editor" type="checkbox" name="wysiwyg_editor" value="1"<?php if($settings['wysiwyg_editor']): ?> checked<?php endif; ?>> <?php echo $lang['wysiwyg_editor_enabled']; ?>
 </label>
-<?php endif; ?>
 </div>
 
 <div class="checkbox">

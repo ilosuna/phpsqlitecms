@@ -2,7 +2,7 @@
 class Comment
  {
   public $comments_per_page = 10;
-  public $comment_order = 1;
+  public $comment_order = 0;
   public $name_maxlength = 100;
   public $email_hp_maxlength = 100;
   public $word_maxlength = 50;
@@ -81,8 +81,10 @@ class Comment
 
      if($this->total_comments > 0)
       {
+       if($this->comment_order) $order = 'DESC';
+       else $order = 'ASC';
        if($rss) $dbr = Database::$entries->prepare("SELECT id, time, name, email_hp, comment, ip FROM ".Database::$db_settings['comment_table']." WHERE type=:type AND comment_id=:comment_id AND comment!='' ORDER BY id ASC LIMIT ".$this->comments_per_page);
-       else $dbr = Database::$entries->prepare("SELECT id, time, name, email_hp, comment, ip FROM ".Database::$db_settings['comment_table']." WHERE type=:type AND comment_id=:comment_id AND comment!='' ORDER BY id DESC LIMIT ".$this->comments_per_page." OFFSET ".(intval($this->current_page)-1)*$this->comments_per_page);
+       else $dbr = Database::$entries->prepare("SELECT id, time, name, email_hp, comment, ip FROM ".Database::$db_settings['comment_table']." WHERE type=:type AND comment_id=:comment_id AND comment!='' ORDER BY id ".$order." LIMIT ".$this->comments_per_page." OFFSET ".(intval($this->current_page)-1)*$this->comments_per_page);
        $dbr->bindParam(':type', $this->type, PDO::PARAM_INT);
        $dbr->bindParam(':comment_id', $this->comment_id, PDO::PARAM_INT);
        $dbr->execute();
@@ -108,7 +110,8 @@ class Comment
             }
           }
          $comments[$i]['id'] = $data['id'];
-         $comments[$i]['nr'] = $this->total_comments + 1 - ($nr + ($this->current_page-1) * $this->comments_per_page);
+         if($this->comment_order) $comments[$i]['nr'] = $this->total_comments + 1 - ($nr + ($this->current_page-1) * $this->comments_per_page);
+         else $comments[$i]['nr'] = ($nr + ($this->current_page-1) * $this->comments_per_page);
          $comments[$i]['name'] = htmlspecialchars($data['name']);
          $comments[$i]['time'] = $data['time'];
          #$comments[$i]['formated_time'] = format_time(TIME_FORMAT_FULL,$data['time']);
@@ -123,7 +126,7 @@ class Comment
         } // end foreach
 
        // reverse array for ascending order:
-       if($this->comment_order == 1) $comments = array_reverse($comments);
+       #if($this->comment_order == 1) $comments = array_reverse($comments);
 
        $this->_localization->replacePlaceholder('total_comments', $this->total_comments, 'comments_pagination_info');
        $this->_localization->replacePlaceholder('current_page', $this->current_page, 'comments_pagination_info');
@@ -172,7 +175,7 @@ class Comment
         } // end foreach
 
        // reverse array for ascending order:
-       if($this->comment_order == 1 && isset($pingbacks)) $pingbacks = array_reverse($pingbacks);
+       #if($this->comment_order == 1 && isset($pingbacks)) $pingbacks = array_reverse($pingbacks);
 
 
     #$this->form_values = $this->get_form_values();
@@ -233,6 +236,13 @@ class Comment
           $mail->set_charset(CHARSET);
           $mail->send($this->settings['email'], $this->settings['email'], Localization::$lang['comment_notification_subject'], Localization::$lang['comment_notification_message'], $this->settings['mail_parameter']);
          }
+        
+        // count comments:
+        $this->total_comments = $this->count_comments($this->comment_id);
+
+        $this->total_pages = ceil($this->total_comments / $this->comments_per_page);
+        if($this->current_page>$this->total_pages) $this->current_page = $this->total_pages;        
+        
         return true;
       }
      }

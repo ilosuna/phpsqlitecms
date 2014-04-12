@@ -19,7 +19,7 @@
 <h1><?php echo $lang['create_new_page_headline']; ?></h1>
 <?php endif; ?>
 </div>
-<div class="col-md-2"><button class="btn btn-lg btn-success btn-top pull-right" /><span class="glyphicon glyphicon-save"></span> <?php echo $lang['edit_page_submit']; ?></button></div>
+<div class="col-md-2"><button class="btn btn-lg btn-success btn-top pull-right"><span class="glyphicon glyphicon-save"></span> <?php echo $lang['edit_page_submit']; ?></button></div>
 </div>
 
 <?php include('errors.inc.tpl'); ?>
@@ -64,29 +64,28 @@
 <div class="form-group">
 <div class="col-lg-12">
 <label for="content"><?php echo $lang['edit_content_marking']; ?></label>
-<textarea id="content" name="content" cols="100" rows="28" class="form-control html"><?php if(isset($page_data['content'])) echo $page_data['content']; ?></textarea>
-<?php /*if($wysiwyg): ?>
-<input type="hidden" name="content_formatting" value="0" />
-<input type="hidden" name="he<div class="form-group">
-<div class="col-lg-12">adline" value="" />
+
+<?php if($wysiwyg_opt): ?>
+<?php if($wysiwyg): ?>
+<a id="wysiwyg-toggle" class="btn btn-default btn-xs pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;disable_wysiwyg=true" title="<?php echo $lang['disable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a>
 <?php else: ?>
-<div class="checkbox">
-<label for="content_formatting">
-<input id="content_formatting" type="checkbox" name="content_formatting" value="1"<?php if(isset($page_data['content_formatting']) && $page_data['content_formatting']==1): ?> checked="checked"'<?php endif; ?> /> <?php echo $lang['edit_formatting']; ?>
-</label>
-</div>
-<?php endif;*/ ?>
+<a id="wysiwyg-toggle" class="btn btn-info btn-xs pull-right" href="index.php?mode=edit<?php if(isset($page_data['id'])): ?>&amp;id=<?php echo $page_data['id']; ?><?php endif; ?>&amp;enable_wysiwyg=true" title="<?php echo $lang['enable_wysiwyg_editor']; ?>" data-confirm-link="<?php echo rawurlencode($lang['change_edit_mode_notice']); ?>"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-right"></span></a>
+<?php endif; ?>
+<?php endif; ?>
+
+<textarea id="content" name="content" cols="100" rows="28" class="form-control html"><?php if(isset($page_data['content'])) echo $page_data['content']; ?></textarea>
 </div>
 </div>
 
+<?php if(!$wysiwyg): ?>
 <div class="form-group">
 <div class="col-lg-12">
-<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_image" data-toggle="modal" data-target="#modal_image" data-insert="#content" title="<?php echo $lang['insert_image_label']; ?>"><span class="glyphicon glyphicon-picture"></a>
-<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_thumbnail" data-toggle="modal" data-target="#modal_thumbnail" data-insert="#content" title="<?php echo $lang['insert_thumbnail_label']; ?>"><span class="glyphicon glyphicon-hand-left"></a>
-<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_gallery" data-toggle="modal" data-target="#modal_gallery" data-insert="#content" title="<?php echo $lang['insert_gallery_label']; ?>"><span class="glyphicon glyphicon-th"></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_image" data-toggle="modal" data-target="#modal_image" data-insert="#content" title="<?php echo $lang['insert_image_label']; ?>"><span class="glyphicon glyphicon-picture"></span></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_thumbnail" data-toggle="modal" data-target="#modal_thumbnail" data-insert="#content" title="<?php echo $lang['insert_thumbnail_label']; ?>"><span class="glyphicon glyphicon-hand-left"></span></a>
+<a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_gallery" data-toggle="modal" data-target="#modal_gallery" data-insert="#content" title="<?php echo $lang['insert_gallery_label']; ?>"><span class="glyphicon glyphicon-th"></span></a>
 </div>
 </div>
-
+<?php endif; ?>
 
 </div>
 
@@ -216,7 +215,7 @@
 <div class="col-lg-10">
       <?php for($i=0;$i<$settings['breadcrumbs'];++$i): ?>
       <select id="breadcrumbs_<?php echo $i; ?>" name="breadcrumbs[]" size="1" class="form-control form-control-inline form-control-small">
-       <option value=""<?php if(empty($page_data['breadcrumbs'][$i])): ?> selected="selected"<?php endif; ?>></option>
+       <option value=""<?php if(empty($page_data['breadcrumbs'][$i])): ?> selected="selected"<?php endif; ?>>&nbsp;</option>
        <?php foreach($pages as $breadcrumb_page): ?>
        <option value="<?php echo $breadcrumb_page['id']; ?>"<?php if(isset($page_data['breadcrumbs'][$i]) && $page_data['breadcrumbs'][$i]==$breadcrumb_page['id']): ?> selected="selected"<?php endif; ?>><?php echo $breadcrumb_page['page']; ?></option>
        <?php endforeach; ?>
@@ -234,9 +233,9 @@
 </div>
 
 <div class="form-group">
-<label for="" class="col-lg-2 control-label"><?php echo $lang['edit_keywords_marking']; ?></label>
+<label for="keywords" class="col-lg-2 control-label"><?php echo $lang['edit_keywords_marking']; ?></label>
 <div class="col-lg-10">
-<input type="text" name="keywords" value="<?php if(isset($page_data['keywords'])) echo $page_data['keywords']; ?>" placeholder="<?php echo $lang['values_comma_separated']; ?>" size="60" class="form-control form-control-large" />
+<input id="keywords" type="text" name="keywords" value="<?php if(isset($page_data['keywords'])) echo $page_data['keywords']; ?>" placeholder="<?php echo $lang['values_comma_separated']; ?>" size="60" class="form-control form-control-large" />
 </div>
 </div>
 
@@ -407,7 +406,7 @@
 <div class="input-group">
 <input type="text" id="teaser_img" name="teaser_img" value="<?php if(isset($page_data['teaser_img'])) echo $page_data['teaser_img']; ?>" size="35" class="form-control">
 <span class="input-group-btn">
-<a class="btn btn-default modal-invoker" href="index.php?mode=modal&amp;action=insert_raw_image" type="button" title="<?php echo $lang['select_image']; ?>" data-toggle="modal" data-target="#modal_raw_image" data-insert="#teaser_img"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-default modal-invoker" href="index.php?mode=modal&amp;action=insert_raw_image" title="<?php echo $lang['select_image']; ?>" data-toggle="modal" data-target="#modal_raw_image" data-insert="#teaser_img"><span class="glyphicon glyphicon-search"></span></a>
 </span>
 </div>
 
@@ -442,10 +441,12 @@
 <input id="edit_mode_1" type="radio" name="edit_mode" value="1"<?php if(isset($edit_mode) && $edit_mode==1): ?> checked="checked"<?php endif; ?> /> <?php echo $lang['edit_page_mode_save_as_new']; ?>
 </label></p>
 </div>
-<?php endif; ?></div>
-<div class="col-md-2"><button class="btn btn-lg btn-success pull-right" /><span class="glyphicon glyphicon-save"></span> <?php echo $lang['edit_page_submit']; ?></button></div>
+<?php endif; ?>
+</div>
+<div class="col-md-2"><button class="btn btn-lg btn-success pull-right"><span class="glyphicon glyphicon-save"></span> <?php echo $lang['edit_page_submit']; ?></button></div>
 </div>
 
+</div>
 </form>
 
 <?php endif; ?>

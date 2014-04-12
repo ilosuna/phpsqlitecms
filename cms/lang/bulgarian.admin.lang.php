@@ -58,8 +58,8 @@ $lang['login_password'] =                'Парола:';
 $lang['login_submit'] =                  'Вход';
 
 # content
-$lang['edit_wysiwyg_mode'] =             'WYSIWYG режим';
-$lang['edit_non_wysiwyg_mode'] =         'Text режим';
+$lang['enable_wysiwyg_editor'] =         'WYSIWYG режим';
+$lang['disable_wysiwyg_editor'] =        'Text режим';
 $lang['change_edit_mode_notice'] =       'Внимание! Настоящите промени няма да бъдат съхранени при смяна на режима на редактиране!';
 $lang['values_comma_separated'] =        'разделени със запетая';
 $lang['page_overview'] =                 'Страници';

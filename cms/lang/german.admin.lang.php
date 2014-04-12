@@ -53,8 +53,8 @@ $lang['login_password'] =                'Passwort:';
 $lang['login_submit'] =                  'Login';
 
 # content
-$lang['edit_wysiwyg_mode'] =             'WYSIWYG mode';
-$lang['edit_non_wysiwyg_mode'] =         'Textmodus';
+$lang['enable_wysiwyg_editor'] =         'WYSIWYG-Editor';
+$lang['disable_wysiwyg_editor'] =        'Quelltext';
 $lang['change_edit_mode_notice'] =       'Achtung! Aktuelle Änderungen werden beim Umschalten nicht übernommen!';
 $lang['values_comma_separated'] =        'mehrere Werte durch Komma getrennt';
 $lang['page_overview'] =                 'Seitenübersicht';
