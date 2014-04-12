@@ -74,7 +74,7 @@ function get_base_path($cut=false)
    {
     return $settings['base_path'];
    }
-  $base_path = dirname($_SERVER['SCRIPT_FILENAME']) . DIRECTORY_SEPARATOR;
+  $base_path = dirname($_SERVER['SCRIPT_FILENAME']) . '/';
   if($cut)
    {
     $pos = strrpos($base_path, $cut);
