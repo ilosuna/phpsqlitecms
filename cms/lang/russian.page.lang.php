@@ -117,7 +117,7 @@ $lang['photo_comment_link_title'] =      'Просмотр/Добавление 
 // Simple news:
 $lang['simple_news_time'] =              '[time|%A, %B %e, %Y]';
 $lang['simple_news_edit_title'] =        'Заголовок:';
-$lang['simple_news_edit_teaser'] =       'Тизер:';
+$lang['simple_news_edit_teaser'] =       'Анонс:';
 $lang['simple_news_edit_text'] =         'Текст:';
 $lang['simple_news_edit_text_format'] =  'Авто-форматирование';
 $lang['simple_news_edit_linkname'] =     'Имя ссылки:';
