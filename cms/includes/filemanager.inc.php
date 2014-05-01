@@ -43,7 +43,7 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
    $thumbnail_resize_xy = isset($_POST['thumbnail_resize_xy']) && $_POST['thumbnail_resize_xy']=='x' ? 'x' : 'y';
    $thumbnail_resize = isset($_POST['thumbnail_resize']) ? intval($_POST['thumbnail_resize']) : $settings['thumbnail_resize'];
    
-   #if(empty($_FILES['probe']) || $_FILES['probe']['size'] == 0 || $_FILES['probe']['error']) $errors[] = Localization::$lang['error_no_file'];
+   if(empty($_FILES['file']['name']) || $_FILES['file']['size'] == 0 || $_FILES['file']['error']) $errors[] = Localization::$lang['error_no_file'];
    if($compression < 1 || $compression > 100 || $thumbnail_compression < 1 || $thumbnail_compression > 100) $errors[] = 'invalid_compression_value';
 
    if(empty($errors))
