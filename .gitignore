@@ -1,0 +1,4 @@
+.idea
+/cms/cache/*
+!/cms/cache/.dummy
+/cms/data/*.sqlite

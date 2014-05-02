@@ -6,7 +6,7 @@
 $lang['lang'] =                          'ru';
 $lang['charset'] =                       'utf-8';
 $lang['locale'] =                        array('ru_RU.utf8','ru','rus');
-$lang['time_format'] =                   '%Y-%m-%d, %H:%M';
+$lang['time_format'] =                   '%d-%m-%Y, %H:%M';
 $lang['time_format_full'] =              '%A, %B %d, %Y, %H:%M';
 $lang['dir'] =                           'ltr';
 
@@ -96,7 +96,7 @@ $lang['edit_sidebar_3_marking'] =        'Боковой блок 3:';
 $lang['breadcrumbs'] =                   'Хлебные&nbsp;крошки:';
 $lang['edit_time_marking'] =             'Дата создания:';
 $lang['edit_last_modified_marking'] =    'Дата изменения:';
-$lang['edit_time_format'] =              'YYYY-MM-DD HH:MM:SS';
+$lang['edit_time_format'] =              'DD-MM-YYYY HH:MM:SS';
 $lang['edit_display_time'] =             'Показ времени:';
 $lang['edit_display_time_label'] =       'Показывать время на странице';
 $lang['edit_description_marking'] =      'Описание:';
@@ -174,8 +174,8 @@ $lang['page_charset'] =                  'Кодировка:';
 $lang['page_charset_exp'] =              'пусто = [кодировка по умолчанию]';
 $lang['template_variables'] =            'Переменные для шаблонов (TV):';
 $lang['edit_permission'] =               'Авторизованные редакторы:';
-$lang['edit_permission_general'] =       'all editors are authorized to edit this page';
-$lang['invalid_edit_auth_list'] =        'please check the edit authorization list - it had to be cleared due to inexistent users';
+$lang['edit_permission_general'] =       'все редакторы могут редактировать эту страницу';
+$lang['invalid_edit_auth_list'] =        'пожалуйста проверьте список авторизации - очистите от несуществующих пользователей';
 $lang['status'] =                        'Статус:';
 $lang['status_published_searchable'] =   'Опубликовано и добавлено в поиске';
 $lang['status_published'] =              'Опубликовано';

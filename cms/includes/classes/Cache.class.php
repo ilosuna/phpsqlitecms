@@ -85,10 +85,12 @@ $cacheContent .= '}
     if(!$page)
      {
       // delete all cache files (settings.php and *.cache):
-      foreach(glob($this->_cacheDir.'{settings.php,*.cache}', GLOB_BRACE) as $cacheFile)
-       {
-        @unlink($cacheFile);
-       }
+         $cacheFiles = glob($this->_cacheDir . '{settings.php,*.cache}', GLOB_BRACE);
+         if ($cacheFiles) {
+             foreach ($cacheFiles as $cacheFile) {
+                 @unlink($cacheFile);
+             }
+      }
      }
     else
      {
