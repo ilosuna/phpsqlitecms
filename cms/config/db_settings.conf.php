@@ -1,5 +1,5 @@
 <?php
-$db_settings['type'] =                'sqlite';
+/*$db_settings['type'] =                'sqlite';
 
 $db_settings['db_content_file'] =     'cms/data/content.sqlite';
 $db_settings['settings_table'] =      'phpsqlitecms_settings';
@@ -16,7 +16,7 @@ $db_settings['comment_table'] =       'phpsqlitecms_comments';
 $db_settings['newsletter_table'] =    'phpsqlitecms_newsletter';
 
 $db_settings['db_userdata_file'] =    'cms/data/userdata.sqlite';
-$db_settings['userdata_table'] =      'phpsqlitecms_userdata';
+$db_settings['userdata_table'] =      'phpsqlitecms_userdata';*/
 
 /*
 // PostgreSQL:
@@ -42,7 +42,7 @@ $db_settings['userdata_table'] = 'phpsqlitecms_userdata';
 */
 
 
-/*// MySQL:
+// MySQL:
 $db_settings['type'] = 'mysql';
 
 $db_settings['host'] = 'localhost';
@@ -61,6 +61,6 @@ $db_settings['notes_table'] = 'phpsqlitecms_notes';
 $db_settings['photo_table'] = 'phpsqlitecms_photos';
 $db_settings['banlists_table'] = 'phpsqlitecms_banlists';
 $db_settings['comment_table'] = 'phpsqlitecms_comments';
-$db_settings['userdata_table'] = 'phpsqlitecms_userdata';*/
+$db_settings['userdata_table'] = 'phpsqlitecms_userdata';
 
 ?>
