@@ -1,20 +1,56 @@
 <?php
+
+/**
+ * Class Cache
+ */
 class Cache
  {
   #const CLEAR_INCLUDE_PAGE = true;
-  public $doCaching = true;
-  public $autoClear = true;
-  public $cacheId = false;
-  private $_cacheDir;
-  private $_settings;
+    /**
+     * Allow to cache
+     * @var bool
+     */
+    public $doCaching = true;
+    /**
+     * Allow to clear cache when does some changes via admin panel
+     * @var bool
+     */
+    public $autoClear = true;
+    /**
+     * Cache ID
+     * @var bool
+     */
+    public $cacheId = false;
+    /**
+     * Location of cache files
+     * @var
+     */
+    private $_cacheDir;
+    /**
+     * Cache some settings
+     * @var
+     */
+    private $_settings;
 
-  public function __construct($cacheDir, $settings)
+    /**
+     * Initialisation of cache object
+     * @param $cacheDir
+     * @param $settings
+     */
+    public function __construct($cacheDir, $settings)
    {
     $this->_cacheDir = $cacheDir;
     $this->_settings = $settings;
    }
 
-  public function createCacheContent($content, $content_type, $charset)
+    /**
+     * Return cache with given parameters
+     * @param $content
+     * @param $content_type
+     * @param $charset
+     * @return string
+     */
+    public function createCacheContent($content, $content_type, $charset)
    {
     $cacheContent = '<?php
 header(\'Last-Modified: ' . gmdate("D, d M Y H:i:s",time()) . ' GMT\');
@@ -43,7 +79,11 @@ $cacheContent .= '}
     return $cacheContent;
    }
 
-  public function createChacheFile($content)
+    /**
+     * Save cache file
+     * @param $content
+     */
+    public function createChacheFile($content)
    {
     if($this->cacheId && $this->doCaching)
      {
@@ -66,7 +106,10 @@ $cacheContent .= '}
     }
    }
 
-  private function _createCacheSettingsFile()
+    /**
+     * Save settings file
+     */
+    private function _createCacheSettingsFile()
    {
     $content  = "<?php\n";
     $content .= '$settings[\'session_prefix\'] = \''.$this->_settings['session_prefix'].'\';'."\n";
@@ -80,7 +123,11 @@ $cacheContent .= '}
     @fclose($fp);
    }
 
-  public function clear($page=false)
+    /**
+     * Delete all cache files and settings file. If $page set delete only this page cache file.
+     * @param bool $page
+     */
+    public function clear($page=false)
    {
     if(!$page)
      {
@@ -96,24 +143,37 @@ $cacheContent .= '}
      {
       // delete cache files of a specifid page:
       $page = rawurlencode(strtolower($page));
-      // select page.cache and page,*.cahe
-      foreach(glob($this->_cacheDir.'{'.$page.'.cache,'.$page.'%2C*.cache}', GLOB_BRACE) as $cacheFile) // "%2C" = ","
-       {
-        @unlink($cacheFile);
-       }
+      // select page.cache and page,*.caсhe
+         $cacheFiles = glob($this->_cacheDir . '{' . $page . '.cache,' . $page . '%2C*.cache}', GLOB_BRACE);
+         if ($cacheFiles) {
+             foreach ($cacheFiles as $cacheFile) // "%2C" = ","
+             {
+                 @unlink($cacheFile);
+             }
+         }
      }
    }
 
-  public function clearPhoto($id)
+    /**
+     * Delete photo cache file
+     * @param $id
+     */
+    public function clearPhoto($id)
    {
     // select *,photo,[id].cache and *,photo,[id],*.cache
-    foreach(glob($this->_cacheDir.'{*%2C'.IMAGE_IDENTIFIER.'%2C'.$id.'.cache,*%2C'.IMAGE_IDENTIFIER.'%2C'.$id.'%2C*.cache}', GLOB_BRACE) as $cacheFile)
-     {
-      @unlink($cacheFile);
-     }
+       $cacheFiles = glob($this->_cacheDir . '{*%2C' . IMAGE_IDENTIFIER . '%2C' . $id . '.cache,*%2C' . IMAGE_IDENTIFIER . '%2C' . $id . '%2C*.cache}', GLOB_BRACE);
+       if ($cacheFiles) {
+           foreach ($cacheFiles as $cacheFile) {
+               @unlink($cacheFile);
+           }
+       }
    }
 
-  function clearRelated($page)
+    /**
+     * Clear cache of overview pages
+     * @param $page
+     */
+    function clearRelated($page)
    {
     $dbr = Database::$content->prepare("SELECT include_page FROM ".Database::$db_settings['pages_table']." WHERE lower(page)=lower(:page) LIMIT 1");
     $dbr->bindParam(':page', $page, PDO::PARAM_STR);
