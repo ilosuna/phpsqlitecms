@@ -4,16 +4,12 @@
     <meta charset="<?php echo $lang['charset']; ?>"/>
     <title><?php if ($page_title): ?><?php echo $page_title; ?><?php else: ?><?php if ($title): ?><?php echo $title; ?> - <?php endif; ?><?php echo $settings['website_title']; ?><?php endif; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="<?php if ($description) echo $description; else echo $settings['default_description']; ?>"/>
-    <meta name="keywords" content="<?php if ($keywords) echo $keywords; else echo $settings['default_keywords']; ?>"/>
-    <meta name="generator" content="phpSQLiteCMS <?php echo $settings['version']; ?>"/>
+    <meta name="description" content="<?php if ($description) echo $description; else echo $settings['default_description']; ?>">
+    <meta name="keywords" content="<?php if ($keywords) echo $keywords; else echo $settings['default_keywords']; ?>">
+    <meta name="generator" content="phpSQLiteCMS <?php echo $settings['version']; ?>">
     <link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     <link href="<?php echo STATIC_URL; ?>css/style.css" rel="stylesheet">
-    <?php if (isset($tv['map'])): ?>
-        <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/leaflet.css"/>
-    <?php endif; ?>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
 </head>
 
