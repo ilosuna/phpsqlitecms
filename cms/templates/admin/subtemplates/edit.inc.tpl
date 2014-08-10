@@ -88,15 +88,15 @@
             <div class="form-group">
                 <div class="col-lg-12">
                     <a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_image"
-                       data-toggle="modal" data-target="#modal_image" data-insert="#content"
+                       data-toggle="modal" data-target="#modal_image" data-insert="ace-editor"
                        title="<?php echo $lang['insert_image_label']; ?>"><span
                             class="glyphicon glyphicon-picture"></span></a>
                     <a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_thumbnail"
-                       data-toggle="modal" data-target="#modal_thumbnail" data-insert="#content"
+                       data-toggle="modal" data-target="#modal_thumbnail" data-insert="ace-editor"
                        title="<?php echo $lang['insert_thumbnail_label']; ?>"><span
                             class="glyphicon glyphicon-hand-left"></span></a>
                     <a class="btn btn-default btn-xs" href="index.php?mode=modal&amp;action=insert_gallery"
-                       data-toggle="modal" data-target="#modal_gallery" data-insert="#content"
+                       data-toggle="modal" data-target="#modal_gallery" data-insert="ace-editor"
                        title="<?php echo $lang['insert_gallery_label']; ?>"><span class="glyphicon glyphicon-th"></span></a>
                 </div>
             </div>
