@@ -8,8 +8,7 @@
         <div class="form-group">
             <select id="imageselect" class="form-control" size="20">
                 <?php foreach ($images as $image): ?>
-                    <option value="<?php echo $image; ?>"
-                            ondblclick="image_popup('<?php echo BASE_URL . MEDIA_DIR . $image; ?>')"><?php echo $image; ?></option>
+                    <option value="<?php echo $image; ?>"><?php echo $image; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

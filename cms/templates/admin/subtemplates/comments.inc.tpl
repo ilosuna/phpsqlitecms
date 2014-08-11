@@ -68,8 +68,7 @@
                                     <img
                                         src="<?php echo BASE_URL . MEDIA_DIR . $items[$comment['comment_id']]['photo_thumbnail']; ?>"
                                         title="<?php echo $items[$comment['comment_id']]['title']; ?>"
-                                        alt="<?php echo $items[$comment['comment_id']]['title']; ?>"
-                                        onclick="image_popup('<?php echo BASE_URL . MEDIA_DIR . $items[$comment['comment_id']]['photo_normal']; ?>'); return false"/>
+                                        alt="<?php echo $items[$comment['comment_id']]['title']; ?>" />
                                     </a><?php else: ?>-<?php endif; ?><?php else: ?><?php if (isset($items[$comment['comment_id']])): ?>
                                     <a
                                     href="<?php echo BASE_URL . $items[$comment['comment_id']]['page']; ?>#comments"><?php echo $items[$comment['comment_id']]['title']; ?></a><?php else: ?>-<?php endif; ?><?php endif; ?>
