@@ -40,6 +40,41 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
          if(isset($cache) && $cache->autoClear) $cache->clear();
         } 
       break;
+           case 'get':
+      if(isset($_REQUEST['page']))
+        {
+         $table = Database::$db_settings['pages_table'];
+         $list = 'page';
+        }
+        elseif(isset($_REQUEST['category']))
+        {
+         $table = Database::$db_settings['pages_table'];
+         $list = 'category';
+        }
+         elseif(isset($_REQUEST['sections']))
+        {
+         $table = Database::$db_settings['menu_table'];
+         $list = 'section';
+        }         
+    $term = addCslashes($_REQUEST['term'],'\%_');
+
+        if(isset($list) && isset($table))
+        {
+        $dbr = Database::$content->query('SELECT distinct '.$list.' FROM '.$table.' WHERE '.$list.' LIKE "%' .$term.'%"');
+        $i=0;
+        while($row=$dbr->fetch()){
+          if (!$row[$list]=="") $res[] = array("id"=>$i, "label"=>$row[$list], "value"=>$row[$list]);  
+        $i++;
+        }
+        
+        $res_list = json_encode($res);
+        echo $res_list;
+         
+        
+        if(isset($cache) && $cache->autoClear) $cache->clear();
+        } 
+       
+       break;
      }
    }
  }

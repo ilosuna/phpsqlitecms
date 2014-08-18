@@ -8,6 +8,7 @@
 
     <link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
     <link href="<?php echo STATIC_URL; ?>css/style_admin.css" rel="stylesheet">
+    <link href="<?php echo JQUERY_UI_CSS; ?>" rel="stylesheet">
 
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
 </head>
