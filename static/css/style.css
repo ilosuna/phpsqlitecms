@@ -80,13 +80,13 @@ h4.author        { font-size:14px; margin-bottom:5px; font-style:italic; }
 .dropdown-menu .glyphicon { padding-right:5px; }
 
 /* Pills dropdown*/
-ul.nav.nav-pills li.dropdown:hover ul.dropdown-menu{
+/*ul.nav.nav-pills li.dropdown:hover ul.dropdown-menu{
   display: block;
 }
 
 ul.nav.nav-pills .dropdown-menu {
  margin-top: 1px;
-}
+}*/
 
 a.rss                         { padding-left:23px; background:url(../img/rss.png) no-repeat left; }
 a.pdf                         { padding-left:23px; background-image:url(../img/pdf.png); background-repeat:no-repeat; background-position: top left; }
