@@ -105,7 +105,6 @@
 
 <script src="<?php echo JQUERY; ?>"></script>
 <script src="<?php echo BOOTSTRAP; ?>"></script>
-<script src="<?php echo BOOTSTRAP_HOVER_PLUGIN; ?>"></script>
 <script src="<?php echo STATIC_URL; ?>js/main.js"></script>
 <?php if ($admin): ?>
     <script src="<?php echo STATIC_URL; ?>js/admin_frontend.js"></script>
