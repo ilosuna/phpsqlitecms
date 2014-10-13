@@ -7,9 +7,11 @@
  */
 function generate_pw_hash($pw)
  {
-  $salt = random_string(10,'0123456789abcdef');
-  $salted_hash = sha1($pw.$salt);
-  $hash_with_salt = $salted_hash.$salt;
+  #$salt = random_string(10,'0123456789abcdef');
+  #$salted_hash = sha1($pw.$salt);
+  #$hash_with_salt = $salted_hash.$salt;
+  $salt = random_string(16);
+  $hash_with_salt = crypt($pw, '$6$rounds=5000$'.$salt.'$');
   return $hash_with_salt;
  }
 
@@ -29,6 +31,7 @@ function is_pw_correct($pw,$hash)
     if(sha1($pw.$salt)==$salted_hash) return true;
     else return false;
    }
+  elseif(crypt($pw, $hash) == $hash) return true;
   else return false;
  }
 
