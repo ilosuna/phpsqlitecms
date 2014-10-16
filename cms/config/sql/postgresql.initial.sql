@@ -260,4 +260,4 @@ INSERT INTO phpsqlitecms_settings (name, value) VALUES ('default_page_language',
 INSERT INTO phpsqlitecms_settings (name, value) VALUES ('caching', '0');
 INSERT INTO phpsqlitecms_settings (name, value) VALUES ('wysiwyg_editor', '0');
 
-INSERT INTO phpsqlitecms_userdata (name, type, pw, last_login, wysiwyg) VALUES('admin', 1, '75470d05abd21fb5e84e735d2bc595e2f7ecc5c7a5e98ad0d7', 1230764400, 0);
+INSERT INTO phpsqlitecms_userdata (name, type, pw, last_login, wysiwyg) VALUES('admin', 1, '$6$rounds=5000$56748f4e35e993f6$nW05WLxf2aJGdiALJktlCvzrAXdxlvMLhRUmNAw1W42tqVLXoS0AGRrM41.sSRp3PrYpg4qsjOHGN22jKzPxA0', 1230764400, 0);
