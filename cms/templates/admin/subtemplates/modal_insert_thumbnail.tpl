@@ -7,11 +7,29 @@
         <div class="form-group">
             <select id="thumbnailselect" class="form-control" size="20">
                 <?php foreach ($thumbnails as $thumbnail): ?>
-                    <option value="<?php echo $thumbnail['id']; ?>"><?php echo $thumbnail['title']; ?>
-                        (<?php echo $thumbnail['gallery']; ?>)
+                    
+                    <?php
+                    $previous_gallery = isset($current_gallery) ? $current_gallery : false;
+                    $current_gallery = $thumbnail['gallery'];
+                    ?>
+                    
+                    <?php if($current_gallery!=$previous_gallery): ?>
+                    <?php if($previous_gallery): ?>
+                    	</optgroup>
+                    <?php endif; ?>
+                    	<optgroup label="<?php echo $current_gallery; ?>">
+                    <?php endif; ?>
+                    
+                    <option value="<?php echo $thumbnail['id']; ?>">
+                    	<?php echo $thumbnail['title']; ?>
                     </option>
+                    
+                    <?php if($current_gallery!=$previous_gallery): ?>
+                    
+                    <?php endif; ?>                    
+                    
                 <?php endforeach; ?>
-            </select>
+                </optgroup>            </select>
         </div>
         <div class="form-group">
             <label for="image_class"><?php echo $lang['insert_image_class']; ?></label>

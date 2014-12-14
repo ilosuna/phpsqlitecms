@@ -22,7 +22,7 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
 
    if(isset($_POST['gallery']))
     {
-     $dbr = Database::$content->prepare("SELECT id, title,	photo_thumbnail FROM ".Database::$db_settings['photo_table']." WHERE gallery=:gallery ORDER BY sequence ASC");
+     $dbr = Database::$content->prepare("SELECT id, title, photo_thumbnail FROM ".Database::$db_settings['photo_table']." WHERE gallery=:gallery ORDER BY gallery ASC, sequence ASC");
      $dbr->bindParam(':gallery', $_POST['gallery'], PDO::PARAM_STR);
      $dbr->execute();
      $i=0;
