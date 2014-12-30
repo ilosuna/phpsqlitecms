@@ -64,7 +64,7 @@
                        class="col-md-2 control-label"><?php echo $lang['simple_news_edit_time']; ?></label>
 
                 <div class="col-md-10">
-                    <input id="newstime" class="form-control" type="text" name="newstime"
+                    <input id="newstime" class="form-control" type="text" name="time"
                            value="<?php if (isset($edit_news['time'])) echo $edit_news['time']; ?>"
                            placeholder="<?php echo $lang['simple_news_edit_time_format']; ?>">
                 </div>
