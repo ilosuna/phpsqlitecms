@@ -77,7 +77,16 @@ h4.author        { font-size:14px; margin-bottom:5px; font-style:italic; }
 #menu-toggle-handle .icon-bar { display: block; margin:auto; width:22px; height:2px;  background-color:#fff; border-radius:1px; }
 #menu-toggle-handle .icon-bar + .icon-bar { margin-top:4px; }
 
-.dropdown-menu .glyphicon { padding-right:5px; }  
+.dropdown-menu .glyphicon { padding-right:5px; }
+
+/* Pills dropdown*/
+ul.nav.nav-pills li.dropdown:hover ul.dropdown-menu{
+  display: block;
+}
+
+ul.nav.nav-pills .dropdown-menu {
+ margin-top: 1px;
+}
 
 a.rss                         { padding-left:23px; background:url(../img/rss.png) no-repeat left; }
 a.pdf                         { padding-left:23px; background-image:url(../img/pdf.png); background-repeat:no-repeat; background-position: top left; }

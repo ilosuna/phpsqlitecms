@@ -7,6 +7,7 @@ define('JQUERY_UI_HANDLER', STATIC_URL.'js/jquery_ui_handler.js');
 
 define('BOOTSTRAP', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js');
 define('BOOTSTRAP_CSS', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+define('BOOTSTRAP_HOVER_PLUGIN', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.js');
 
 define('WYSIWYG_EDITOR', '//tinymce.cachefly.net/4.0/tinymce.min.js');
 define('WYSIWYG_EDITOR_INIT', BASE_URL . 'static/js/wysiwyg_init.js');

@@ -29,7 +29,8 @@
                 <?php if ($menu_1 && isset($menus[$menu_1])): ?>
                     <ul class="nav nav-pills">
                         <?php foreach ($menus[$menu_1] as $item): ?>
-                            <li<?php if (!empty($item['section']) && $item['section'] == $section[0]): ?> class="active"<?php endif; ?>>
+                            <li data-section="<?php echo $item['section']?>" 
+                            <?php if (!empty($item['section']) && $item['section'] == $section[0]): ?> class="active"<?php endif; ?>>
                             <a href="<?php echo $item['link']; ?>"
                                title="<?php echo $item['title']; ?>"<?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?>><?php echo $item['name']; ?></a>
                             </li><?php endforeach; ?>
