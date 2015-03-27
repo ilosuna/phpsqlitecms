@@ -126,6 +126,7 @@ try
     case 'modal': include('./includes/modal.inc.php'); break;
     case 'thumbnail': include('./includes/insert_thumbnail.inc.php'); break;
     case 'ajaxprocess': include('./includes/ajaxprocess.inc.php'); break;
+    case 'tinymceimage': include('./includes/tinymceimage.inc.php'); break;
     default: include('./includes/admin_index.inc.php');
    }
 
