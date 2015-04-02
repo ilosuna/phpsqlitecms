@@ -27,8 +27,8 @@ header ul        { padding:20px 0 0 0; }
 
 .caption         { margin:3px 0 3px 0; color:#808080; font-style:italic; }
 .thumbnail       { max-width:100% !important; height:auto; } 
-.thumbnail-left  { float:left; margin:0 15px 10px 0; }
-.thumbnail-right { float:right; margin:0 0 10px 15px; }
+.thumbnail-left  { float:left; margin:0 10px 10px 0; }
+.thumbnail-right { float:right; margin:0 0 10px 10px; }
 .thumbnail img   { width:100%; }
 a.thumbnail:hover { opacity:0.9; } 
 

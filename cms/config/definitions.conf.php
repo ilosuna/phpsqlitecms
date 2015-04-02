@@ -5,8 +5,8 @@ define('JQUERY_UI', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.m
 define('JQUERY_UI_CSS', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css');
 define('JQUERY_UI_HANDLER', STATIC_URL.'js/jquery_ui_handler.js');
 
-define('BOOTSTRAP', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js');
-define('BOOTSTRAP_CSS', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+define('BOOTSTRAP', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js');
+define('BOOTSTRAP_CSS', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 
 define('WYSIWYG_EDITOR', '//tinymce.cachefly.net/4.0/tinymce.min.js');
 define('WYSIWYG_EDITOR_INIT', BASE_URL . 'static/js/wysiwyg_init.js');
