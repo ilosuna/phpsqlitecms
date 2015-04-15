@@ -55,5 +55,57 @@ $('.modal').on('show.bs.modal', function (e) {
   $insertField = $(e.relatedTarget).data('insert');
 });
 
+//Ajax autocompleate
+function split( val ) {
+    return val.split( /,\s*/ );
+}
+function extractLast( term ) {
+  return split( term ).pop();
+}
+
+    jQuery( 'input[name="page"],input[name="category"],input[name="link"]' ).autocomplete({
+        source: function( request, response ) {
+            var $list = this.element.attr("name");
+                    if($list=='link') $list="page";
+          jQuery.getJSON( "./index.php?mode=ajaxprocess&action=get&"+$list+"=1", {
+          term: request.term
+          }, response );
+        }
+      });
+
+            jQuery( 'input[name="sections"]' ).autocomplete({
+        source: function( request, response ) {
+          var $list = this.element.attr("name");
+                    jQuery.getJSON( "./index.php?mode=ajaxprocess&action=get&"+$list+"=1", {
+            term: extractLast( request.term )
+          }, response );
+        },
+        search: function() {
+          // custom minLength
+          var term = extractLast( this.value );
+          if ( term.length < 2 ) {
+            return false;
+          }
+        //console.log(term);
+                },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        },
+                create: function(){
+
+                }
+      });
 
 });
