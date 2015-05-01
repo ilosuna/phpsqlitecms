@@ -49,7 +49,40 @@
 <script src="<?php echo JQUERY; ?>"></script>
 <script src="<?php echo JQUERY_UI; ?>"></script>
 <script src="<?php echo BOOTSTRAP; ?>"></script>
-<?php if (isset($wysiwyg)): ?>
+
+<?php if (!isset($wysiwyg)): ?>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+    <script src="http://nightwing.github.io/emmet-core/emmet.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ext-emmet.js"></script>
+
+    <script>
+        var textarea = $('#content');
+        textarea.before('<div id="ace-editor"></div>').hide();
+        $('#ace-editor').height(textarea.height()).width(textarea.width());
+
+        $(window).resize(function() {
+            $('#ace-editor').height(textarea.height()).width(textarea.width());
+        });
+
+        var editor = ace.edit("ace-editor");
+        // Settings
+        editor.getSession().setMode("ace/mode/html");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setUseSoftTabs(true);
+        editor.getSession().setUseWrapMode(true);
+        editor.setShowPrintMargin(false);
+        editor.setOption("enableEmmet", true);
+
+        editor.getSession().setValue(textarea.val());
+
+        $('form:first').submit(function() {
+            textarea.val(editor.getSession().getValue());
+        });
+
+    </script>
+
+<?php else: ?>
+
     <script src="<?php echo WYSIWYG_EDITOR; ?>"></script>
     <script src="<?php echo WYSIWYG_EDITOR_INIT; ?>"></script>
 <?php endif; ?>
