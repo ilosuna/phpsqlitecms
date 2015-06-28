@@ -111,6 +111,9 @@
 <?php if (isset($contains_thumbnails)): ?>
     <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
 <?php endif; ?>
+<?php if ($settings['recaptcha_entry_check'] || $settings['recaptcha_mail_check']): ?>
+    <script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
+<?php endif; ?>
 </body>
 </html>
 

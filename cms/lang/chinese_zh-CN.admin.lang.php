@@ -458,6 +458,17 @@ $lang['spam_protection_saved'] =         '已保存';
 $lang['error_own_ip_banned'] =           '你禁止了自己的IP!';
 $lang['error_own_user_agent_banned'] =   '你禁止了自己的浏览器标志!';
 
+# reCAPTCHA
+$lang['recaptcha'] =                     'reCAPTCHA';
+$lang['recaptcha_desc'] =                'reCAPTCHA bot protection';
+$lang['recaptcha_login_check'] =         'enable for users login';
+$lang['recaptcha_entry_check'] =         'enable for comments';
+$lang['recaptcha_mail_check'] =          'enable for formmailer';
+$lang['recaptcha_public_key'] =          'Site Key';
+$lang['recaptcha_secret_key'] =          'Secret Key';
+$lang['error_recaptcha_keys'] =          'You forgot to setup your reCAPTCHA keys!';
+$lang['wrong_captcha'] =                 'You entered a wrong captcha, try again!';
+
 # insert_image
 $lang['insert_image'] =                  '插入图片';
 $lang['select_image_title'] =            '插入图片';

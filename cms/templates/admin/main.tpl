@@ -57,5 +57,8 @@
 <?php if ($mode == 'galleries'): ?>
     <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
 <?php endif; ?>
+<?php if ($settings['recaptcha_login_check']): ?>
+    <script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
+<?php endif; ?>
 </body>
 </html>

@@ -143,5 +143,8 @@ $lang['search_no_results'] =             '页面未找到';
 $lang['akismet_error_api_key'] =         'Invalid akismet api key';
 $lang['akismet_error_connection'] =      'Server connection error - please try again later';
 $lang['akismet_spam_suspicion'] =        'Spam suspicion!';
+
+// reCAPTCHA:
+$lang['wrong_captcha'] =				 'You entered a wrong captcha, please try again!';
 ?>
 

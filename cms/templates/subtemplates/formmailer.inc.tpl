@@ -36,7 +36,13 @@
                 <textarea id="message" class="form-control" name="message"
                           rows="12"><?php if (isset($message)) echo $message; ?></textarea>
             </div>
-
+            
+            <?php if($settings['recaptcha_mail_check'] && !isset($_SESSION[$settings['session_prefix'].'user_id'])): ?>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="<?php echo htmlspecialchars($settings['recaptcha_public_key']); ?>"></div>
+            </div>
+            <?php endif; ?>
+            
             <p>
                 <button class="btn btn-primary btn-lg" type="submit"><span
                         class="glyphicon glyphicon-envelope"></span> <?php echo $lang['formmailer_button_send']; ?>
