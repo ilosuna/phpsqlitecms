@@ -45,6 +45,7 @@ $lang['admin_menu_edit_gcb'] =           'Глобални блокове';
 $lang['admin_menu_edit_comments'] =      'Коментари';
 $lang['admin_menu_filemanager'] =        'Файл мениджър';
 $lang['admin_menu_spam_protection'] =    'Спам защита';
+$lang['admin_menu_ganalytics'] =         'Google Analytics';
 $lang['admin_menu_user_administr'] =     'Потребители';
 $lang['admin_menu_clear_cache'] =        'Изчистване на кеша';
 $lang['admin_menu_edit_userdata'] =      'Смяна на парола';
@@ -473,6 +474,15 @@ $lang['recaptcha_public_key'] =          'Site Key';
 $lang['recaptcha_secret_key'] =          'Secret Key';
 $lang['error_recaptcha_keys'] =          'You forgot to setup your reCAPTCHA keys!';
 $lang['wrong_captcha'] =                 'You entered a wrong captcha, try again!';
+
+# Google Analytics
+$lang['google_analytics'] =              'Google Analytics';
+$lang['google_analytics_desc'] =         'Google Analytics is a service offered by Google to help web-masters knowing who is visiting their site.';
+$lang['google_analytics_id'] =           'Tracking ID:';
+$lang['google_analytics_check'] =        'enable Google Analytics <small><em>(in every page except in administration\'s ones)</em></small>';
+$lang['google_analytics_submit'] =       'OK - Control them all';
+$lang['google_analytics_saved'] =        'Data saved successfully, 1984 is now.';
+$lang['error_google_analytics_id'] =     'You can\'t enable Google Analytics without entering your personal tracking id!';
 
 # insert_image
 $lang['insert_image'] =                  'Вмъкване на снимка';
