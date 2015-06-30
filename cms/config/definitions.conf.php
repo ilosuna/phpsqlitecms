@@ -8,7 +8,7 @@ define('JQUERY_UI_HANDLER', STATIC_URL.'js/jquery_ui_handler.js');
 define('BOOTSTRAP', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js');
 define('BOOTSTRAP_CSS', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 
-define('RECAPTCHA_SCRIPT', 'https://www.google.com/recaptcha/api.js');
+define('RECAPTCHA_SCRIPT', '//www.google.com/recaptcha/api.js');
 
 define('WYSIWYG_EDITOR', '//tinymce.cachefly.net/4.0/tinymce.min.js');
 define('WYSIWYG_EDITOR_INIT', BASE_URL . 'static/js/wysiwyg_init.js');

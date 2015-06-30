@@ -5,11 +5,6 @@
     <title><?php echo $settings['website_title']; ?> - <?php echo $lang['administration'];
         if (isset($subtitle)) echo ' - ' . $subtitle; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
-    <link href="<?php echo STATIC_URL; ?>css/style_admin.css" rel="stylesheet">
-
-    <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
 </head>
 
 <body>
@@ -46,19 +41,23 @@
 
 </div>
 
-<script src="<?php echo JQUERY; ?>"></script>
-<script src="<?php echo JQUERY_UI; ?>"></script>
-<script src="<?php echo BOOTSTRAP; ?>"></script>
+<script async src="<?php echo JQUERY; ?>"></script>
+<script async src="<?php echo JQUERY_UI; ?>"></script>
+<script async src="<?php echo BOOTSTRAP; ?>"></script>
 <?php if (isset($wysiwyg)): ?>
-    <script src="<?php echo WYSIWYG_EDITOR; ?>"></script>
-    <script src="<?php echo WYSIWYG_EDITOR_INIT; ?>"></script>
+<script async src="<?php echo WYSIWYG_EDITOR; ?>"></script>
+<script async src="<?php echo WYSIWYG_EDITOR_INIT; ?>"></script>
 <?php endif; ?>
-<script src="<?php echo STATIC_URL; ?>js/admin_backend.js"></script>
+<script async src="<?php echo STATIC_URL; ?>js/admin_backend.js"></script>
 <?php if ($mode == 'galleries'): ?>
-    <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
+<script async src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
 <?php endif; ?>
 <?php if ($settings['recaptcha_login_check']): ?>
-    <script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
+<script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
 <?php endif; ?>
+<link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
+<link href="<?php echo STATIC_URL; ?>css/style_admin.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
 </body>
 </html>

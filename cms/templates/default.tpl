@@ -7,9 +7,6 @@
     <meta name="description" content="<?php if ($description) echo $description; else echo $settings['default_description']; ?>">
     <meta name="keywords" content="<?php if ($keywords) echo $keywords; else echo $settings['default_keywords']; ?>">
     <meta name="generator" content="phpSQLiteCMS <?php echo $settings['version']; ?>">
-    <link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
-    <link href="<?php echo STATIC_URL; ?>css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>img/favicon.png">
 </head>
 
@@ -102,18 +99,21 @@
 
 </div>
 
-<script src="<?php echo JQUERY; ?>"></script>
-<script src="<?php echo BOOTSTRAP; ?>"></script>
-<script src="<?php echo STATIC_URL; ?>js/main.js"></script>
+<script async src="<?php echo JQUERY; ?>"></script>
+<script async src="<?php echo BOOTSTRAP; ?>"></script>
+<script async src="<?php echo STATIC_URL; ?>js/main.js"></script>
 <?php if ($admin): ?>
-    <script src="<?php echo STATIC_URL; ?>js/admin_frontend.js"></script>
+<script async src="<?php echo STATIC_URL; ?>js/admin_frontend.js"></script>
 <?php endif; ?>
 <?php if (isset($contains_thumbnails)): ?>
-    <script src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
+<script async src="<?php echo STATIC_URL; ?>js/mylightbox.js" type="text/javascript"></script>
 <?php endif; ?>
 <?php if ($settings['recaptcha_entry_check'] || $settings['recaptcha_mail_check']): ?>
-    <script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
+<script async src='<?php echo RECAPTCHA_SCRIPT; ?>'></script>
 <?php endif; ?>
+<link href="<?php echo BOOTSTRAP_CSS; ?>" rel="stylesheet">
+<link href="<?php echo STATIC_URL; ?>css/style.css" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 </body>
 </html>
 
