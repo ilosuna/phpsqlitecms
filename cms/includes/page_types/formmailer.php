@@ -34,6 +34,10 @@ if(isset($_POST['send']))
    {
     $errors[] = 'formmail_error_subj_too_long';
    }
+  if ($settings['recaptcha_mail_check'] && !isset($_SESSION[$settings['session_prefix'].'user_id']) && !check_captcha($settings['recaptcha_secret_key']))
+   {
+    $errors[] = 'wrong_captcha';
+   }
   if(empty($errors))
    {
         // Akismet spam check:

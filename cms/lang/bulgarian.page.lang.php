@@ -147,4 +147,7 @@ $lang['search_no_results'] =             'Не са намерени стран�
 $lang['akismet_error_api_key'] =         'Невалиден Akismet API ключ!';
 $lang['akismet_error_connection'] =      'Грешка при свързването със сървъра - моля, опитайте по-късно!';
 $lang['akismet_spam_suspicion'] =        'Съмнение за Спам!';
+
+// reCAPTCHA:
+$lang['wrong_captcha'] =				 'You entered a wrong captcha, please try again!';
 ?>

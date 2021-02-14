@@ -40,6 +40,7 @@ $lang['admin_menu_edit_gcb'] =           'Globale Inhaltsblöcke';
 $lang['admin_menu_edit_comments'] =      'Kommentare';
 $lang['admin_menu_filemanager'] =        'Dateimanager';
 $lang['admin_menu_spam_protection'] =    'Spamschutz';
+$lang['admin_menu_ganalytics'] =         'Google Analytics';
 $lang['admin_menu_user_administr'] =     'Benutzerverwaltung';
 $lang['admin_menu_clear_cache'] =        'Chache löschen';
 $lang['admin_menu_edit_userdata'] =      'Benitzerdaten bearbeiten';
@@ -457,6 +458,26 @@ $lang['spam_protection_submit'] =        'OK - Speichern';
 $lang['spam_protection_saved'] =         'Gespeichert';
 $lang['error_own_ip_banned'] =           'Sie haben Ihre eigene IP gebannt!';
 $lang['error_own_user_agent_banned'] =   'Sie haben Ihren eigenen User-Agent gebannt!';
+
+# reCAPTCHA
+$lang['recaptcha'] =                     'reCAPTCHA';
+$lang['recaptcha_desc'] =                'reCAPTCHA bot protection';
+$lang['recaptcha_login_check'] =         'enable for users login';
+$lang['recaptcha_entry_check'] =         'enable for comments';
+$lang['recaptcha_mail_check'] =          'enable for formmailer';
+$lang['recaptcha_public_key'] =          'Site Key';
+$lang['recaptcha_secret_key'] =          'Secret Key';
+$lang['error_recaptcha_keys'] =          'You forgot to setup your reCAPTCHA keys!';
+$lang['wrong_captcha'] =                 'You entered a wrong captcha, try again!';
+
+# Google Analytics
+$lang['google_analytics'] =              'Google Analytics';
+$lang['google_analytics_desc'] =         'Google Analytics is a service offered by Google to help web-masters knowing who is visiting their site.';
+$lang['google_analytics_id'] =           'Tracking ID:';
+$lang['google_analytics_check'] =        'enable Google Analytics <small><em>(in every page except in administration\'s ones)</em></small>';
+$lang['google_analytics_submit'] =       'OK - Control them all';
+$lang['google_analytics_saved'] =        'Data saved successfully, 1984 is now.';
+$lang['error_google_analytics_id'] =     'You can\'t enable Google Analytics without entering your personal tracking id!';
 
 # insert_image
 $lang['insert_image'] =                  'Bild einfügen';
