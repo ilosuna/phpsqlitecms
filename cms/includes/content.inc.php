@@ -94,7 +94,7 @@ foreach($tv_array as $tv_item)
  {
   if($tv_item)
    {
-    $tv_item_parts = explode('=', $tv_item);
+    $tv_item_parts = explode('=', $tv_item, 2);
     $tv[trim($tv_item_parts[0])] = isset($tv_item_parts[1]) ? trim($tv_item_parts[1]) : true;
    }
  }

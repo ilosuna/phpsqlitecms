@@ -324,7 +324,22 @@
             </select>
         </div>
     </div>
-
+    
+    <?php if(isset($simple_news_pages)): ?>
+	<div class="form-group">
+		<label for="include_news" class="col-lg-2 control-label"><?php echo $lang['edit_include_news']; ?></label>
+		
+		<div class="col-lg-10">
+			<select id="include_news" name="include_news" size="1" class="form-control form-control-default">
+				<option value=""<?php if(empty($page_data['include_news'])): ?> selected="selected"<?php endif; ?>></option>
+				<?php foreach($simple_news_pages as $simple_news_page): ?>
+				<option value="<?php echo $simple_news_page['id']; ?>"<?php if(isset($page_data['include_news']) && $page_data['include_news']==$simple_news_page['id']): ?> selected="selected"<?php endif; ?>><?php echo $simple_news_page['page']; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+	</div>
+	<?php endif; ?>
+    
     <div class="form-group">
         <label for="template" class="col-lg-2 control-label"><?php echo $lang['edit_template_marking']; ?></label>
 
