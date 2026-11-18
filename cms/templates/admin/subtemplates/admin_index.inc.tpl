@@ -33,6 +33,11 @@
         <li><a href="<?php echo BASE_URL; ?>cms/index.php?mode=spam_protection"><span
                 class="glyphicon glyphicon-ban-circle"></span> <?php echo $lang['admin_menu_spam_protection']; ?></a>
         </li><?php endif; ?>
+    <?php if ($user_type == 1): ?>
+    <li><a href="<?php echo BASE_URL; ?>cms/index.php?mode=google_analytics"><span
+            class="glyphicon glyphicon-stats"></span> <?php echo $lang['admin_menu_ganalytics']; ?></a>
+    </li>
+    <?php endif; ?>
     <li><a href="<?php echo BASE_URL; ?>cms/index.php?mode=users"><span
                 class="glyphicon glyphicon-user"></span> <?php if ($user_type == 1) echo $lang['admin_menu_user_administr']; else echo $lang['admin_menu_edit_userdata']; ?>
         </a></li>

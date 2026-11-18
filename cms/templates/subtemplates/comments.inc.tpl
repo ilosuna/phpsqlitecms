@@ -176,6 +176,12 @@
                                            value="<?php echo $form_values['email_hp']; ?>"
                                            placeholder="<?php echo $lang['comment_input_email_hp']; ?>"/>
                                 </div>
+                                
+                                <?php if($settings['recaptcha_entry_check'] && $form_session && !$admin): ?>
+                                <div class="form-group login-form">
+                                    <div class="g-recaptcha" data-sitekey="<?php echo htmlspecialchars($settings['recaptcha_public_key']); ?>"></div>
+                                </div>
+                                <?php endif; ?>
 
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-primary" name="save"

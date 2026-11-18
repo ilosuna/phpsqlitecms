@@ -10,6 +10,8 @@ class Comment
   public $prevent_repeated_posts_minutes = 2;
   public $akismet_key = '';
   public $akismet_entry_check = 0;
+  public $recaptcha_secret_key = '';
+  public $recaptcha_entry_check = 0;
   public $remove_blank_lines = 1;
   public $auto_link = 1;
   public $smilies = 1;
@@ -460,6 +462,13 @@ class Comment
               $this->errors[] = 'akismet_spam_suspicion';
              }
            }
+         }
+         
+         // reCAPTCHA check
+        if(!$this->admin_mode && $this->recaptcha_secret_key!='' && $this->recaptcha_entry_check==1)
+         {
+          if(!check_captcha($this->recaptcha_secret_key))
+            $this->errors[] = 'wrong_captcha';
          }
        } // end if($save)
      }

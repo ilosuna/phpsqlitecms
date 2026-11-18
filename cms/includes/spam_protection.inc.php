@@ -47,6 +47,15 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']) && $_SESSION[$setting
     $akismet_key = !empty($_POST['akismet_key']) ? $_POST['akismet_key'] : '';
     $akismet_entry_check = isset($_POST['akismet_entry_check']) ? 1 : 0;
     $akismet_mail_check = isset($_POST['akismet_mail_check']) ? 1 : 0;
+    
+    $recaptcha_public_key = !empty($_POST['recaptcha_public_key']) ? $_POST['recaptcha_public_key'] : '';
+    $recaptcha_secret_key = !empty($_POST['recaptcha_secret_key']) ? $_POST['recaptcha_secret_key'] : '';
+    $recaptcha_login_check = isset($_POST['recaptcha_login_check']) ? 1 : 0;
+    $recaptcha_entry_check = isset($_POST['recaptcha_entry_check']) ? 1 : 0;
+    $recaptcha_mail_check = isset($_POST['recaptcha_mail_check']) ? 1 : 0;
+    
+    if(($recaptcha_login_check || $recaptcha_entry_check || $recaptcha_mail_check) && (empty($recaptcha_public_key)) || empty($recaptcha_secret_key))
+      $errors[] = 'error_recaptcha_keys';
 
     if(trim($banned_ips=='') && trim($banned_user_agents=='')) $check_access_permission = 0;
     else $check_access_permission = 1;
@@ -77,6 +86,21 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']) && $_SESSION[$setting
       $dbr->bindValue(':name', 'akismet_mail_check', PDO::PARAM_STR);
       $dbr->bindParam(':value', $akismet_mail_check, PDO::PARAM_STR);
       $dbr->execute();
+      $dbr->bindValue(':name', 'recaptcha_public_key', PDO::PARAM_STR);
+      $dbr->bindParam(':value', $recaptcha_public_key, PDO::PARAM_STR);
+      $dbr->execute();
+      $dbr->bindValue(':name', 'recaptcha_secret_key', PDO::PARAM_STR);
+      $dbr->bindParam(':value', $recaptcha_secret_key, PDO::PARAM_STR);
+      $dbr->execute();
+      $dbr->bindValue(':name', 'recaptcha_login_check', PDO::PARAM_STR);
+      $dbr->bindParam(':value', $recaptcha_login_check, PDO::PARAM_STR);
+      $dbr->execute();
+      $dbr->bindValue(':name', 'recaptcha_entry_check', PDO::PARAM_STR);
+      $dbr->bindParam(':value', $recaptcha_entry_check, PDO::PARAM_STR);
+      $dbr->execute();
+      $dbr->bindValue(':name', 'recaptcha_mail_check', PDO::PARAM_STR);
+      $dbr->bindParam(':value', $recaptcha_mail_check, PDO::PARAM_STR);
+      $dbr->execute();
       $dbr->bindValue(':name', 'check_access_permission', PDO::PARAM_STR);
       $dbr->bindParam(':value', $check_access_permission, PDO::PARAM_STR);
       $dbr->execute();
@@ -95,6 +119,11 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']) && $_SESSION[$setting
       if(isset($_POST['akismet_key'])) $template->assign('akismet_key',htmlspecialchars(stripslashes($_POST['akismet_key'])));
       if(isset($_POST['akismet_entry_check'])) $template->assign('akismet_entry_check',intval($_POST['akismet_entry_check']));
       if(isset($_POST['akismet_mail_check'])) $template->assign('akismet_mail_check',intval($_POST['akismet_mail_check']));
+      if(isset($_POST['recaptcha_public_key'])) $template->assign('recaptcha_public_key', htmlspecialchars(stripslashes($_POST['recaptcha_public_key'])));
+      if(isset($_POST['recaptcha_secret_key']))$template->assign('recaptcha_secret_key', htmlspecialchars(stripslashes($_POST['recaptcha_secret_key'])));
+      if(isset($_POST['recaptcha_login_check'])) $template->assign('recaptcha_login_check',intval($_POST['recaptcha_login_check']));
+      if(isset($_POST['recaptcha_entry_check'])) $template->assign('recaptcha_entry_check',intval($_POST['recaptcha_entry_check']));
+      if(isset($_POST['recaptcha_mail_check'])) $template->assign('recaptcha_mail_check',intval($_POST['recaptcha_mail_check']));
 
      }
 
@@ -120,6 +149,13 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']) && $_SESSION[$setting
     $template->assign('akismet_key',htmlspecialchars(stripslashes($settings['akismet_key'])));
     $template->assign('akismet_entry_check',intval($settings['akismet_entry_check']));
     $template->assign('akismet_mail_check',intval($settings['akismet_mail_check']));
+    
+    // reCAPTCHA
+    $template->assign('recaptcha_public_key', htmlspecialchars(stripslashes($settings['recaptcha_public_key'])));
+    $template->assign('recaptcha_secret_key', htmlspecialchars(stripslashes($settings['recaptcha_secret_key'])));
+    $template->assign('recaptcha_login_check',intval($settings['recaptcha_login_check']));
+    $template->assign('recaptcha_entry_check',intval($settings['recaptcha_entry_check']));
+    $template->assign('recaptcha_mail_check',intval($settings['recaptcha_mail_check']));
    }
   if(isset($_GET['saved']))
    {

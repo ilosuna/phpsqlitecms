@@ -25,6 +25,29 @@ function showme($what)
   exit;
  }
 
+ /**
+  * check if the entered captcha is right
+  * NOTE: you need PHP5 for this specific function to work,
+  *       if you wan't to support other versions do a workaround yourself.
+  */
+function check_captcha($secret) {
+  $post_data = array(
+    'secret' => htmlspecialchars($secret), // have to pass it, since here $settings is not initalized 
+    'response' => $_POST["g-recaptcha-response"],
+  );
+    
+  $options = array(
+    'http' => array(
+      'method' => 'POST',
+      'content' => http_build_query($post_data),
+    ),
+  );
+  $context = stream_context_create($options);
+  $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, $context);
+
+  return json_decode($response)->success;
+ }
+
 /**
  * fetches settings from database
  */

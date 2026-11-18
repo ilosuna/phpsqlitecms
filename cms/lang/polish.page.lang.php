@@ -152,4 +152,7 @@ $lang['search_no_results'] =             'Nie znaleziono stron';
 $lang['akismet_error_api_key'] =         'Błędny klucz api akismet (api key)';
 $lang['akismet_error_connection'] =      'Błąd połączenia z serwerem akismet - proszę spróbować później';
 $lang['akismet_spam_suspicion'] =        'Podejrzenie spamu!';
+
+// reCAPTCHA:
+$lang['wrong_captcha'] =				 'You entered a wrong captcha, please try again!';
 ?>

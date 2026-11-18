@@ -52,6 +52,36 @@
                        name="akismet_mail_check"<?php if (isset($akismet_mail_check) && $akismet_mail_check == 1): ?> checked<?php endif; ?>> <?php echo $lang['akismet_mail_check']; ?>
             </label>
         </div>
+        <div class="form-group">
+            <label for="recaptcha"><?php echo $lang['recaptcha']; ?></label>
+            <span class="help-block"><?php echo $lang['recaptcha_desc']; ?></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="recaptcha_public_key" name="recaptcha_public_key"
+                    placeholder="<?php echo $lang['recaptcha_public_key']; ?>"
+                    value="<?php echo htmlspecialchars($recaptcha_public_key); ?>">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="recaptcha_secret_key" name="recaptcha_secret_key"
+                   placeholder="<?php echo $lang['recaptcha_secret_key']; ?>"
+                   value="<?php echo htmlspecialchars($recaptcha_secret_key); ?>">
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input id="recaptcha_login_check" type="checkbox"
+                           name="recaptcha_login_check"<?php if (isset($recaptcha_login_check) && $recaptcha_login_check == 1): ?> checked<?php endif; ?>> <?php echo $lang['recaptcha_login_check']; ?>
+                </label><br/>
+                <label>
+                    <input id="recaptcha_entry_check" type="checkbox"
+                           name="recaptcha_entry_check"<?php if (isset($recaptcha_entry_check) && $recaptcha_entry_check == 1): ?> checked<?php endif; ?>> <?php echo $lang['recaptcha_entry_check']; ?>
+                </label><br/>
+                <label>
+                    <input id="recaptcha_mail_check" type="checkbox"
+                           name="recaptcha_mail_check"<?php if (isset($recaptcha_mail_check) && $recaptcha_mail_check == 1): ?> checked<?php endif; ?>> <?php echo $lang['recaptcha_mail_check']; ?>
+                </label>
+            </div>
+        </div>
 
         <button class="btn btn-primary" type="submit"><?php echo $lang['spam_protection_submit']; ?></button>
 

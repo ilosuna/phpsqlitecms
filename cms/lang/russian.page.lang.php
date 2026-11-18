@@ -147,3 +147,5 @@ $lang['akismet_error_api_key'] =         'Недопустимый ключ akis
 $lang['akismet_error_connection'] =      'Ошибка подключения к серверу akismet - попробуйте повторить позже';
 $lang['akismet_spam_suspicion'] =        'Похоже на спам!';
 
+// reCAPTCHA:
+$lang['wrong_captcha'] =				 'You entered a wrong captcha, please try again!';

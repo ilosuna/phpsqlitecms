@@ -146,4 +146,7 @@ $lang['search_no_results'] =             'Keine Seiten gefunden';
 $lang['akismet_error_api_key'] =         'Ungültiger Akismet-API-Key';
 $lang['akismet_error_connection'] =      'Fehler bei der Serververbindung - bitte versuchen Sie es später noch einmal';
 $lang['akismet_spam_suspicion'] =        'Spam-Verdacht!';
+
+// reCAPTCHA:
+$lang['wrong_captcha'] =				 'You entered a wrong captcha, please try again!';
 ?>

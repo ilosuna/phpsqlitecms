@@ -115,6 +115,7 @@ try
     case 'pages': include('./includes/pages.inc.php'); break;
     case 'galleries': include('./includes/galleries.inc.php'); break;
     case 'gcb': include('./includes/gcb.inc.php'); break;
+    case 'google_analytics': include('./includes/google_analytics.inc.php'); break;
     case 'notes': include('./includes/notes.inc.php'); break;
     case 'comments': include('./includes/comments.inc.php'); break;
     case 'filemanager': include('./includes/filemanager.inc.php'); break;
